@@ -1,0 +1,1617 @@
+
+namespace = vfef
+
+# Federation Member Gains Subject
+country_event = {
+    id = vfef.146
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+        from = {
+            has_federation = yes
+            federation = { has_federation_law = allow_subjects_to_join_yes_empire }
+        }
+    }
+
+    immediate = {
+        join_alliance = { who = from override_requirements = yes }
+    }
+
+}
+
+# Empire Member's Request to Leave was Rejected
+country_event = {
+	id = vfef.147
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	
+		immediate = {
+			if = {
+				limit = {
+					federation = { has_federation_type = vf_ef_federation }
+				}
+				set_timed_country_flag = {
+					flag = asked_to_leave_empire
+					days = 3600
+				}
+				add_opinion_modifier = {
+					who = from
+					modifier = opinion_denied_to_leave_empire
+				}
+				from = {
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_wanted_to_leave_empire
+				}
+			}
+		}
+	}
+}
+
+##############################
+# JOINT OPERATIONS
+##############################
+
+### Empire
+
+#Starting event
+country_event = {
+	id = vfef.500
+	title = vfef.500.name
+	desc = vfef.500.desc
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_default
+
+	is_triggered_only = yes
+
+	trigger = {
+		years_passed >= 50
+		exists = federation
+		has_federation = yes
+		is_federation_leader = yes
+		NOT = { has_country_flag = empire_joint_operation_monument }
+		federation = {
+			has_federation_type = vf_ef_federation
+			federation_level >= 2
+			NOT = { has_federation_flag = had_successful_empire_joint_operation }
+			count_member = {
+				count >= 2
+				limit = {
+					NOT = { is_same_value = root }
+					exists = capital_scope.solar_system #just in case...
+					if = {
+						limit = {
+							any_owned_fleet = {
+								is_ship_class = shipclass_constructor
+							}
+						}
+						any_owned_fleet = {
+							is_ship_class = shipclass_constructor
+							can_access_system = root.capital_scope.solar_system #never overuse this trigger
+						}
+					}
+					else = {
+						any_owned_fleet = {
+							NOT = { is_ship_class = shipclass_military_station }
+							NOT = { is_ship_class = shipclass_mining_station }
+							NOT = { is_ship_class = shipclass_research_station }
+							NOT = { is_ship_class = shipclass_observation_station }
+							is_inside_border = owner
+							can_access_system = root.capital_scope.solar_system
+						}
+					}
+				}
+			}
+			NOT = { has_federation_flag = federation_recent_empire_joint_operation }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			remove_country_flag = empire_ethos_militarist
+			remove_country_flag = empire_ethos_pacifist
+			remove_country_flag = empire_ethos_xenophobe
+			remove_country_flag = empire_ethos_xenophile
+			remove_country_flag = empire_ethos_materialist
+			remove_country_flag = empire_ethos_spiritualist
+			remove_country_flag = empire_ethos_egalitarian
+			remove_country_flag = empire_ethos_authoritarian
+			federation = {
+				every_member = {
+					remove_country_flag = empire_joint_operation_yes
+					remove_country_flag = empire_joint_operation_no
+					remove_country_flag = empire_joint_operation_invalid_participant
+				}
+				remove_federation_flag = empire_joint_operation_complete_success
+				remove_federation_flag = empire_joint_operation_complete_failure
+				remove_federation_flag = empire_joint_operation_partial_success
+				remove_federation_flag = empire_joint_operation_partial_failure
+				set_variable = {
+					which = empire_joint_operation_succeed
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_fail
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_yes
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_no
+					value = 0
+				}
+			}
+			#And set them again :D
+			if = {
+				limit = { has_ethic = ethic_fanatic_militarist }
+				set_country_flag = empire_ethos_militarist
+			}
+			else_if = {
+				limit = { has_ethic = ethic_fanatic_pacifist }
+				set_country_flag = empire_ethos_pacifist
+			}
+			else_if = {
+				limit = { has_ethic = ethic_fanatic_xenophobe }
+				set_country_flag = empire_ethos_xenophobe
+			}
+			else_if = {
+				limit = { has_ethic = ethic_fanatic_xenophile }
+				set_country_flag = empire_ethos_xenophile
+			}
+			else_if = {
+				limit = { has_ethic = ethic_fanatic_materialist }
+				set_country_flag = empire_ethos_materialist
+			}
+			else_if = {
+				limit = { has_ethic = ethic_fanatic_spiritualist }
+				set_country_flag = empire_ethos_spiritualist
+			}
+			else_if = { #hopefully never
+				limit = { has_ethic = ethic_fanatic_egalitarian }
+				set_country_flag = empire_ethos_egalitarian
+			}
+			else = {
+				set_country_flag = empire_ethos_authoritarian
+			}
+		}
+		federation = {
+			set_timed_federation_flag = {
+				flag = federation_recent_empire_joint_operation
+				days = 18000 #50 years cooldown
+			}
+		}
+	}
+
+	option = {
+		name = vfef.500.A #sounds like a spiffing idea
+		custom_tooltip = vfef.500.A.tooltip
+
+		hidden_effect = {
+			every_federation_ally = {
+				if = {
+					limit = {
+						exists = capital_scope.solar_system
+						if = {
+							limit = {
+								any_owned_fleet = {
+									is_ship_class = shipclass_constructor
+								}
+							}
+							any_owned_fleet = {
+								is_ship_class = shipclass_constructor
+								can_access_system = root.capital_scope.solar_system
+							}
+						}
+						else = {
+							any_owned_fleet = {
+								NOT = { is_ship_class = shipclass_military_station }
+								NOT = { is_ship_class = shipclass_mining_station }
+								NOT = { is_ship_class = shipclass_research_station }
+								NOT = { is_ship_class = shipclass_observation_station }
+								is_inside_border = owner
+								can_access_system = root.capital_scope.solar_system
+							}
+						}
+					}
+					country_event = { id = vfef.501 }
+				}
+				else = {
+					set_country_flag = empire_joint_operation_invalid_participant
+				}
+			}
+		}
+
+		hidden_effect = {
+			country_event = { id = vfef.502 days = 90 }
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_country_flag = empire_ethos_authoritarian
+				is_authoritarian = no
+			}
+		}
+	}
+	option = {
+		name = vfef.500.B #actually, let's not
+
+		hidden_effect = {
+			remove_country_flag = empire_ethos_militarist
+			remove_country_flag = empire_ethos_pacifist
+			remove_country_flag = empire_ethos_xenophobe
+			remove_country_flag = empire_ethos_xenophile
+			remove_country_flag = empire_ethos_materialist
+			remove_country_flag = empire_ethos_spiritualist
+			remove_country_flag = empire_ethos_egalitarian
+			remove_country_flag = empire_ethos_authoritarian
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				federation = { federation_cohesion >= 0 }
+				NAND = {
+					has_country_flag = empire_ethos_authoritarian
+					is_authoritarian = no
+				}
+			}
+		}
+	}
+}
+
+
+#All members asked whether to join
+country_event = {
+	id = vfef.501
+	title = vfef.501.name
+	desc = vfef.501.desc
+	show_sound = event_default
+	diplomatic = yes
+	picture_event_data = {
+		portrait = from
+		planet_background = from
+		graphical_culture = from
+		city_level = from
+		room = from.ruler
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_federation_leader = yes }
+	}
+
+	option = {
+		name = vfef.501.A # Gladly
+		from = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_empire_joint_action_happy
+			}
+		}
+		custom_tooltip = vfef.501.A.tooltip
+		custom_tooltip = vfef.501.A.tooltip2
+
+		hidden_effect = {
+			set_country_flag = empire_joint_operation_yes
+			federation = {
+				change_variable = {
+					which = empire_joint_operation_yes
+					value = 1
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				federation = { federation_cohesion <= -50 }
+			}
+			modifier = {
+				factor = 0.75
+				federation = { federation_cohesion <= 0 }
+			}
+			modifier = {
+				factor = 1.5
+				federation = { federation_cohesion >= 50 }
+			}
+			modifier = {
+				factor = 2
+				federation = { federation_cohesion >= 90 }
+			}
+			modifier = {
+				factor = 1.5
+				opinion_level = {
+					who = from
+					level >= good
+				}
+			}
+			modifier = {
+				factor = 1.5
+				opinion_level = {
+					who = from
+					level = excellent
+				}
+			}
+			modifier = {
+				factor = 0.5
+				opinion_level = {
+					who = from
+					level <= poor
+				}
+			}
+			modifier = {
+				factor = 0.5
+				opinion_level = {
+					who = from
+					level = terrible
+				}
+			}
+			modifier = {
+				factor = 1.5
+				is_authoritarian = yes
+			}
+		}
+	}
+	option = {
+		name = vfef.501.B # Stubbornly
+		root = {
+			add_opinion_modifier = {
+				who = from
+				modifier = opinion_empire_joint_action_forced
+			}
+		}
+		custom_tooltip = vfef.501.B.tooltip
+		hidden_effect = {
+			set_country_flag = empire_joint_operation_yes
+			set_country_flag = empire_joint_operation_yes_but
+			federation = {
+				change_variable = {
+					which = empire_joint_operation_yes
+					value = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				relative_power = {
+					who = from
+					value <= inferior
+				}
+			}
+			modifier = {
+				factor = 1.5
+				relative_power = {
+					who = from
+					value >= superior
+				}
+			}
+			modifier = {
+				factor = 2
+				is_egalitarian = yes
+			}
+		}
+	}
+}
+
+#Setup event: The answers are in, will it happen or not?
+country_event = {
+	id = vfef.502
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_federation_leader = yes
+		federation = {
+			has_federation_flag = federation_recent_empire_joint_operation
+		}
+	}
+
+	immediate = {
+		save_event_target_as = federation_leader
+		if = {
+			limit = {
+				federation = {
+					check_variable = {
+						which = empire_joint_operation_yes
+						value >= 1
+					}
+					check_variable = {
+						which = empire_joint_operation_yes
+						value >= empire_joint_operation_no
+					}
+				}
+			}
+			country_event = { id = vfef.505 }
+			every_federation_ally = {
+				country_event = { id = vfef.506 }
+				if = {
+					limit = {
+						has_country_flag = empire_joint_operation_no
+					}
+					federation = {
+						change_variable = {
+							which = empire_joint_operation_fail
+							value = 1
+						}
+					}
+				}
+			}
+		}
+		# else = {
+		# 	country_event = { id = vfef.503 days = 2 }
+		# 	every_federation_ally = {
+		# 		limit = {
+		# 			NOT = { has_country_flag = empire_joint_operation_invalid_participant }
+		# 		}
+		# 		country_event = { id = vfef.504 }
+		# 	}
+		# }
+	}
+}
+
+# #Question fails: President
+# country_event = {
+# 	id = vfef.503
+# 	title = vfef.503.name
+# 	desc = vfef.503.desc
+# 	picture = GFX_evt_arguing_senate
+# 	show_sound = event_ghost_town
+# 	is_triggered_only = yes
+
+# 	option = {
+# 		name = vfef.503.A
+# 		federation = {
+# 			add_cohesion = -100
+# 		}
+# 		add_resource = {
+# 			influence = -50
+# 		}
+# 		if = {
+# 			limit = {
+# 				any_federation_ally = {
+# 					has_country_flag = empire_joint_operation_yes
+# 				}
+# 			}
+# 			custom_tooltip = the_following_nations_said_yes
+# 			country_list_tooltip = {
+# 				limit = {
+# 					is_in_federation_with = root
+# 					has_country_flag = empire_joint_operation_yes
+# 				}
+# 			}
+# 		}
+# 		else = { custom_tooltip = no_following_nations_said_yes }
+# 		custom_tooltip = the_following_nations_said_no
+# 		country_list_tooltip = {
+# 			limit = {
+# 				is_in_federation_with = root
+# 				has_country_flag = empire_joint_operation_no
+# 			}
+# 		}
+# 	}
+
+# 	after = {
+# 		hidden_effect = {
+# 			remove_country_flag = empire_ethos_militarist
+# 			remove_country_flag = empire_ethos_pacifist
+# 			remove_country_flag = empire_ethos_xenophobe
+# 			remove_country_flag = empire_ethos_xenophile
+# 			remove_country_flag = empire_ethos_materialist
+# 			remove_country_flag = empire_ethos_spiritualist
+# 			remove_country_flag = empire_ethos_egalitarian
+# 			remove_country_flag = empire_ethos_authoritarian
+# 			federation = {
+# 				every_member = {
+# 					remove_country_flag = empire_joint_operation_yes
+# 					remove_country_flag = empire_joint_operation_no
+# 					remove_country_flag = empire_joint_operation_invalid_participant
+# 				}
+# 				set_variable = {
+# 					which = empire_joint_operation_fail
+# 					value = 0
+# 				}
+# 				set_variable = {
+# 					which = empire_joint_operation_succeed
+# 					value = 0
+# 				}
+# 				set_variable = {
+# 					which = empire_joint_operation_yes
+# 					value = 0
+# 				}
+# 				set_variable = {
+# 					which = empire_joint_operation_no
+# 					value = 0
+# 				}
+# 			}
+# 		}
+# 	}
+# }
+
+# #Question fails: Member
+# country_event = {
+# 	id = vfef.504
+# 	title = vfef.504.name
+# 	desc = {
+# 		text = vfef.504.desc.said_yes
+# 		trigger = { has_country_flag = empire_joint_operation_yes }
+# 	}
+# 	desc = {
+# 		text = vfef.504.desc.said_no
+# 		trigger = { has_country_flag = empire_joint_operation_no }
+# 	}
+# 	picture = GFX_evt_arguing_senate
+# 	show_sound = event_ghost_town
+# 	is_triggered_only = yes
+
+# 	option = {
+# 		name = {
+# 			text = vfef.504.A.yes
+# 			trigger = { has_country_flag = empire_joint_operation_yes }
+# 		}
+# 		name = {
+# 			text = vfef.504.A.no
+# 			trigger = { has_country_flag = empire_joint_operation_no }
+# 		}
+# 		tooltip = {
+# 			federation = {
+# 				add_cohesion = -100
+# 			}
+# 		}
+# 	}
+# }
+
+#Question succeeds: President
+country_event = {
+	id = vfef.505
+	title = vfef.505.name
+	desc = vfef.505.desc
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+	is_triggered_only = yes
+
+	option = {
+		name = vfef.505.A
+		custom_tooltip = empire_join_operation_happens_tooltip
+		custom_tooltip = the_following_nations_will_participate
+		country_list_tooltip = {
+			limit = {
+				is_in_federation_with = root
+				has_country_flag = empire_joint_operation_yes
+			}
+		}
+		hidden_effect = {
+			begin_event_chain = {
+				event_chain = empire_joint_project_chain
+			}
+		}
+		hidden_effect = {
+			every_federation_ally = {
+				limit = {
+					has_country_flag = empire_joint_operation_yes
+				}
+				root = {
+					if = {
+						limit = {
+							prev = { is_gestalt = no }
+						}
+						prev.capital_scope = {
+							enable_special_project = { #on every capital, but only two can be done
+								name = empire_joint_project_leader
+								location = this
+								owner = root
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_federation_ally = {
+					has_country_flag = empire_joint_operation_yes_but
+				}
+			}
+			custom_tooltip = the_following_nations_said_yes_but
+			country_list_tooltip = {
+				limit = {
+					is_in_federation_with = root
+					has_country_flag = empire_joint_operation_yes_but
+				}
+			}
+		}
+		else = { custom_tooltip = no_following_nations_said_yes_but }
+	}
+}
+
+#Question succeeds: Member
+country_event = {
+	id = vfef.506
+	title = vfef.506.name
+	desc = {
+		text = vfef.506.desc.said_yes
+		trigger = { 
+			has_country_flag = empire_joint_operation_yes
+			NOT = { has_country_flag = empire_joint_operation_yes_but }
+		}
+	}
+	desc = {
+		text = vfef.506.desc.said_no
+		trigger = { has_country_flag = empire_joint_operation_yes_but }
+	}
+	desc = {
+		text = vfef.506.desc.invalid
+		trigger = { has_country_flag = empire_joint_operation_invalid_participant }
+	}
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+	is_triggered_only = yes
+
+	option = {
+		name = vfef.506.A
+		trigger = {
+			has_country_flag = empire_joint_operation_yes
+		}
+		custom_tooltip = empire_join_operation_happens_tooltip
+		custom_tooltip = the_following_nations_will_participate
+		country_list_tooltip = {
+			limit = {
+				is_in_federation_with = root
+				has_country_flag = empire_joint_operation_yes
+			}
+		}
+
+		hidden_effect = {
+			begin_event_chain = {
+				event_chain = empire_joint_project_chain
+			}
+		}
+		from.capital_scope = {
+			enable_special_project = {
+				name = empire_joint_project_member
+				location = this
+				owner = root
+			}
+		}
+	}
+	option = {
+		name = {
+			text = vfef.506.B
+			trigger = { has_country_flag = empire_joint_operation_yes_but }
+		}
+		name = {
+			text = INTERESTING
+			trigger = { has_country_flag = empire_joint_operation_invalid_participant }
+		}
+		trigger = {
+			NOT = { has_country_flag = empire_joint_operation_yes }
+		}
+		custom_tooltip = empire_join_operation_happens_tooltip
+	}
+}
+
+
+#The empire has completed the special project on a member (empire scope)
+country_event = {
+	id = vfef.507
+	title = vfef.507.name
+	desc = vfef.507.desc
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+	is_triggered_only = yes
+	location = fromfrom
+
+	option = {
+		name = EXCELLENT
+		tooltip = {
+			switch = {
+				trigger = has_country_flag
+				empire_ethos_militarist = {
+					fromfrom.owner = {
+						add_modifier = {
+							modifier = empire_propaganda_militarist
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_pacifist = {
+					fromfrom.owner = {
+						add_modifier = {
+							modifier = empire_propaganda_pacifist
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_xenophobe = {
+					fromfrom.owner = {
+						add_modifier = {
+							modifier = empire_propaganda_xenophobe
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_xenophile = {
+					fromfrom.owner = {
+						add_modifier = {
+							modifier = empire_propaganda_xenophile
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_materialist = {
+					fromfrom.owner = {
+						add_modifier = {
+							modifier = empire_propaganda_materialist
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_spiritualist = {
+					fromfrom.owner = {
+						add_modifier = {
+							modifier = empire_propaganda_spiritualist
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_egalitarian = {
+					fromfrom.owner = {
+						add_modifier = {
+							modifier = empire_propaganda_egalitarian
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_authoritarian = {
+					fromfrom.owner = {
+						add_modifier = {
+							modifier = empire_propaganda_authoritarian
+							days = 7200
+						}
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = { NOT = { has_country_flag = empire_joint_project_leader_first_done } }
+			hidden_effect = { set_country_flag = empire_joint_project_leader_first_done }
+		}
+		else = {
+			hidden_effect = {
+				remove_country_flag = empire_joint_project_leader_first_done
+				while = {
+					limit = { has_special_project = empire_joint_project_leader }
+					abort_special_project = {
+						type = empire_joint_project_leader
+					}
+				}
+			}
+		}
+	}
+}
+
+#The empire has completed the special project on a member (member scope)
+country_event = {
+	id = vfef.508
+	title = vfef.508.name
+	desc = {
+		text = vfef.508.desc
+		trigger = {
+			NOT = {
+				from.owner = {
+					switch = {
+						trigger = has_country_flag
+						empire_ethos_militarist = {
+							root = { is_militarist = yes }
+						}
+						empire_ethos_pacifist = {
+							root = { is_pacifist = yes }
+						}
+						empire_ethos_xenophobe = {
+							root = { is_xenophobe = yes }
+						}
+						empire_ethos_xenophile = {
+							root = { is_xenophile = yes }
+						}
+						empire_ethos_materialist = {
+							root = { is_materialist = yes }
+						}
+						empire_ethos_spiritualist = {
+							root = { is_spiritualist = yes }
+						}
+						empire_ethos_egalitarian = {
+							root = { is_egalitarian = yes }
+						}
+						empire_ethos_authoritarian = {
+							root = { is_authoritarian = yes }
+						}
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = vfef.508.desc.good
+		trigger = {
+			from.owner = {
+				switch = {
+					trigger = has_country_flag
+					empire_ethos_militarist = {
+						root = { is_militarist = yes }
+					}
+					empire_ethos_pacifist = {
+						root = { is_pacifist = yes }
+					}
+					empire_ethos_xenophobe = {
+						root = { is_xenophobe = yes }
+					}
+					empire_ethos_xenophile = {
+						root = { is_xenophile = yes }
+					}
+					empire_ethos_materialist = {
+						root = { is_materialist = yes }
+					}
+					empire_ethos_spiritualist = {
+						root = { is_spiritualist = yes }
+					}
+					empire_ethos_egalitarian = {
+						root = { is_egalitarian = yes }
+					}
+					empire_ethos_authoritarian = {
+						root = { is_authoritarian = yes }
+					}
+				}
+			}
+		}
+	}
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+	is_triggered_only = yes
+	location = fromfrom
+
+	option = {
+		name = {
+			text = vfef.508.A.good
+			trigger = {
+				from.owner = {
+					switch = {
+						trigger = has_country_flag
+						empire_ethos_militarist = {
+							root = { is_militarist = yes }
+						}
+						empire_ethos_pacifist = {
+							root = { is_pacifist = yes }
+						}
+						empire_ethos_xenophobe = {
+							root = { is_xenophobe = yes }
+						}
+						empire_ethos_xenophile = {
+							root = { is_xenophile = yes }
+						}
+						empire_ethos_materialist = {
+							root = { is_materialist = yes }
+						}
+						empire_ethos_spiritualist = {
+							root = { is_spiritualist = yes }
+						}
+						empire_ethos_egalitarian = {
+							root = { is_egalitarian = yes }
+						}
+						empire_ethos_authoritarian = {
+							root = { is_authoritarian = yes }
+						}
+					}
+				}
+			}
+		}
+		name = {
+			text = WORRYING
+			trigger = {
+				from.owner = {
+					switch = {
+						trigger = has_country_flag
+						empire_ethos_militarist = {
+							root = { is_pacifist = yes }
+						}
+						empire_ethos_pacifist = {
+							root = { is_militarist = yes }
+						}
+						empire_ethos_xenophobe = {
+							root = { is_xenophile = yes }
+						}
+						empire_ethos_xenophile = {
+							root = { is_xenophobe = yes }
+						}
+						empire_ethos_materialist = {
+							root = { is_spiritualist = yes }
+						}
+						empire_ethos_spiritualist = {
+							root = { is_materialist = yes }
+						}
+						empire_ethos_egalitarian = {
+							root = { is_authoritarian = yes }
+						}
+						empire_ethos_authoritarian = {
+							root = { is_egalitarian = yes }
+						}
+					}
+				}
+			}
+		}
+		name = {
+			text = vfef.508.A.neutral
+			trigger = {
+				from.owner = {
+					switch = {
+						trigger = has_country_flag
+						empire_ethos_militarist = {
+							root = {
+								is_pacifist = no
+								is_militarist = no
+							}
+						}
+						empire_ethos_pacifist = {
+							root = {
+								is_pacifist = no
+								is_militarist = no
+							}
+						}
+						empire_ethos_xenophobe = {
+							root = {
+								is_xenophile = no
+								is_xenophobe = no
+							}
+						}
+						empire_ethos_xenophile = {
+							root = {
+								is_xenophile = no
+								is_xenophobe = no
+							}
+						}
+						empire_ethos_materialist = {
+							root = {
+								is_spiritualist = no
+								is_materialist = no
+							}
+						}
+						empire_ethos_spiritualist = {
+							root = {
+								is_spiritualist = no
+								is_materialist = no
+							}
+						}
+						empire_ethos_egalitarian = {
+							root = {
+								is_authoritarian = no
+								is_egalitarian = no
+							}
+						}
+						empire_ethos_authoritarian = {
+							root = {
+								is_authoritarian = no
+								is_egalitarian = no
+							}
+						}
+					}
+				}
+			}
+		}
+		from.owner = {
+			switch = {
+				trigger = has_country_flag
+				empire_ethos_militarist = {
+					root = {
+						add_modifier = {
+							modifier = empire_propaganda_militarist
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_pacifist = {
+					root = {
+						add_modifier = {
+							modifier = empire_propaganda_pacifist
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_xenophobe = {
+					root = {
+						add_modifier = {
+							modifier = empire_propaganda_xenophobe
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_xenophile = {
+					root = {
+						add_modifier = {
+							modifier = empire_propaganda_xenophile
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_materialist = {
+					root = {
+						add_modifier = {
+							modifier = empire_propaganda_materialist
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_spiritualist = {
+					root = {
+						add_modifier = {
+							modifier = empire_propaganda_spiritualist
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_egalitarian = {
+					root = {
+						add_modifier = {
+							modifier = empire_propaganda_egalitarian
+							days = 7200
+						}
+					}
+				}
+				empire_ethos_authoritarian = {
+					root = {
+						add_modifier = {
+							modifier = empire_propaganda_authoritarian
+							days = 7200
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#A member has completed the special project on the empire, others still need to do it though (member scope)
+country_event = {
+	id = vfef.509
+	title = vfef.509.name
+	desc = vfef.509.desc
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+	is_triggered_only = yes
+	location = fromfrom
+
+	option = {
+		name = EXCELLENT
+		fromfrom.owner = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_empire_joint_action_completed
+			}
+			hidden_effect = {
+				change_variable = {
+					which = empire_joint_action_member_completed
+					value = 1
+				}
+			}
+		}
+		custom_tooltip = vfef.509.A.tooltip
+	}
+}
+
+#A member has completed the special project on the empire, all are now done (member scope)
+country_event = {
+	id = vfef.510
+	title = vfef.510.name
+	desc = {
+		trigger = {
+			federation = {
+				OR = {
+					has_federation_flag = empire_joint_operation_complete_success
+					AND = {
+						has_federation_flag = empire_joint_operation_partial_success
+						count_member = {
+							count = 2
+							limit = {
+								NOT = { has_country_flag = empire_joint_operation_invalid_participant }
+							}
+						}
+					}
+				}
+			}
+		}
+		text = vfef.510.desc.complete_success
+	}
+	desc = {
+		trigger = {
+			federation = {
+				has_federation_flag = empire_joint_operation_partial_success
+				count_member = {
+					count > 2
+					limit = {
+						NOT = { has_country_flag = empire_joint_operation_invalid_participant }
+					}
+				}
+			}
+		}
+		text = vfef.510.desc.partial_success
+	}
+	desc = {
+		trigger = {
+			federation = {
+				has_federation_flag = empire_joint_operation_partial_failure
+			}
+		}
+		text = vfef.510.desc.partial_failure
+	}
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+	is_triggered_only = yes
+	location = fromfrom
+
+	option = {
+		name = {
+			text = EXCELLENT
+			trigger = {
+				NOT = {
+					federation = {
+						has_federation_flag = empire_joint_operation_partial_failure
+					}
+				}
+			}
+		}
+		name = {
+			text = vfef.510.A.oh_well
+			trigger = {
+				federation = {
+					has_federation_flag = empire_joint_operation_partial_failure
+				}
+			}
+		}
+		tooltip = {
+			empire_join_operation_reward = yes
+		}
+		add_favors = {
+			target = fromfrom.owner
+			value = 1
+		}
+		fromfrom.owner = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_empire_joint_action_completed
+			}
+		}
+	}
+	after = {
+		hidden_effect = { remove_country_flag = empire_joint_operation_yes }
+		end_event_chain = empire_joint_project_chain
+	}
+}
+
+#A member has completed or the last one has failed the special project on the empire, all are now done (event for all other members except empire)
+country_event = {
+	id = vfef.511
+	title = vfef.511.name
+	desc = {
+		trigger = {
+			federation = {
+				OR = {
+					has_federation_flag = empire_joint_operation_complete_success
+					AND = {
+						has_federation_flag = empire_joint_operation_partial_success
+						count_member = {
+							count = 2
+							limit = {
+								NOT = { has_country_flag = empire_joint_operation_invalid_participant }
+							}
+						}
+					}
+				}
+			}
+		}
+		text = vfef.511.desc.complete_success
+	}
+	desc = {
+		trigger = {
+			federation = {
+				has_federation_flag = empire_joint_operation_partial_success
+				count_member = {
+					count > 2
+					limit = {
+						NOT = { has_country_flag = empire_joint_operation_invalid_participant }
+					}
+				}
+			}
+		}
+		text = vfef.511.desc.partial_success
+	}
+	desc = {
+		trigger = {
+			federation = {
+				has_federation_flag = empire_joint_operation_partial_failure
+			}
+			has_completed_special_project = empire_joint_project_member
+		}
+		text = vfef.511.desc.partial_failure.but_I_did_it
+	}
+	desc = {
+		trigger = {
+			federation = {
+				has_federation_flag = empire_joint_operation_partial_failure
+			}
+			NOT = { has_completed_special_project = empire_joint_project_member }
+		}
+		text = vfef.511.desc.partial_failure.haha_no
+	}
+	desc = {
+		trigger = {
+			federation = {
+				has_federation_flag = empire_joint_operation_complete_failure
+			}
+		}
+		text = vfef.511.desc.complete_failure
+	}
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+	is_triggered_only = yes
+	location = fromfrom
+
+	option = {
+		name = {
+			text = vfef.511.A.good
+			trigger = {
+				federation = {
+					OR = {
+						has_federation_flag = empire_joint_operation_complete_success
+						has_federation_flag = empire_joint_operation_partial_success
+					}
+				}
+			}
+		}
+		name = {
+			text = vfef.511.A.but_I_did_it
+			trigger = {
+				federation = {
+					has_federation_flag = empire_joint_operation_partial_failure
+				}
+				has_completed_special_project = empire_joint_project_member
+			}
+		}
+		name = {
+			text = vfef.511.A.neutral
+			trigger = {
+				federation = {
+					has_federation_flag = empire_joint_operation_partial_failure
+				}
+				NOT = { has_completed_special_project = empire_joint_project_member }
+			}
+		}
+		name = {
+			text = vfef.511.A.oh_dear
+			trigger = {
+				federation = {
+					has_federation_flag = empire_joint_operation_complete_failure
+				}
+			}
+		}
+		tooltip = {
+			empire_join_operation_reward = yes
+		}
+	}
+	after = {
+		hidden_effect = {
+			remove_country_flag = empire_joint_operation_no
+			remove_country_flag = empire_joint_operation_yes
+			remove_country_flag = empire_joint_operation_yes_but
+			remove_country_flag = empire_joint_operation_invalid_participant
+		}
+		end_event_chain = empire_joint_project_chain
+	}
+}
+
+#A member has completed the special project on the empire, all are now done (event for empire)
+country_event = {
+	id = vfef.512
+	title = vfef.512.name
+	desc = {
+		trigger = {
+			federation = {
+				OR = {
+					has_federation_flag = empire_joint_operation_complete_success
+					AND = {
+						has_federation_flag = empire_joint_operation_partial_success
+						count_member = {
+							count = 2
+							limit = {
+								NOT = { has_country_flag = empire_joint_operation_invalid_participant }
+							}
+						}
+					}
+				}
+			}
+		}
+		text = vfef.512.desc.complete_success
+	}
+	desc = {
+		trigger = {
+			federation = {
+				has_federation_flag = empire_joint_operation_partial_success
+				count_member = {
+					count > 2
+					limit = {
+						NOT = { has_country_flag = empire_joint_operation_invalid_participant }
+					}
+				}
+			}
+		}
+		text = vfef.512.desc.partial_success
+	}
+	desc = {
+		trigger = {
+			federation = {
+				has_federation_flag = empire_joint_operation_partial_failure
+			}
+		}
+		text = vfef.512.desc.partial_failure
+	}
+	desc = {
+		trigger = {
+			federation = {
+				has_federation_flag = empire_joint_operation_complete_failure
+			}
+		}
+		text = vfef.512.desc.complete_failure
+	}
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+	is_triggered_only = yes
+	location = fromfrom
+
+	immediate = {
+		set_country_flag = empire_joint_operation_monument
+	}
+
+	option = {
+		name = {
+			text = vfef.512.A.good
+			trigger = {
+				federation = {
+					OR = {
+						has_federation_flag = empire_joint_operation_complete_success
+						has_federation_flag = empire_joint_operation_partial_success
+					}
+				}
+			}
+		}
+		name = {
+			text = vfef.512.A.neutral
+			trigger = {
+				federation = {
+					has_federation_flag = empire_joint_operation_partial_failure
+				}
+			}
+		}
+		name = {
+			text = vfef.512.A.oh_dear
+			trigger = {
+				federation = {
+					has_federation_flag = empire_joint_operation_complete_failure
+				}
+			}
+		}
+		empire_join_operation_reward = yes
+
+		if = {
+			limit = {
+				any_federation_ally = {
+					has_country_flag = empire_challenge_failed
+				}
+			}
+			custom_tooltip = the_following_nations_failed2
+			country_list_tooltip = {
+				limit = {
+					is_in_federation_with = root
+					has_country_flag = empire_challenge_failed
+				}
+			}
+		}
+	}
+
+	after = {
+		end_event_chain = empire_joint_project_chain
+		hidden_effect = {
+			federation = {
+				set_variable = {
+					which = empire_joint_operation_fail
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_succeed
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_yes
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_yes_but
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_no
+					value = 0
+				}
+			}
+		}
+	}
+}
+
+#Fail event 1: Federation leader changes (all members)
+country_event = {
+	id = vfef.700
+	title = vfef.700.name
+	desc = vfef.700.desc
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+
+	is_triggered_only = yes
+
+	trigger = { #duplicate popup protection
+		NOT = { has_country_flag = vfef.700 }
+	}
+
+	immediate = {
+		set_timed_country_flag = {
+			flag = vfef.700
+			days = 5
+		}
+	}
+
+	option = {
+		name = vfef.700.A
+		end_event_chain = empire_joint_project_chain
+		hidden_effect = {
+			remove_country_flag = empire_joint_operation_no
+			remove_country_flag = empire_joint_operation_yes
+			remove_country_flag = empire_joint_operation_yes_but
+			remove_country_flag = empire_joint_operation_invalid_participant
+			remove_country_flag = empire_ethos_militarist
+			remove_country_flag = empire_ethos_pacifist
+			remove_country_flag = empire_ethos_xenophobe
+			remove_country_flag = empire_ethos_xenophile
+			remove_country_flag = empire_ethos_materialist
+			remove_country_flag = empire_ethos_spiritualist
+			remove_country_flag = empire_ethos_egalitarian
+			remove_country_flag = empire_ethos_authoritarian
+			federation = {
+				set_variable = {
+					which = empire_joint_operation_fail
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_succeed
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_yes
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_yes_but
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_no
+					value = 0
+				}
+			}
+		}
+	}
+}
+
+#Fail event 2: No longer in federation (leaving member)
+country_event = {
+	id = vfef.701
+	title = vfef.701.name
+	desc = vfef.701.desc
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+
+	is_triggered_only = yes
+
+	trigger = { #duplicate popup protection
+		NOT = { has_country_flag = vfef.701 }
+	}
+
+	immediate = {
+		set_timed_country_flag = {
+			flag = vfef.701
+			days = 5
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+		end_event_chain = empire_joint_project_chain
+		hidden_effect = {
+			remove_country_flag = empire_joint_operation_no
+			remove_country_flag = empire_joint_operation_yes
+			remove_country_flag = empire_joint_operation_yes_but
+			remove_country_flag = empire_joint_operation_invalid_participant
+			remove_country_flag = empire_ethos_militarist
+			remove_country_flag = empire_ethos_pacifist
+			remove_country_flag = empire_ethos_xenophobe
+			remove_country_flag = empire_ethos_xenophile
+			remove_country_flag = empire_ethos_materialist
+			remove_country_flag = empire_ethos_spiritualist
+			remove_country_flag = empire_ethos_egalitarian
+			remove_country_flag = empire_ethos_authoritarian
+		}
+	}
+}
+
+#Fail event 3: Federation leader leaves (all members but former leader)
+country_event = {
+	id = vfef.702
+	title = vfef.702.name
+	desc = vfef.702.desc
+	picture = GFX_evt_diplomatic_visit
+	show_sound = event_announcement
+
+	is_triggered_only = yes
+
+	trigger = { #duplicate popup protection
+		NOT = { has_country_flag = vfef.702 }
+	}
+
+	immediate = {
+		set_timed_country_flag = {
+			flag = vfef.702
+			days = 5
+		}
+	}
+
+	option = {
+		name = vfef.702.A
+		end_event_chain = empire_joint_project_chain
+		hidden_effect = {
+			remove_country_flag = empire_joint_operation_no
+			remove_country_flag = empire_joint_operation_yes
+			remove_country_flag = empire_joint_operation_yes_but
+			remove_country_flag = empire_joint_operation_invalid_participant
+			federation = {
+				set_variable = {
+					which = empire_joint_operation_fail
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_succeed
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_yes
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_yes_but
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_no
+					value = 0
+				}
+			}
+		}
+	}
+}

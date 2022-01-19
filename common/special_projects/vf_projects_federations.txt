@@ -1,0 +1,390 @@
+###########################
+#						  #
+#  RESEARCH PROJECTS FOR  #
+#       FEDERATIONS       #
+#						  #
+###########################
+
+#	SCOPES
+#	abort_trigger
+#	this = country (project owner)
+#	from = event scope (planet or ship, MIGHT NOT EXIST)
+#	fromfrom = project creation scope (usually equals location)
+#	
+#	on_success / on_start / on_progress_25/50/75
+#	this = event scope (ship or planet)
+#	from = project creation scope (usually equals location)
+#	
+#	on_fail - this fires if it times out
+#	this = country (project owner)
+#	from = project creation scope (usually equals location)
+#	
+#	on_cancel - this fires if the abort trigger returns true
+#	this = country (project owner)
+#	from = project creation scope (usually equals location)
+
+## empire Joint Operation Project - leader
+special_project = {
+	KEY = "empire_joint_project_leader"
+	event_chain = "empire_joint_project_chain"
+	
+	days_to_research = 1800
+	timelimit = 3600
+	picture = GFX_evt_diplomatic_visit
+	icon = "gfx/interface/icons/situation_log/situation_log_federation.dds"
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+	}
+
+	abort_trigger = {
+		OR = {
+			is_federation_leader = no
+			fromfrom.owner = {
+				OR = {
+					has_federation = no
+					NOT = { is_in_federation_with = prev }
+				}
+			}
+		}
+	}
+
+	on_success = {
+		space_owner = {
+			country_event = { id = vfef.508 }
+		}
+		owner = {
+			country_event = { id = vfef.507 }
+		}
+	}
+	on_fail = {
+		if = {
+			limit = { has_country_flag = empire_joint_project_leader_first_done }
+			remove_country_flag = empire_joint_project_leader_first_done
+		}
+	}
+	on_cancel = {
+		if = {
+			limit = { has_country_flag = empire_joint_project_leader_first_done }
+			remove_country_flag = empire_joint_project_leader_first_done
+		}
+		if = {
+			limit = { #no longer federation leader
+				is_federation_leader = no
+				has_federation = yes
+				exists = federation
+			}
+			federation = {
+				set_variable = {
+					which = empire_joint_operation_fail
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_succeed
+					value = 0
+				}
+				every_member = {
+					country_event = { id = vfef.700 }
+				}
+			}
+		}
+		else_if = {
+			limit = { #left federation or federation disbanded
+				has_federation = no
+			}
+			country_event = { id = vfef.701 }
+		}
+		#else: the other country left or destroyed, no event needed
+	}
+}
+
+## empire Joint Operation Project - member
+special_project = {
+	KEY = "empire_joint_project_member"
+	event_chain = "empire_joint_project_chain"
+	
+	days_to_research = 360
+	timelimit = 3600
+	picture = GFX_evt_diplomatic_visit
+	icon = "gfx/interface/icons/situation_log/situation_log_federation.dds"
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_constructor = 1
+	}
+
+	abort_trigger = {
+		OR = {
+			has_federation = no
+			fromfrom.owner = {
+				OR = {
+					is_federation_leader = no
+					NOT = { is_in_federation_with = prev }
+				}
+			}
+		}
+	}
+
+	on_start = {
+		if = {
+			limit = {
+				exists = owner
+			}
+			owner = {
+				add_modifier = {
+					modifier = empire_joint_operation_project_in_progress
+				}
+			}
+		}
+	}
+
+	on_success = {
+		owner = { remove_modifier = empire_joint_operation_project_in_progress }
+		owner.federation = {
+			change_variable = {
+				which = empire_joint_operation_succeed
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						any_federation_ally = {
+							has_special_project = empire_joint_project_member
+							NOT = { has_completed_special_project_in_log = empire_joint_project_member }
+							NOT = { has_failed_special_project_in_log = empire_joint_project_member }
+						}
+					}
+				}
+			}
+			owner = {
+				federation = {
+					every_member = {
+						limit = {
+							has_country_flag = empire_joint_operation_no
+						}
+						set_timed_country_flag = {
+							flag = empire_challenge_failed
+							days = 3600
+						}
+					}
+					random_member = {
+						limit = { is_federation_leader = yes }
+						save_event_target_as = federation_leader
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = empire_joint_operation_fail
+								value = 0
+							}
+							count_member = {
+								count > 2
+								limit = { has_country_flag = empire_joint_operation_yes }
+							}
+						}
+						set_federation_flag = empire_joint_operation_complete_success
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = empire_joint_operation_succeed
+								value = 0
+							}
+						}
+						set_federation_flag = empire_joint_operation_complete_failure
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = empire_joint_operation_succeed
+								value >= 2
+							}
+						}
+						subtract_variable = {
+							which = empire_joint_operation_succeed
+							value = empire_joint_operation_fail
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = empire_joint_operation_succeed
+									value >= 0
+								}
+							}
+							set_federation_flag = empire_joint_operation_partial_success
+						}
+						else = {
+							set_federation_flag = empire_joint_operation_partial_failure
+						}
+					}
+					else = {
+						set_federation_flag = empire_joint_operation_partial_failure
+					}
+					set_variable = {
+						which = empire_joint_operation_succeed
+						value = 0
+					}
+					set_variable = {
+						which = empire_joint_operation_fail
+						value = 0
+					}
+					every_member = {
+						limit = {
+							NOT = { is_same_value = prevprev }
+							is_federation_leader = no
+						}
+						country_event = { id = vfef.511 }
+					}
+					random_member = {
+						limit = { is_federation_leader = yes }
+						country_event = { id = vfef.512 }
+					}
+				}
+				country_event = { id = vfef.510 }
+			}
+		}
+		else = {
+			owner = {
+				country_event = { id = vfef.509 }
+			}
+		}
+	}
+	on_fail = {
+		if = {
+			limit = { has_modifier = empire_joint_operation_project_in_progress }
+			remove_modifier = empire_joint_operation_project_in_progress
+		}
+		federation = {
+			change_variable = {
+				which = empire_joint_operation_fail
+				value = 1
+			}
+		}
+		set_timed_country_flag = {
+			flag = empire_challenge_failed
+			days = 5400
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_federation_ally = {
+						has_special_project = empire_joint_project_member
+						NOT = { has_completed_special_project_in_log = empire_joint_project_member }
+						NOT = { has_failed_special_project_in_log = empire_joint_project_member }
+					}
+				}
+			}
+			federation = {
+				every_member = {
+					limit = {
+						has_country_flag = empire_joint_operation_no
+					}
+					set_timed_country_flag = {
+						flag = empire_challenge_failed
+						days = 3600
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = empire_joint_operation_fail
+							value = 0
+						}
+						count_member = {
+							count > 2
+							limit = { has_country_flag = empire_joint_operation_yes }
+						}
+					}
+					set_federation_flag = empire_joint_operation_complete_success
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = empire_joint_operation_succeed
+							value = 0
+						}
+					}
+					set_federation_flag = empire_joint_operation_complete_failure
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = empire_joint_operation_succeed
+							value >= 2
+						}
+					}
+					subtract_variable = {
+						which = empire_joint_operation_succeed
+						value = empire_joint_operation_fail
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = empire_joint_operation_succeed
+								value >= 0
+							}
+						}
+						set_federation_flag = empire_joint_operation_partial_success
+					}
+					else = {
+						set_federation_flag = empire_joint_operation_partial_failure
+					}
+				}
+				else = {
+					set_federation_flag = empire_joint_operation_partial_failure
+				}
+				set_variable = {
+					which = empire_joint_operation_succeed
+					value = 0
+				}
+				set_variable = {
+					which = empire_joint_operation_fail
+					value = 0
+				}
+
+				every_member = {
+					limit = {
+						is_federation_leader = no
+					}
+					country_event = { id = vfef.511 }
+				}
+				random_member = {
+					limit = { is_federation_leader = yes }
+					country_event = { id = vfef.512 }
+				}
+			}
+		}
+	}
+	on_cancel = {
+		if = {
+			limit = { has_modifier = empire_joint_operation_project_in_progress }
+			remove_modifier = empire_joint_operation_project_in_progress
+		}
+		if = { #Left federation
+			limit = {
+				has_federation = no
+			}
+			country_event = { id = vfef.701 }
+		}
+		else_if = { #Probably federation leader left or is destroyed
+			limit = { from.owner = { NOT = { is_in_federation_with = prev } } }
+			country_event = { id = vfef.702 }
+			if = { #Federation leader lost capital but remains leader
+				limit = {
+					any_federation_ally = {
+						has_special_project = empire_joint_project_leader
+					}
+				}
+				random_federation_ally = {
+					limit = { has_special_project = empire_joint_project_leader }
+					country_event = { id = vfef.702 }
+				}
+			}
+		}
+	}
+}

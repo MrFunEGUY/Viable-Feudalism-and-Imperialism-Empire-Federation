@@ -1,0 +1,201 @@
+# Empire
+
+federation_name_parts_list = {
+	key = "vf_ef_federation_names_1_1"
+	parts = {
+		"Authority" = 1
+		"Empire" = 1
+		"Hierarchy" = 1
+		"Dominion" = 1
+		"Bloc" = 1
+		"Domain" = 1
+		"Sovereignty" = 1
+		"Order" = 1
+		"Realm" = 1
+		"Dependency" = 1
+		"Territories" = 1	
+	}
+}
+
+federation_name_parts_list = {
+	key = "vf_ef_federation_names_1_2"
+	parts = {
+		"Celestial" = 1
+		"Star" = 1
+		"Galactic" = 1
+		"Grand" = 1
+		"Great" = 1
+		"Greater" = 1
+	}
+}
+
+federation_name_parts_list = {
+	key = "vf_ef_federation_names_1_3"
+	parts = {
+		"Unified Territories" = 1
+		"Unified Systems" = 1
+		"Greater Domain" = 1		
+		"Greater Celestial Domain" = 1
+		"Great Realm" = 1
+	}
+}
+
+###
+
+federation_name_parts_list = {
+	key = "vf_ef_federation_names_2_1"
+	parts = {
+		"New" = 1
+		"Greater" = 1
+		"Great" = 1
+		"Grand" = 1
+		"Exalted" = 1
+		"Glorious" = 1
+		"Supreme" = 1
+		"United" = 1
+		"Unified" = 1
+		"Imperial" =1
+		"Mighty" = 1
+		"Almighty" = 1
+		"Relentless" = 1
+		"Unbroken" = 1
+		"Venerable" = 1
+		"Supreme" = 1
+		"Legitimate" = 1
+		"Adamant" = 1
+		"Ancient" = 1
+		"Eternal" = 1
+		"Dauntless" = 1
+		"Unsurpassed" = 1
+		"Crimson" = 1
+		"Cobalt" = 1
+		"Golden" = 1
+		"Silver" = 1
+		"Righteous" = 1
+		"Acclaimed" = 1
+		"Admired" = 1
+		"Ageless" = 1
+		"Autonomous" = 1
+		"Empyrean" = 1
+		"Vast" = 1
+		"Centralized" = 1
+		"Eminent" = 1
+	}
+}
+
+federation_name_parts_list = {
+	key = "vf_ef_federation_names_2_1_1"
+	parts = {
+		"Celestial" = 1
+	}
+}
+
+federation_name_parts_list = {
+	key = "vf_ef_federation_names_2_2"
+	parts = {
+		"Order" = 1
+		"Empire" = 1
+		"Hierarchy" = 1
+		"Sovereignty" = 1
+		"Domain" = 1
+		"Dominion" = 1
+		"Realm" = 1
+		"Authority" = 1
+		"Bloc" = 1
+	}
+}
+
+federation_name_parts_list = {
+	key = "vf_ef_federation_names_2_3"
+	parts = {
+		"of Planets" = 1
+		"of Moons" = 1
+		"of Celestial Bodies" = 1
+		"of Suns" = 1
+		"of Stars" = 1
+		"of Blood" = 1
+		"of the Blessed" = 1
+		"of Worlds" = 1
+		"of Systems" = 1				
+	}
+}
+
+federation_name_parts_list = {
+	key = "vf_ef_federation_names_2_3_1"
+	parts = {
+		"of Planets" = 1
+		"of Moons" = 1
+		"of Suns" = 1
+		"of Stars" = 1
+		"of Blood" = 1
+		"of the Blessed" = 1
+		"of Worlds" = 1
+		"of Systems" = 1				
+	}
+}
+
+federation_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_federation_type = vf_ef_federation
+		}
+	}
+	format = "[This.Leader.GetAdj] <vf_ef_federation_names_1_3>"
+}
+
+federation_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_federation_type = vf_ef_federation
+		}
+	}
+	format = "[This.Leader.GetAdj] <vf_ef_federation_names_1_2> <vf_ef_federation_names_1_1>"
+}
+
+federation_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_federation_type = vf_ef_federation
+		}
+	}
+	format = "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
+}
+
+federation_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_federation_type = vf_ef_federation
+		}
+	}
+	format = "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
+}
+
+federation_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_federation_type = vf_ef_federation
+		}
+	}
+	format = "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3>"
+}
+
+federation_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_federation_type = vf_ef_federation
+		}
+	}
+	format = "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3_1>"
+}

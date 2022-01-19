@@ -1,0 +1,156 @@
+#Perks Example
+#<perk_name>={
+#	Modifier for federation scope
+#	federation_modifier = {}
+#	Modifier for all members (leader included)
+#	members_modifier = {}
+#	Modifier for exclusevely leader
+#	leader_modifier = {}
+#	On activate effect in federation scope
+#	on_activate = {}
+#	On deactivate effect in federation scope
+#}
+
+emperor_diplo_weight_steal_1 = {
+	federation_modifier = {
+		description = emperor_diplo_weight_steal_1_effect
+		federation_leader_diplo_weight_from_members_mult = 0.40
+	}
+}
+
+emperor_diplo_weight_steal_2 = {
+	federation_modifier = {
+		description = emperor_diplo_weight_steal_1_effect
+		federation_leader_diplo_weight_from_members_mult = 0.10
+	}
+}
+
+emperor_diplo_weight_steal_3 = {
+	federation_modifier = {
+		description = emperor_diplo_weight_steal_1_effect
+		federation_leader_diplo_weight_from_members_mult = 0.10
+	}
+}
+
+emperor_diplo_weight_steal_4 = {
+	federation_modifier = {
+		description = emperor_diplo_weight_steal_1_effect
+		federation_leader_diplo_weight_from_members_mult = 0.10
+	}
+}
+
+emperor_diplo_weight_steal_5 = {
+	federation_modifier = {
+		description = emperor_diplo_weight_steal_1_effect
+		federation_leader_diplo_weight_from_members_mult = 0.10
+	}
+}
+
+emperor_empire_cb_1 = {
+	leader_modifier = {
+		description = emperor_empire_cb_1_effect
+	}
+}
+
+empire_federation_passive = {
+	members_modifier = {
+		description = empire_federation_passive_effect
+	}
+	on_activate = {
+		set_diplomacy_action_setting = {
+			action = action_ask_to_leave_federation
+			settings = {
+				acceptance_type = leader
+			}
+		}
+	}
+	on_deactivate = {
+		set_diplomacy_action_setting = {
+			action = action_ask_to_leave_federation 
+			settings = {
+				acceptance_type = default
+			}
+		}
+	}
+}
+
+vf_ef_job_output_1 = {
+	members_modifier = {
+		planet_jobs_productive_produces_mult = 0.15
+	}
+}
+
+emperor_unity_1 = {
+	leader_modifier = {
+		country_unity_produces_mult = 0.12
+	}
+	members_modifier = {
+		country_unity_produces_mult = 0.05
+	}
+}
+
+extra_imperial_envoy_1 = {
+	leader_modifier = {
+		envoys_add = 2
+	}
+}
+
+imperial_influence_1 = {
+	leader_modifier = {
+		federation_influence_produces_add = 2
+		description = imperial_influence_1_effect
+	}
+}
+
+imperial_upkeep_1 = {
+	members_modifier = {
+		description = imperial_upkeep_1_effect
+	}
+}
+
+empire_fleet_speed_1 = {
+	members_modifier = {
+		description = empire_fleet_speed_effect
+		ship_federation_territory_speed_mult = 0.10
+	}
+}
+
+empire_ship_gain = {
+	members_modifier = {
+		description = empire_ship_gain_effect
+		starbase_shipyard_build_speed_mult = 0.2
+	}
+}
+
+emperor_megastructure_1 = {
+	leader_modifier = {
+		description = emperor_megastructure_1_effect
+		country_megastructure_build_cap_add = 2
+	}
+}
+
+cohesion_empire_join_1 = {
+	federation_modifier = {
+		description = cohesion_empire_join_1_effect
+		federation_join_malus_mult = -0.65
+	}
+}
+
+empire_fleet_size_1 = {
+	members_modifier = {
+		description = empire_fleet_size_1_effect
+		federation_naval_cap_contribution_mult = 0.15
+	}
+}
+
+empire_trade_value_1 = {
+	members_modifier = {
+		trade_value_mult = 0.15
+	}
+}
+
+empire_research_boost_1 = {
+	members_modifier = {
+		all_technology_research_speed = 0.075
+	}
+}

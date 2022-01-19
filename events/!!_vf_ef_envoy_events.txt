@@ -1,0 +1,196 @@
+#################################
+#
+# Envoy Events
+# by Pierre du Plessis
+#
+#################################
+
+@envoy_punishment_cooldown = 1080 #three years
+
+namespace = envoy_events
+
+#event_target offended_party is for operation_diplomatic_incident purposes via set_espionage_diplo_incident_success_flag. Safer than retrospectively trying to make all the event targets the same.
+
+#Ideological Disputes in the Federation
+country_event = {
+	id = envoy_events.16
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		any_envoy = {
+			has_envoy_task = {
+				task = federation
+			}
+		}
+		federation = {
+			any_member = {
+				is_gestalt = no
+				opposing_ethics_divergence = {
+					steps >= 3
+					who = root
+				}
+				any_envoy = {
+					has_envoy_task = {
+						task = federation
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		save_event_target_as = dispute_member_1
+		federation = {
+			random_member = {
+				limit = {
+					is_gestalt = no
+					opposing_ethics_divergence = {
+						steps >= 3
+						who = root
+					}
+					any_envoy = {
+						has_envoy_task = {
+							task = federation
+						}
+					}
+				}
+				save_event_target_as = dispute_member_2
+			}
+		}
+		random_list = {
+			1 = {
+				save_event_target_as = dispute_winner
+				random_envoy = {
+					limit = {
+						has_envoy_task = {
+							task = federation
+						}
+					}
+					save_event_target_as = dispute_winner_envoy
+				}
+				event_target:dispute_member_2 = {
+					save_event_target_as = dispute_loser
+					random_envoy = {
+						limit = {
+							has_envoy_task = {
+								task = federation
+							}
+						}
+						save_event_target_as = dispute_loser_envoy
+					}
+					country_event = { id = envoy_events.17 }
+				}
+
+				modifier = {
+					factor = 0.75
+					event_target:dispute_member_2 = { is_federation_leader = yes }
+				}
+				modifier = {
+					factor = 0.25
+					event_target:dispute_member_2 = { is_federation_leader = yes }
+					federation = {
+						OR = {
+							has_federation_type = hegemony_federation
+							has_federation_type = vf_ef_federation
+						}
+					}
+				}
+				modifier = {
+					factor = 0.85
+					federation = {
+						count_member = {
+							count >= 2
+							limit = {
+								opposing_ethics_divergence = {
+									steps <= 1
+									who = event_target:dispute_member_2
+								}
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 0.75
+					federation = {
+						count_member = {
+							count >= 3
+							limit = {
+								opposing_ethics_divergence = {
+									steps <= 1
+									who = event_target:dispute_member_2
+								}
+							}
+						}
+					}
+				}
+			}
+			1 = {
+				save_event_target_as = dispute_loser
+				random_envoy = {
+					limit = {
+						has_envoy_task = {
+							task = federation
+						}
+					}
+					save_event_target_as = dispute_loser_envoy
+				}
+				event_target:dispute_member_2 = {
+					save_event_target_as = dispute_winner
+					random_envoy = {
+						limit = {
+							has_envoy_task = {
+								task = federation
+							}
+						}
+						save_event_target_as = dispute_winner_envoy
+					}
+				}
+				country_event = { id = envoy_events.17 }
+
+				modifier = {
+					factor = 0.75
+					is_federation_leader = yes
+				}
+				modifier = {
+					factor = 0.25
+					is_federation_leader = yes
+					federation = {
+						OR = {
+							has_federation_type = hegemony_federation
+							has_federation_type = vf_ef_federation
+						}
+					}
+				}
+				modifier = {
+					factor = 0.85
+					federation = {
+						count_member = {
+							count >= 2
+							limit = {
+								opposing_ethics_divergence = {
+									steps <= 1
+									who = root
+								}
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 0.75
+					federation = {
+						count_member = {
+							count >= 3
+							limit = {
+								opposing_ethics_divergence = {
+									steps <= 1
+									who = root
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

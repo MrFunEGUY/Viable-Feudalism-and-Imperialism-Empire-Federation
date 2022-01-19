@@ -1,0 +1,41 @@
+
+
+namespace = vfdiplo
+
+# Apply diplo decrease modifier
+country_event = {
+	id = vfdiplo.1000
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_subject = yes
+		has_federation = yes
+		federation = {
+			has_federation_type = vf_ef_federation
+		}
+	}
+
+	immediate = {
+		add_modifier = {
+			modifier = imperial_subject_diplo_decrease
+			days = -1
+		}
+	}
+}
+
+# Remove diplo decrease modifier
+country_event = {
+	id = vfdiplo.1050
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_subject = no
+		has_modifier = imperial_subject_diplo_decrease
+	}
+
+	immediate = {
+		remove_modifier = imperial_subject_diplo_decrease
+	}
+}

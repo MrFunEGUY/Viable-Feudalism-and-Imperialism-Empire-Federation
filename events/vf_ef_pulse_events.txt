@@ -1,0 +1,56 @@
+################################
+# Federations Events
+###############################
+
+
+namespace = vfefpulse
+
+country_event = {
+	id = vfefpulse.1000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_federation = yes
+		federation = { has_federation_type = vf_ef_federation }
+		is_federation_leader = no
+		is_subject_type = devstate
+		
+	}
+
+	immediate = {
+		leave_alliance = { override_requirements = yes }
+	}
+}
+
+country_event = {
+	id = vfefpulse.2000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_federation = yes
+		federation = { has_federation_type = vf_ef_federation }
+		is_federation_leader = no
+		check_subject_join_wars = yes
+	}
+
+	immediate = {
+		random_war = {
+			limit = {
+				random_attacker = {
+					limit = {
+						is_overlord_to = root
+						is_war_leader = yes
+					}
+				}	
+			}
+			random_war_participant = {
+				limit = { is_same_empire = root }
+				prev = {
+					remove_war_participant = prev
+				}
+			}
+		}
+	}
+}

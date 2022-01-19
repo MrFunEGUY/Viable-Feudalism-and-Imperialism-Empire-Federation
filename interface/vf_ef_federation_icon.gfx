@@ -1,0 +1,22 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_empire_federation"
+		textureFile = "gfx/interface/icons/federation/federation_types/empire_federation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_wg_empire"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isvassal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_wg_leave_empire"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_integrating.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_wg_assert_empire"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isvassal.dds"
+	}
+}
+

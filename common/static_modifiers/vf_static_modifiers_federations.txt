@@ -1,0 +1,39 @@
+empire_propaganda_militarist = {
+	pop_ethic_militarist_attraction_mult = 0.35
+}
+
+empire_propaganda_pacifist = {
+	pop_ethic_pacifist_attraction_mult = 0.35
+}
+
+empire_propaganda_xenophobe = {
+	pop_ethic_xenophobe_attraction_mult = 0.35
+}
+
+empire_propaganda_xenophile = {
+	pop_ethic_xenophile_attraction_mult = 0.35
+}
+
+empire_propaganda_materialist = {
+	pop_ethic_materialist_attraction_mult = 0.35
+}
+
+empire_propaganda_spiritualist = {
+	pop_ethic_spiritualist_attraction_mult = 0.35
+}
+
+empire_propaganda_egalitarian = {
+	pop_ethic_egalitarian_attraction_mult = 0.35
+}
+
+empire_propaganda_authoritarian = {
+	pop_ethic_authoritarian_attraction_mult = 0.35
+}
+
+imperial_subject_diplo_decrease = {
+	diplo_weight_mult = -0.5
+}
+
+empire_joint_operation_project_in_progress = {
+	diplo_weight_mult = -0.05
+}

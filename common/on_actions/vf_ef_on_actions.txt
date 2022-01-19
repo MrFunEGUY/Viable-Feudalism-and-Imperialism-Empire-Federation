@@ -1,0 +1,45 @@
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		vfef_start.1000   			# Set Global Flag
+	}
+}
+
+
+# This = subject
+# From = subject's overlord
+on_becoming_subject = {
+	events = {
+		vfef.146				# Join Overlord's Federation if laws permit
+		vfdiplo.1000			# Give empire fed subjects diplo weight modifier.
+	}
+}
+
+# This = empire trying to leave federation
+# From = empire who declined (federation leader)
+on_ask_to_leave_federation_declined = {
+	events = {
+		vfef.147
+	}
+}
+
+# this = country
+on_yearly_pulse_country = {
+	events = {
+		vfdiplo.1050			# remove diplo weight modifier if not a subject
+		vfefpulse.1000
+	}
+}
+
+# this = country, fired via action.220 from on_five_year_pulse_country
+on_five_year_random_pulse_country = {
+	random_events = {
+		100 = vfef.500			# Federation empire challenge
+	}
+}
+
+on_war_beginning = {
+	events = {
+		vfefpulse.2000			# Remove correct subjects from wars
+	}
+}

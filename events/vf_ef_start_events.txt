@@ -1,0 +1,21 @@
+###################
+# Global Events
+###################
+
+
+namespace = vfef_start
+
+event = { # Set Global Flag
+	id = vfef_start.1000
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = viable_feudalism_active }
+			}
+			set_global_flag = viable_feudalism_active
+		}
+	}
+}

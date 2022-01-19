@@ -1,0 +1,45 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# blocked_modifier - applied to planet only when deposit blocker has been cleared
+# constant_modifier - applied to planet always
+# blocker = <key/any/none> - default any
+# station = station class in orbit to gather
+
+@rw_maintenance = 5
+@rw_maintenance_sr = 2
+
+############################
+#	Federations Deposits	#
+############################
+
+
+#2nd best reward for Empire Joint Operation
+d_federation_empire_monument_1 = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_monument_in_space
+
+	country_modifier = {
+		country_monuments_influence_produces_add = 0.25
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#Best reward for Empire Joint Operation
+d_federation_empire_monument_2 = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_monument_in_space
+
+	country_modifier = {
+		country_monuments_influence_produces_add = 0.5
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
