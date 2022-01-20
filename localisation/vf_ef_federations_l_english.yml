@@ -1,7 +1,7 @@
 ﻿l_english:
  IS_YOU:1 "This is you"
 
-# Empire Federation
+ # Empire Federation
 
  vf_ef_federation:0 "Empire"
  vf_ef_federation_desc:0 "This system of government is structured around one Crown nation that wields almost absolute control over its subject nations."
@@ -301,97 +301,97 @@
  empire_join_operation_happens_tooltip:0 "All participating subjects gain a special project to build a monument on §H[federation_leader.Capital.GetName]§!.\nThe §H[federation_leader.GetName]§! gains special projects to spread the §H[federation_leader.GetHegemonyEthos]§! ethos to up to two subject states."
 
 
- vfef.500.name:0 "A Celebration of the Might, Leadership, and the Glory of the Empire"
- vfef.500.desc:0 "The [Root.Federation.GetName] has prospered under our wise leadership. Many [Root.GetAdj] now feel that it is time for our services to the empire to be paid back with a celebration of its might - and more specifically, the great [Root.GetAdj] emperors that have done so much for it. They propose that subject states contribute towards the erection of a grand monument in the skies above [Root.Capital.GetName]. In the meantime, we will send delegations to two subject states' capitals to aid them in their efforts to bring greater unity to the [Root.Federation.GetName]."
- vfef.500.A:0 "Sounds like a great idea."
- vfef.500.A.tooltip:0 "All subject states with access to the §H[Root.Capital.System.GetName]§! system will be approached and 'asked' to take part in the imperial operation.\n\nWhen they accept, they will have to dedicate resources to a monument which will boost Empire §HExperience§! and the [Root.GetName]'s §HInfluence§!.\n\nThe [Root.GetName] will also be able to choose to increase §H[Root.GetEmpireEthos]§! attraction in two subject states."
- vfef.500.B:0 "We have no need for such trinkets."
+ vfef.3000.name:0 "A Celebration of the Might, Leadership, and the Glory of the Empire"
+ vfef.3000.desc:0 "The [Root.Federation.GetName] has prospered under our wise leadership. Many [Root.GetAdj] now feel that it is time for our services to the empire to be paid back with a celebration of its might - and more specifically, the great [Root.GetAdj] emperors that have done so much for it. They propose that subject states contribute towards the erection of a grand monument in the skies above [Root.Capital.GetName]. In the meantime, we will send delegations to two subject states' capitals to aid them in their efforts to bring greater unity to the [Root.Federation.GetName]."
+ vfef.3000.A:0 "Sounds like a great idea."
+ vfef.3000.A.tooltip:0 "All subject states with access to the §H[Root.Capital.System.GetName]§! system will be approached and 'asked' to take part in the imperial operation.\n\nWhen they accept, they will have to dedicate resources to a monument which will boost Empire §HExperience§! and the [Root.GetName]'s §HInfluence§!.\n\nThe [Root.GetName] will also be able to choose to increase §H[Root.GetEmpireEthos]§! attraction in two subject states."
+ vfef.3000.B:0 "We have no need for such trinkets."
 
 
- vfef.501.name:0 "$vfef.500.name$"
- vfef.501.desc:0 "Greetings, noble [Root.GetSpeciesNamePluralCompliment]! Under our wise and magnanimous leadership, the [Root.Federation.GetName] has gone from strength to strength, projecting our unity of purpose across the galaxy. The time has come to celebrate our successes as an empire. What better way to do this than through a grand monument over our capital, erected through the efforts of our subjects? In the meantime, we will send a delegation to your capital, which will aid your efforts to strive for the greater good of the [Root.Federation.GetName]."
- vfef.501.A:0 "Anything for your majesty."
- vfef.501.A.tooltip:0 "All subject states with access to the §H[From.Capital.System.GetName]§! system will be approached to take part in the imperial operation.\n\nOnce accepted, you will have to dedicate resources to a monument which will boost Empire §HExperience§! and the [From.GetName]'s §HInfluence§!.\n\nThe [From.GetName] will also be able to choose to increase §H[From.GetEmpireEthos]§! attraction in two subject states."
- vfef.501.A.tooltip2:0 "\nCompleting the monument will cost 10% of the [Root.GetName]'s £minerals£ mineral output for 1 year."
- vfef.501.B:0 "We shall do as our emperor commands."
- vfef.501.B.tooltip:0 "$vfef.501.A.tooltip$"
- vfef.501.B.tooltip2:0 "$vfef.501.A.tooltip2$"
+ vfef.3001.name:0 "$vfef.3000.name$"
+ vfef.3001.desc:0 "Greetings, noble [Root.GetSpeciesNamePluralCompliment]! Under our wise and magnanimous leadership, the [Root.Federation.GetName] has gone from strength to strength, projecting our unity of purpose across the galaxy. The time has come to celebrate our successes as an empire. What better way to do this than through a grand monument over our capital, erected through the efforts of our subjects? In the meantime, we will send a delegation to your capital, which will aid your efforts to strive for the greater good of the [Root.Federation.GetName]."
+ vfef.3001.A:0 "Anything for your majesty."
+ vfef.3001.A.tooltip:0 "All subject states with access to the §H[From.Capital.System.GetName]§! system will be approached to take part in the imperial operation.\n\nOnce accepted, you will have to dedicate resources to a monument which will boost Empire §HExperience§! and the [From.GetName]'s §HInfluence§!.\n\nThe [From.GetName] will also be able to choose to increase §H[From.GetEmpireEthos]§! attraction in two subject states."
+ vfef.3001.A.tooltip2:0 "\nCompleting the monument will cost 10% of the [Root.GetName]'s £minerals£ mineral output for 1 year."
+ vfef.3001.B:0 "We shall do as our emperor commands."
+ vfef.3001.B.tooltip:0 "$vfef.3001.A.tooltip$"
+ vfef.3001.B.tooltip2:0 "$vfef.3001.A.tooltip2$"
 
 
- vfef.505.name:0 "Imperial Operation Approved"
- vfef.505.desc:0 "The plans for our initiative celebrating the strength and unity of the [Root.Federation.GetName] have been distributed to all our subjects. We will begin work on implementing our plans to spread harmony within the empire immediately!"
- vfef.505.A:0 "For the Empire!"
+ vfef.3005.name:0 "Imperial Operation Approved"
+ vfef.3005.desc:0 "The plans for our initiative celebrating the strength and unity of the [Root.Federation.GetName] have been distributed to all our subjects. We will begin work on implementing our plans to spread harmony within the empire immediately!"
+ vfef.3005.A:0 "For the Empire!"
 
 
- vfef.506.name:0 "Imperial Operation Approved"
- vfef.506.desc.said_yes:0 "The plans for the [From.GetAdj] initiative celebrating the strength and unity of the [Root.Federation.GetName] has been distributed to all of the subjects. We will begin work to make the plans a reality immediately!"
-  vfef.506.desc.said_no:0 "The overbearing [From.GetAdj] is forcing their plans for this "grand" project upon all their subjects. Fortunately, there is nothing the [From.GetName] can do to force us to participate in the scheme."
- vfef.506.desc.invalid:0 "In honor of the strong leadership offered by the [From.GetName] in the [Root.Federation.GetName], the [From.GetAdj] have secured approval among its subjects for a celebration of our Empire's unity. Subject states will dedicate resources to a grand monument in the skies above [From.Capital.GetName], while [From.GetAdj] delegations will visit various subject capitals to ensure project cohesion and further aid subject integration into the empire.\n\nGiven our remote location, with no easy access to [From.Capital.GetName], we are unable to participate in the scheme."
- vfef.506.A:0 "For the Empire!"
- vfef.506.B:0 "How fortunate."
+ vfef.3006.name:0 "Imperial Operation Approved"
+ vfef.3006.desc.said_yes:0 "The plans for the [From.GetAdj] initiative celebrating the strength and unity of the [Root.Federation.GetName] has been distributed to all of the subjects. We will begin work to make the plans a reality immediately!"
+  vfef.3006.desc.said_no:0 "The overbearing [From.GetAdj] is forcing their plans for this "grand" project upon all their subjects. Fortunately, there is nothing the [From.GetName] can do to force us to participate in the scheme."
+ vfef.3006.desc.invalid:0 "In honor of the strong leadership offered by the [From.GetName] in the [Root.Federation.GetName], the [From.GetAdj] have secured approval among its subjects for a celebration of our Empire's unity. Subject states will dedicate resources to a grand monument in the skies above [From.Capital.GetName], while [From.GetAdj] delegations will visit various subject capitals to ensure project cohesion and further aid subject integration into the empire.\n\nGiven our remote location, with no easy access to [From.Capital.GetName], we are unable to participate in the scheme."
+ vfef.3006.A:0 "For the Empire!"
+ vfef.3006.B:0 "How fortunate."
 
 
- vfef.507.name:0 "Delegation Established on [FromFrom.GetName]"
- vfef.507.desc:0 "Our delegation to spread [Root.GetEmpireEthos] ideals in the [FromFrom.Owner.GetName] has established itself on [FromFrom.GetName]. With luck, their efforts will bear fruit and increase harmony within the [Root.Federation.GetName]."
+ vfef.3007.name:0 "Delegation Established on [FromFrom.GetName]"
+ vfef.3007.desc:0 "Our delegation to spread [Root.GetEmpireEthos] ideals in the [FromFrom.Owner.GetName] has established itself on [FromFrom.GetName]. With luck, their efforts will bear fruit and increase harmony within the [Root.Federation.GetName]."
 
 
- vfef.508.name:0 "[From.Owner.GetAdj] Delegation Established on [FromFrom.GetName]"
- vfef.508.desc:0 "As part of the current empire operations, the [From.Owner.GetAdj] [From.Owner.GetGovernmentName] has sent delegates to [FromFrom.GetName] to spread [From.Owner.GetEmpireEthos] ideals in the [Root.GetName]. Although they claim to be promoting harmony and goodwill within the [Root.Federation.GetName], many are concerned that our own values are being compromised by our membership in the empire."
- vfef.508.desc.good:0 "As part of the current empire operations, the [From.Owner.GetAdj] [From.Owner.GetGovernmentName] has sent delegates to [FromFrom.GetName] to spread [From.Owner.GetEmpireEthos] ideals in the [Root.GetName]. Fortunately, their values align well with our own, lending credence to their claim to be promoting harmony and goodwill within the [Root.Federation.GetName]."
- vfef.508.A.good:0 "Surely only good can come of this."
- vfef.508.A.neutral:0 "We shall see what comes of this..."
+ vfef.3008.name:0 "[From.Owner.GetAdj] Delegation Established on [FromFrom.GetName]"
+ vfef.3008.desc:0 "As part of the current empire operations, the [From.Owner.GetAdj] [From.Owner.GetGovernmentName] has sent delegates to [FromFrom.GetName] to spread [From.Owner.GetEmpireEthos] ideals in the [Root.GetName]. Although they claim to be promoting harmony and goodwill within the [Root.Federation.GetName], many are concerned that our own values are being compromised by our membership in the empire."
+ vfef.3008.desc.good:0 "As part of the current empire operations, the [From.Owner.GetAdj] [From.Owner.GetGovernmentName] has sent delegates to [FromFrom.GetName] to spread [From.Owner.GetEmpireEthos] ideals in the [Root.GetName]. Fortunately, their values align well with our own, lending credence to their claim to be promoting harmony and goodwill within the [Root.Federation.GetName]."
+ vfef.3008.A.good:0 "Surely only good can come of this."
+ vfef.3008.A.neutral:0 "We shall see what comes of this..."
 
 
- vfef.509.name:0 "Work on Monument Complete"
- vfef.509.desc:0 "We have completed our work on the monument over [FromFrom.GetName], celebrating the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. They thank us for our offering, although they await the contributions of our fellow subjects before the monument is officially unveiled."
- vfef.509.A.tooltip:0 "Once all subjects have completed their contributions, the Empire will gain an experience boost."
+ vfef.3009.name:0 "Work on Monument Complete"
+ vfef.3009.desc:0 "We have completed our work on the monument over [FromFrom.GetName], celebrating the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. They thank us for our offering, although they await the contributions of our fellow subjects before the monument is officially unveiled."
+ vfef.3009.A.tooltip:0 "Once all subjects have completed their contributions, the Empire will gain an experience boost."
 
 
- vfef.510.name:0 "Monument over [FromFrom.GetName] Complete"
+ vfef.3010.name:0 "Monument over [FromFrom.GetName] Complete"
  empire_federation_monument_complete_success:0 "It has been unveiled to much fanfare, sparking celebrations across all the worlds in our domain as the splendor of our creation became clear. Each subject competed with all others to outdo them in their contribution, with none slacking off. The work - originally dedicated to the Emperor of the [Root.Federation.GetName] - now stands as evidence for all to see, of the strength and togetherness of our empire."
   empire_federation_monument_complete_success_subject:0 "It has been unveiled to much fanfare, sparking celebrations across every world throughout the empire as the splendor of our creation became clear. Each subject competed with all others to outdo them in their contribution, with none slacking off. The work - originally dedicated to the Emperor of the [Root.Federation.GetName] - now stands as evidence for all to see, of the strength and togetherness of our empire."
  empire_federation_monument_partial_success:0 "It has been unveiled to much fanfare, sparking celebrations across member worlds as the splendor of our creation became clear. Nearly all subject states gave significant contributions, making the work a fine example of our empires's strength and togetherness."
- vfef.510.desc.complete_success:0 "We have completed our work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the august and enlightened leadership offered by the [FromFrom.Owner.GetName]. $empire_federation_monument_complete_success$"
- vfef.510.desc.partial_success:0 "We have completed our work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. $empire_federation_monument_partial_success$"
- vfef.510.desc.partial_failure:0 "We have completed our work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. However, it seems that other subjects did not support the initiative as strongly as we did, and a majority of the empire's subjects did not contribute much beyond empty words. The resulting monument is therefore rather lacklustre - an embarrassment more symbolic of our empire's divisions than any common feeling or strength."
- vfef.510.A.oh_well:0 "At least we did our part."
+ vfef.3010.desc.complete_success:0 "We have completed our work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the august and enlightened leadership offered by the [FromFrom.Owner.GetName]. $empire_federation_monument_complete_success$"
+ vfef.3010.desc.partial_success:0 "We have completed our work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. $empire_federation_monument_partial_success$"
+ vfef.3010.desc.partial_failure:0 "We have completed our work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. However, it seems that other subjects did not support the initiative as strongly as we did, and a majority of the empire's subjects did not contribute much beyond empty words. The resulting monument is therefore rather lacklustre - an embarrassment more symbolic of our empire's divisions than any common feeling or strength."
+ vfef.3010.A.oh_well:0 "At least we did our part."
 
 
- vfef.511.name:0 "$vfef.510.name$"
- vfef.511.desc.complete_success:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the august and enlightened leadership offered by the [FromFrom.Owner.GetName]. $empire_federation_monument_complete_success_subject$"
- vfef.511.desc.partial_success:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. $empire_federation_monument_partial_success$"
- vfef.511.desc.partial_failure.but_I_did_it:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. However, it seems that other subjects did not support the initiative as strongly as we did, and a majority of the empire's subjects did not contribute much beyond empty words. The resulting monument is therefore rather lacklustre - an embarrassment more symbolic of our empires's divisions than any common feeling or strength."
- vfef.511.desc.partial_failure.haha_no:0 "Our allies have finished their work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. It seems that commitment to the initiative was not as strong as the [FromFrom.Owner.GetAdj] had hoped, however, and a majority of empire's subjects did not contribute much beyond empty words. The resulting monument is therefore rather lacklustre - an embarrassment more symbolic of our empire's divisions than any common feeling or strength."
- vfef.511.desc.complete_failure:0 "Plans for a monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName] have officially been cancelled today. $empire_federation_monument_complete_failure$"
+ vfef.3011.name:0 "$vfef.3010.name$"
+ vfef.3011.desc.complete_success:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the august and enlightened leadership offered by the [FromFrom.Owner.GetName]. $empire_federation_monument_complete_success_subject$"
+ vfef.3011.desc.partial_success:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. $empire_federation_monument_partial_success$"
+ vfef.3011.desc.partial_failure.but_I_did_it:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. However, it seems that other subjects did not support the initiative as strongly as we did, and a majority of the empire's subjects did not contribute much beyond empty words. The resulting monument is therefore rather lacklustre - an embarrassment more symbolic of our empires's divisions than any common feeling or strength."
+ vfef.3011.desc.partial_failure.haha_no:0 "Our allies have finished their work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName]. It seems that commitment to the initiative was not as strong as the [FromFrom.Owner.GetAdj] had hoped, however, and a majority of empire's subjects did not contribute much beyond empty words. The resulting monument is therefore rather lacklustre - an embarrassment more symbolic of our empire's divisions than any common feeling or strength."
+ vfef.3011.desc.complete_failure:0 "Plans for a monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and the enlightened leadership offered by the [FromFrom.Owner.GetName] have officially been cancelled today. $empire_federation_monument_complete_failure$"
  empire_federation_monument_complete_failure:0 "Not one subject of the empire committed anything but hollow words to the initiative, meaning that the monument will go down as just another unrealized scheme - a failed idea symbolic more of our divisions than any common feeling or strength."
- vfef.511.A.good:0 "Together we are stronger."
- vfef.511.A.but_I_did_it:0 "$vfef.510.desc.A.oh_well$"
- vfef.511.A.neutral:0 "Oh well."
- vfef.511.A.oh_dear:0 "This doesn't look good for the Empire."
+ vfef.3011.A.good:0 "Together we are stronger."
+ vfef.3011.A.but_I_did_it:0 "$vfef.3010.desc.A.oh_well$"
+ vfef.3011.A.neutral:0 "Oh well."
+ vfef.3011.A.oh_dear:0 "This doesn't look good for the Empire."
 
 
- vfef.512.name:0 "$vfef.510.name$"
- vfef.512.desc.complete_success:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and our august and enlightened leadership. $empire_federation_monument_complete_success$"
- vfef.512.desc.partial_success:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and our august and enlightened leadership. $empire_federation_monument_partial_success$"
- vfef.512.desc.partial_failure:0 "Our subjects have finished their work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and our enlightened leadership. It seems that commitment to the initiative was not as strong as we had hoped, however, and a majority of the empire's subjects did not contribute much beyond empty words. The resulting monument is therefore rather lacklustre - an embarrassment more symbolic of our empires's divisions than any common feeling or strength."
- vfef.512.desc.complete_failure:0 "Plans for a monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and our enlightened leadership have officially been cancelled today. $empire_federation_monument_complete_failure$"
- vfef.512.A.good:0 "Under our leadership, all are stronger."
- vfef.512.A.neutral:0 "We must forge greater unity."
- vfef.512.A.oh_dear:0 "Perhaps we were wrong to rely on our subjects."
+ vfef.3012.name:0 "$vfef.3010.name$"
+ vfef.3012.desc.complete_success:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and our august and enlightened leadership. $empire_federation_monument_complete_success$"
+ vfef.3012.desc.partial_success:0 "Work has been completed on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and our august and enlightened leadership. $empire_federation_monument_partial_success$"
+ vfef.3012.desc.partial_failure:0 "Our subjects have finished their work on the monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and our enlightened leadership. It seems that commitment to the initiative was not as strong as we had hoped, however, and a majority of the empire's subjects did not contribute much beyond empty words. The resulting monument is therefore rather lacklustre - an embarrassment more symbolic of our empires's divisions than any common feeling or strength."
+ vfef.3012.desc.complete_failure:0 "Plans for a monument over [FromFrom.GetName] to celebrate the unity of the [Root.Federation.GetName] and our enlightened leadership have officially been cancelled today. $empire_federation_monument_complete_failure$"
+ vfef.3012.A.good:0 "Under our leadership, all are stronger."
+ vfef.3012.A.neutral:0 "We must forge greater unity."
+ vfef.3012.A.oh_dear:0 "Perhaps we were wrong to rely on our subjects."
 
 
- vfef.700.name:0 "Monument over [FromFrom.GetName] Cancelled"
- vfef.700.desc:0 "With a change in the Crown nation, the old plans to glorify the rulers of the [FromFrom.Owner.GetName] have been duly shelved."
- vfef.700.A:0 "The old king is dead; long live the king."
+ vfef.4000.name:0 "Monument over [FromFrom.GetName] Cancelled"
+ vfef.4000.desc:0 "With a change in the Crown nation, the old plans to glorify the rulers of the [FromFrom.Owner.GetName] have been duly shelved."
+ vfef.4000.A:0 "The old king is dead; long live the king."
 
 
- vfef.701.name:0 "Participation in Monumental Construction Curtailed"
- vfef.701.desc:0 "As we have seceded from the empire, plans to construct a monument over [FromFrom.GetName] to celebrate the unity of their empire are no longer relevant to us."
+ vfef.4001.name:0 "Participation in Monumental Construction Curtailed"
+ vfef.4001.desc:0 "As we have seceded from the empire, plans to construct a monument over [FromFrom.GetName] to celebrate the unity of their empire are no longer relevant to us."
 
 
- vfef.702.name:0 "$vfef.700.name$"
- vfef.702.desc:0 "As [FromFrom.GetName] has forfeited the Crown and is no longer a member of the empire, the old plans to glorify the planet's rulers have been duly shelved."
- vfef.702.A:0 "Good riddance."
+ vfef.4002.name:0 "$vfef.4000.name$"
+ vfef.4002.desc:0 "As [FromFrom.GetName] has forfeited the Crown and is no longer a member of the empire, the old plans to glorify the planet's rulers have been duly shelved."
+ vfef.4002.A:0 "Good riddance."
 
 
  empire_propaganda_militarist:0 "Imperialist Propaganda"
@@ -418,6 +418,15 @@
  d_federation_empire_monument_2:0 "$d_federation_empire_monument_1$"
  d_federation_empire_monument_2_desc:0 "$d_federation_empire_monument_1_desc$"
 
+ # Origins
+ origin_vfef_empire: "Empire"
+ origin_vfef_empire_desc:0 "This civilization established early contact with their immediate alien neighbors. Gradually, over the span of a century, they came to dominate their neighbors in an imperial fashion."
+ origin_tooltip_empire_effects:0 "- Start as the leader of an §HEmpire§! federation with two additional members\n- Members will occupy any Guaranteed Habitable Worlds slots near your home system"
+ origin_tooltip_empire_subject_effects:0 "- Start as a member of an §HEmpire§! federation with two additional members"
+
+ origin_vfef_empire_npc:0 "Empire Vassal"
+ origin_vfef_empire_npc_desc:0 "This civilization established early contact with their immediate alien neighbors. Gradually, over the span of a century, they were made into a client state of one of those neighbors."
+
  # Overwrites
 
  # FEDERATION_VIEW_ASK_TO_LEAVE_FEDERATION_BUTTON_DESC:0 "We will ask the Emperor for permission to leave the empire. If this request is refused, we will be granted the §YSecession§! Casus Belli against the Crown nation."
@@ -430,7 +439,6 @@
 
 
  # Federations Expanded
-
  law_category_FEDEXP_defend_associates_empire:0 "Associate Protection"
  law_category_FEDEXP_defend_associates_empire_desc:0 "A series of treaties regarding external guarantees of allied nations outside of the empire itself."
  

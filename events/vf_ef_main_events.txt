@@ -3,7 +3,7 @@ namespace = vfef
 
 # Federation Member Gains Subject
 country_event = {
-    id = vfef.146
+    id = vfef.1000
     hide_window = yes
 
     is_triggered_only = yes
@@ -18,12 +18,11 @@ country_event = {
     immediate = {
         join_alliance = { who = from override_requirements = yes }
     }
-
 }
 
 # Empire Member's Request to Leave was Rejected
 country_event = {
-	id = vfef.147
+	id = vfef.2000
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -52,17 +51,17 @@ country_event = {
 	}
 }
 
-##############################
-# JOINT OPERATIONS
-##############################
+################
+# Empire Project
+################
 
 ### Empire
 
 #Starting event
 country_event = {
-	id = vfef.500
-	title = vfef.500.name
-	desc = vfef.500.desc
+	id = vfef.3000
+	title = vfef.3000.name
+	desc = vfef.3000.desc
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_default
 
@@ -189,8 +188,8 @@ country_event = {
 	}
 
 	option = {
-		name = vfef.500.A #sounds like a spiffing idea
-		custom_tooltip = vfef.500.A.tooltip
+		name = vfef.3000.A #sounds like a spiffing idea
+		custom_tooltip = vfef.3000.A.tooltip
 
 		hidden_effect = {
 			every_federation_ally = {
@@ -219,7 +218,7 @@ country_event = {
 							}
 						}
 					}
-					country_event = { id = vfef.501 }
+					country_event = { id = vfef.3001 }
 				}
 				else = {
 					set_country_flag = empire_joint_operation_invalid_participant
@@ -228,7 +227,7 @@ country_event = {
 		}
 
 		hidden_effect = {
-			country_event = { id = vfef.502 days = 90 }
+			country_event = { id = vfef.3002 days = 90 }
 		}
 
 		ai_chance = {
@@ -241,7 +240,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = vfef.500.B #actually, let's not
+		name = vfef.3000.B #actually, let's not
 
 		hidden_effect = {
 			remove_country_flag = empire_ethos_militarist
@@ -267,12 +266,11 @@ country_event = {
 	}
 }
 
-
 #All members asked whether to join
 country_event = {
-	id = vfef.501
-	title = vfef.501.name
-	desc = vfef.501.desc
+	id = vfef.3001
+	title = vfef.3001.name
+	desc = vfef.3001.desc
 	show_sound = event_default
 	diplomatic = yes
 	picture_event_data = {
@@ -290,15 +288,15 @@ country_event = {
 	}
 
 	option = {
-		name = vfef.501.A # Gladly
+		name = vfef.3001.A # Gladly
 		from = {
 			add_opinion_modifier = {
 				who = root
 				modifier = opinion_empire_joint_action_happy
 			}
 		}
-		custom_tooltip = vfef.501.A.tooltip
-		custom_tooltip = vfef.501.A.tooltip2
+		custom_tooltip = vfef.3001.A.tooltip
+		custom_tooltip = vfef.3001.A.tooltip2
 
 		hidden_effect = {
 			set_country_flag = empire_joint_operation_yes
@@ -363,14 +361,14 @@ country_event = {
 		}
 	}
 	option = {
-		name = vfef.501.B # Stubbornly
+		name = vfef.3001.B # Stubbornly
 		root = {
 			add_opinion_modifier = {
 				who = from
 				modifier = opinion_empire_joint_action_forced
 			}
 		}
-		custom_tooltip = vfef.501.B.tooltip
+		custom_tooltip = vfef.3001.B.tooltip
 		hidden_effect = {
 			set_country_flag = empire_joint_operation_yes
 			set_country_flag = empire_joint_operation_yes_but
@@ -407,7 +405,7 @@ country_event = {
 
 #Setup event: The answers are in, will it happen or not?
 country_event = {
-	id = vfef.502
+	id = vfef.3002
 	is_triggered_only = yes
 	hide_window = yes
 
@@ -433,9 +431,9 @@ country_event = {
 					}
 				}
 			}
-			country_event = { id = vfef.505 }
+			country_event = { id = vfef.3005 }
 			every_federation_ally = {
-				country_event = { id = vfef.506 }
+				country_event = { id = vfef.3006 }
 				if = {
 					limit = {
 						has_country_flag = empire_joint_operation_no
@@ -450,139 +448,28 @@ country_event = {
 			}
 		}
 		# else = {
-		# 	country_event = { id = vfef.503 days = 2 }
+		# 	country_event = { id = vfef.3003 days = 2 }
 		# 	every_federation_ally = {
 		# 		limit = {
 		# 			NOT = { has_country_flag = empire_joint_operation_invalid_participant }
 		# 		}
-		# 		country_event = { id = vfef.504 }
+		# 		country_event = { id = vfef.3004 }
 		# 	}
 		# }
 	}
 }
 
-# #Question fails: President
-# country_event = {
-# 	id = vfef.503
-# 	title = vfef.503.name
-# 	desc = vfef.503.desc
-# 	picture = GFX_evt_arguing_senate
-# 	show_sound = event_ghost_town
-# 	is_triggered_only = yes
-
-# 	option = {
-# 		name = vfef.503.A
-# 		federation = {
-# 			add_cohesion = -100
-# 		}
-# 		add_resource = {
-# 			influence = -50
-# 		}
-# 		if = {
-# 			limit = {
-# 				any_federation_ally = {
-# 					has_country_flag = empire_joint_operation_yes
-# 				}
-# 			}
-# 			custom_tooltip = the_following_nations_said_yes
-# 			country_list_tooltip = {
-# 				limit = {
-# 					is_in_federation_with = root
-# 					has_country_flag = empire_joint_operation_yes
-# 				}
-# 			}
-# 		}
-# 		else = { custom_tooltip = no_following_nations_said_yes }
-# 		custom_tooltip = the_following_nations_said_no
-# 		country_list_tooltip = {
-# 			limit = {
-# 				is_in_federation_with = root
-# 				has_country_flag = empire_joint_operation_no
-# 			}
-# 		}
-# 	}
-
-# 	after = {
-# 		hidden_effect = {
-# 			remove_country_flag = empire_ethos_militarist
-# 			remove_country_flag = empire_ethos_pacifist
-# 			remove_country_flag = empire_ethos_xenophobe
-# 			remove_country_flag = empire_ethos_xenophile
-# 			remove_country_flag = empire_ethos_materialist
-# 			remove_country_flag = empire_ethos_spiritualist
-# 			remove_country_flag = empire_ethos_egalitarian
-# 			remove_country_flag = empire_ethos_authoritarian
-# 			federation = {
-# 				every_member = {
-# 					remove_country_flag = empire_joint_operation_yes
-# 					remove_country_flag = empire_joint_operation_no
-# 					remove_country_flag = empire_joint_operation_invalid_participant
-# 				}
-# 				set_variable = {
-# 					which = empire_joint_operation_fail
-# 					value = 0
-# 				}
-# 				set_variable = {
-# 					which = empire_joint_operation_succeed
-# 					value = 0
-# 				}
-# 				set_variable = {
-# 					which = empire_joint_operation_yes
-# 					value = 0
-# 				}
-# 				set_variable = {
-# 					which = empire_joint_operation_no
-# 					value = 0
-# 				}
-# 			}
-# 		}
-# 	}
-# }
-
-# #Question fails: Member
-# country_event = {
-# 	id = vfef.504
-# 	title = vfef.504.name
-# 	desc = {
-# 		text = vfef.504.desc.said_yes
-# 		trigger = { has_country_flag = empire_joint_operation_yes }
-# 	}
-# 	desc = {
-# 		text = vfef.504.desc.said_no
-# 		trigger = { has_country_flag = empire_joint_operation_no }
-# 	}
-# 	picture = GFX_evt_arguing_senate
-# 	show_sound = event_ghost_town
-# 	is_triggered_only = yes
-
-# 	option = {
-# 		name = {
-# 			text = vfef.504.A.yes
-# 			trigger = { has_country_flag = empire_joint_operation_yes }
-# 		}
-# 		name = {
-# 			text = vfef.504.A.no
-# 			trigger = { has_country_flag = empire_joint_operation_no }
-# 		}
-# 		tooltip = {
-# 			federation = {
-# 				add_cohesion = -100
-# 			}
-# 		}
-# 	}
-# }
-
 #Question succeeds: President
 country_event = {
-	id = vfef.505
-	title = vfef.505.name
-	desc = vfef.505.desc
+	id = vfef.3005
+	title = vfef.3005.name
+	desc = vfef.3005.desc
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 	is_triggered_only = yes
 
 	option = {
-		name = vfef.505.A
+		name = vfef.3005.A
 		custom_tooltip = empire_join_operation_happens_tooltip
 		custom_tooltip = the_following_nations_will_participate
 		country_list_tooltip = {
@@ -637,21 +524,21 @@ country_event = {
 
 #Question succeeds: Member
 country_event = {
-	id = vfef.506
-	title = vfef.506.name
+	id = vfef.3006
+	title = vfef.3006.name
 	desc = {
-		text = vfef.506.desc.said_yes
+		text = vfef.3006.desc.said_yes
 		trigger = { 
 			has_country_flag = empire_joint_operation_yes
 			NOT = { has_country_flag = empire_joint_operation_yes_but }
 		}
 	}
 	desc = {
-		text = vfef.506.desc.said_no
+		text = vfef.3006.desc.said_no
 		trigger = { has_country_flag = empire_joint_operation_yes_but }
 	}
 	desc = {
-		text = vfef.506.desc.invalid
+		text = vfef.3006.desc.invalid
 		trigger = { has_country_flag = empire_joint_operation_invalid_participant }
 	}
 	picture = GFX_evt_diplomatic_visit
@@ -659,7 +546,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = vfef.506.A
+		name = vfef.3006.A
 		trigger = {
 			has_country_flag = empire_joint_operation_yes
 		}
@@ -687,7 +574,7 @@ country_event = {
 	}
 	option = {
 		name = {
-			text = vfef.506.B
+			text = vfef.3006.B
 			trigger = { has_country_flag = empire_joint_operation_yes_but }
 		}
 		name = {
@@ -701,12 +588,11 @@ country_event = {
 	}
 }
 
-
 #The empire has completed the special project on a member (empire scope)
 country_event = {
-	id = vfef.507
-	title = vfef.507.name
-	desc = vfef.507.desc
+	id = vfef.3007
+	title = vfef.3007.name
+	desc = vfef.3007.desc
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 	is_triggered_only = yes
@@ -806,10 +692,10 @@ country_event = {
 
 #The empire has completed the special project on a member (member scope)
 country_event = {
-	id = vfef.508
-	title = vfef.508.name
+	id = vfef.3008
+	title = vfef.3008.name
 	desc = {
-		text = vfef.508.desc
+		text = vfef.3008.desc
 		trigger = {
 			NOT = {
 				from.owner = {
@@ -845,7 +731,7 @@ country_event = {
 		}
 	}
 	desc = {
-		text = vfef.508.desc.good
+		text = vfef.3008.desc.good
 		trigger = {
 			from.owner = {
 				switch = {
@@ -885,7 +771,7 @@ country_event = {
 
 	option = {
 		name = {
-			text = vfef.508.A.good
+			text = vfef.3008.A.good
 			trigger = {
 				from.owner = {
 					switch = {
@@ -953,7 +839,7 @@ country_event = {
 			}
 		}
 		name = {
-			text = vfef.508.A.neutral
+			text = vfef.3008.A.neutral
 			trigger = {
 				from.owner = {
 					switch = {
@@ -1084,9 +970,9 @@ country_event = {
 
 #A member has completed the special project on the empire, others still need to do it though (member scope)
 country_event = {
-	id = vfef.509
-	title = vfef.509.name
-	desc = vfef.509.desc
+	id = vfef.3009
+	title = vfef.3009.name
+	desc = vfef.3009.desc
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 	is_triggered_only = yes
@@ -1106,14 +992,14 @@ country_event = {
 				}
 			}
 		}
-		custom_tooltip = vfef.509.A.tooltip
+		custom_tooltip = vfef.3009.A.tooltip
 	}
 }
 
 #A member has completed the special project on the empire, all are now done (member scope)
 country_event = {
-	id = vfef.510
-	title = vfef.510.name
+	id = vfef.3010
+	title = vfef.3010.name
 	desc = {
 		trigger = {
 			federation = {
@@ -1131,7 +1017,7 @@ country_event = {
 				}
 			}
 		}
-		text = vfef.510.desc.complete_success
+		text = vfef.3010.desc.complete_success
 	}
 	desc = {
 		trigger = {
@@ -1145,7 +1031,7 @@ country_event = {
 				}
 			}
 		}
-		text = vfef.510.desc.partial_success
+		text = vfef.3010.desc.partial_success
 	}
 	desc = {
 		trigger = {
@@ -1153,7 +1039,7 @@ country_event = {
 				has_federation_flag = empire_joint_operation_partial_failure
 			}
 		}
-		text = vfef.510.desc.partial_failure
+		text = vfef.3010.desc.partial_failure
 	}
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
@@ -1172,7 +1058,7 @@ country_event = {
 			}
 		}
 		name = {
-			text = vfef.510.A.oh_well
+			text = vfef.3010.A.oh_well
 			trigger = {
 				federation = {
 					has_federation_flag = empire_joint_operation_partial_failure
@@ -1201,8 +1087,8 @@ country_event = {
 
 #A member has completed or the last one has failed the special project on the empire, all are now done (event for all other members except empire)
 country_event = {
-	id = vfef.511
-	title = vfef.511.name
+	id = vfef.3011
+	title = vfef.3011.name
 	desc = {
 		trigger = {
 			federation = {
@@ -1220,7 +1106,7 @@ country_event = {
 				}
 			}
 		}
-		text = vfef.511.desc.complete_success
+		text = vfef.3011.desc.complete_success
 	}
 	desc = {
 		trigger = {
@@ -1234,7 +1120,7 @@ country_event = {
 				}
 			}
 		}
-		text = vfef.511.desc.partial_success
+		text = vfef.3011.desc.partial_success
 	}
 	desc = {
 		trigger = {
@@ -1243,7 +1129,7 @@ country_event = {
 			}
 			has_completed_special_project = empire_joint_project_member
 		}
-		text = vfef.511.desc.partial_failure.but_I_did_it
+		text = vfef.3011.desc.partial_failure.but_I_did_it
 	}
 	desc = {
 		trigger = {
@@ -1252,7 +1138,7 @@ country_event = {
 			}
 			NOT = { has_completed_special_project = empire_joint_project_member }
 		}
-		text = vfef.511.desc.partial_failure.haha_no
+		text = vfef.3011.desc.partial_failure.haha_no
 	}
 	desc = {
 		trigger = {
@@ -1260,7 +1146,7 @@ country_event = {
 				has_federation_flag = empire_joint_operation_complete_failure
 			}
 		}
-		text = vfef.511.desc.complete_failure
+		text = vfef.3011.desc.complete_failure
 	}
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
@@ -1269,7 +1155,7 @@ country_event = {
 
 	option = {
 		name = {
-			text = vfef.511.A.good
+			text = vfef.3011.A.good
 			trigger = {
 				federation = {
 					OR = {
@@ -1280,7 +1166,7 @@ country_event = {
 			}
 		}
 		name = {
-			text = vfef.511.A.but_I_did_it
+			text = vfef.3011.A.but_I_did_it
 			trigger = {
 				federation = {
 					has_federation_flag = empire_joint_operation_partial_failure
@@ -1289,7 +1175,7 @@ country_event = {
 			}
 		}
 		name = {
-			text = vfef.511.A.neutral
+			text = vfef.3011.A.neutral
 			trigger = {
 				federation = {
 					has_federation_flag = empire_joint_operation_partial_failure
@@ -1298,7 +1184,7 @@ country_event = {
 			}
 		}
 		name = {
-			text = vfef.511.A.oh_dear
+			text = vfef.3011.A.oh_dear
 			trigger = {
 				federation = {
 					has_federation_flag = empire_joint_operation_complete_failure
@@ -1322,8 +1208,8 @@ country_event = {
 
 #A member has completed the special project on the empire, all are now done (event for empire)
 country_event = {
-	id = vfef.512
-	title = vfef.512.name
+	id = vfef.3012
+	title = vfef.3012.name
 	desc = {
 		trigger = {
 			federation = {
@@ -1341,7 +1227,7 @@ country_event = {
 				}
 			}
 		}
-		text = vfef.512.desc.complete_success
+		text = vfef.3012.desc.complete_success
 	}
 	desc = {
 		trigger = {
@@ -1355,7 +1241,7 @@ country_event = {
 				}
 			}
 		}
-		text = vfef.512.desc.partial_success
+		text = vfef.3012.desc.partial_success
 	}
 	desc = {
 		trigger = {
@@ -1363,7 +1249,7 @@ country_event = {
 				has_federation_flag = empire_joint_operation_partial_failure
 			}
 		}
-		text = vfef.512.desc.partial_failure
+		text = vfef.3012.desc.partial_failure
 	}
 	desc = {
 		trigger = {
@@ -1371,7 +1257,7 @@ country_event = {
 				has_federation_flag = empire_joint_operation_complete_failure
 			}
 		}
-		text = vfef.512.desc.complete_failure
+		text = vfef.3012.desc.complete_failure
 	}
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
@@ -1384,7 +1270,7 @@ country_event = {
 
 	option = {
 		name = {
-			text = vfef.512.A.good
+			text = vfef.3012.A.good
 			trigger = {
 				federation = {
 					OR = {
@@ -1395,7 +1281,7 @@ country_event = {
 			}
 		}
 		name = {
-			text = vfef.512.A.neutral
+			text = vfef.3012.A.neutral
 			trigger = {
 				federation = {
 					has_federation_flag = empire_joint_operation_partial_failure
@@ -1403,7 +1289,7 @@ country_event = {
 			}
 		}
 		name = {
-			text = vfef.512.A.oh_dear
+			text = vfef.3012.A.oh_dear
 			trigger = {
 				federation = {
 					has_federation_flag = empire_joint_operation_complete_failure
@@ -1457,29 +1343,33 @@ country_event = {
 	}
 }
 
+#############
+# Fail Events
+#############
+
 #Fail event 1: Federation leader changes (all members)
 country_event = {
-	id = vfef.700
-	title = vfef.700.name
-	desc = vfef.700.desc
+	id = vfef.4000
+	title = vfef.4000.name
+	desc = vfef.4000.desc
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 
 	is_triggered_only = yes
 
 	trigger = { #duplicate popup protection
-		NOT = { has_country_flag = vfef.700 }
+		NOT = { has_country_flag = vfef.4000 }
 	}
 
 	immediate = {
 		set_timed_country_flag = {
-			flag = vfef.700
+			flag = vfef.4000
 			days = 5
 		}
 	}
 
 	option = {
-		name = vfef.700.A
+		name = vfef.4000.A
 		end_event_chain = empire_joint_project_chain
 		hidden_effect = {
 			remove_country_flag = empire_joint_operation_no
@@ -1522,21 +1412,21 @@ country_event = {
 
 #Fail event 2: No longer in federation (leaving member)
 country_event = {
-	id = vfef.701
-	title = vfef.701.name
-	desc = vfef.701.desc
+	id = vfef.4001
+	title = vfef.4001.name
+	desc = vfef.4001.desc
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 
 	is_triggered_only = yes
 
 	trigger = { #duplicate popup protection
-		NOT = { has_country_flag = vfef.701 }
+		NOT = { has_country_flag = vfef.4001 }
 	}
 
 	immediate = {
 		set_timed_country_flag = {
-			flag = vfef.701
+			flag = vfef.4001
 			days = 5
 		}
 	}
@@ -1563,27 +1453,27 @@ country_event = {
 
 #Fail event 3: Federation leader leaves (all members but former leader)
 country_event = {
-	id = vfef.702
-	title = vfef.702.name
-	desc = vfef.702.desc
+	id = vfef.4002
+	title = vfef.4002.name
+	desc = vfef.4002.desc
 	picture = GFX_evt_diplomatic_visit
 	show_sound = event_announcement
 
 	is_triggered_only = yes
 
 	trigger = { #duplicate popup protection
-		NOT = { has_country_flag = vfef.702 }
+		NOT = { has_country_flag = vfef.4002 }
 	}
 
 	immediate = {
 		set_timed_country_flag = {
-			flag = vfef.702
+			flag = vfef.4002
 			days = 5
 		}
 	}
 
 	option = {
-		name = vfef.702.A
+		name = vfef.4002.A
 		end_event_chain = empire_joint_project_chain
 		hidden_effect = {
 			remove_country_flag = empire_joint_operation_no
@@ -1613,5 +1503,314 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+
+###############
+# Origin Events
+###############
+
+# Empire Origin Setup
+country_event = {
+	id = vfef.5000
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_vfef_empire
+	}
+
+	immediate = {
+		set_country_flag = first_contact_event
+		set_country_flag = Story2 # Already encountered spacefarers
+
+		if = {
+			limit = { num_guaranteed_colonies >= 2 }
+			capital_scope = {
+				solar_system = {
+					closest_system = {
+						limit = { has_star_flag = neighbor_t1_first_colony }
+						random_system_planet = {
+							limit = { has_planet_flag = prescripted_ideal }
+							save_event_target_as = fed_planet_1
+							federation_origin_planet_setup = yes
+						}
+					}
+					closest_system = {
+						limit = { has_star_flag = neighbor_t2_second_colony }
+						random_system_planet = {
+							limit = { has_planet_flag = prescripted_ideal }
+							save_event_target_as = fed_planet_2
+							federation_origin_planet_setup = yes
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { num_guaranteed_colonies >= 1 }
+			capital_scope = {
+				solar_system = {
+					closest_system = {
+						limit = { has_star_flag = neighbor_t1_first_colony }
+						random_system_planet = {
+							limit = { has_planet_flag = prescripted_ideal }
+							save_event_target_as = fed_planet_1
+							federation_origin_planet_setup = yes
+						}
+					}
+					closest_system = {
+						limit = {
+							NOT = { has_star_flag = neighbor_t1_first_colony }
+							has_owner = no
+							any_system_planet = {
+								is_ringworld = no
+								is_asteroid = no
+								is_star = no
+								is_moon = no
+							}
+						}
+						if = {
+							limit = {
+								any_system_planet = { habitable_planet = yes }
+							}
+							random_system_planet = {
+								limit = { habitable_planet = yes }
+								save_event_target_as = fed_planet_2
+								set_planet_size = 16
+							}
+						}
+						else = {
+							random_system_planet = {
+								limit = {
+									is_ringworld = no
+									is_asteroid = no
+									is_star = no
+									is_moon = no
+								}
+								save_event_target_as = fed_planet_2
+								federation_origin_planet_setup = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { num_guaranteed_colonies = 0 }
+			capital_scope = {
+				solar_system = {
+					closest_system = {
+						limit = { has_owner = no }
+						set_star_flag = fed_origin_system_1
+						if = {
+							limit = {
+								any_system_planet = { habitable_planet = yes }
+							}
+							random_system_planet = {
+								limit = { habitable_planet = yes }
+								save_event_target_as = fed_planet_1
+								set_planet_size = 16
+							}
+						}
+						else = {
+							random_system_planet = {
+								limit = {
+									is_ringworld = no
+									is_asteroid = no
+									is_star = no
+									is_moon = no
+								}
+								save_event_target_as = fed_planet_1
+								federation_origin_planet_setup = yes
+							}
+						}
+					}
+					closest_system = {
+						limit = {
+							NOT = { has_star_flag = fed_origin_system_1 }
+							has_owner = no
+							any_system_planet = {
+								is_ringworld = no
+								is_asteroid = no
+								is_star = no
+								is_moon = no
+							}
+						}
+						if = {
+							limit = {
+								any_system_planet = { habitable_planet = yes }
+							}
+							random_system_planet = {
+								limit = { habitable_planet = yes }
+								save_event_target_as = fed_planet_2
+								set_planet_size = 16
+							}
+						}
+						else = {
+							random_system_planet = {
+								limit = {
+									is_ringworld = no
+									is_asteroid = no
+									is_star = no
+									is_moon = no
+								}
+								save_event_target_as = fed_planet_2
+								federation_origin_planet_setup = yes
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		# First Member
+		event_target:fed_planet_1 = {
+			solar_system = { generate_home_system_resources = yes }
+			create_species = {
+				name = random
+				class = random_non_machine
+				portrait = random
+				traits = random
+				homeworld = this
+				effect = {
+					save_event_target_as = empire_planet_1_species
+				}
+			}
+			create_empire_fed_member_1 = yes
+			create_colony = {
+				owner = event_target:empire_member_1
+			}
+			generate_start_deposits_and_blockers = yes
+			generate_start_buildings_and_districts = yes
+			generate_start_pops = yes
+			solar_system = {
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:empire_member_1
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+						set_starbase_module = {
+							slot = 2
+							module = shipyard
+						}
+					}
+				}
+			}
+		}
+
+		# Second Member
+		event_target:fed_planet_2 = {
+			solar_system = { generate_home_system_resources = yes }
+			create_species = {
+				name = random
+				class = random_non_machine
+				portrait = random
+				traits = random
+				homeworld = this
+				effect = {
+					save_event_target_as = empire_planet_2_species
+				}
+			}
+			create_empire_fed_member_2 = yes
+			create_colony = {
+				owner = event_target:empire_member_2
+			}
+			generate_start_deposits_and_blockers = yes
+			generate_start_buildings_and_districts = yes
+			generate_start_pops = yes
+			solar_system = {
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:empire_member_2
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = trading_hub
+						}
+						set_starbase_module = {
+							slot = 2
+							module = shipyard
+						}
+					}
+				}
+			}
+		}
+		event_target:empire_member_1 = {
+			create_starting_leaders = yes
+			country_event = { id = game_start.9 }
+			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			join_alliance = { who = root override_requirements = yes }
+			if = {
+				limit = {
+					has_global_flag = gf_veru_activated
+				}
+				set_subject_of = { who = root subject_type = vervassal }
+			}
+			else = {
+				set_subject_of = { who = root subject_type = vassal }
+			}
+			set_name = random # Fixes some naming issues
+		}
+		event_target:empire_member_2 = {
+			create_starting_leaders = yes
+			country_event = { id = game_start.9 }
+			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			join_alliance = { who = root override_requirements = yes }
+			if = {
+				limit = {
+					has_global_flag = gf_veru_activated
+				}
+				set_subject_of = { who = root subject_type = vervassal }
+			}
+			else = {
+				set_subject_of = { who = root subject_type = vassal }
+			}
+			set_name = random # Fixes some naming issues
+		}
+		federation = {
+			set_federation_type = vf_ef_federation
+			set_name = random
+			set_federation_law = succession_term_status_change_empire
+		}
+		event_target:empire_member_1 = {
+			add_intel = {
+				amount = 40
+				who = root
+			}
+			add_intel = {
+				amount = 40
+				who = event_target:empire_member_2
+			}
+		}
+		event_target:empire_member_2 = {
+			add_intel = {
+				amount = 40
+				who = root
+			}
+			add_intel = {
+				amount = 40
+				who = event_target:empire_member_1
+			}
+		}
+		add_intel = {
+			amount = 20
+			who = event_target:empire_member_1
+		}
+		add_intel = {
+			amount = 20
+			who = event_target:empire_member_2
+		}
+		set_federation_leader = root
 	}
 }

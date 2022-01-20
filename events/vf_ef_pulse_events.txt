@@ -45,7 +45,7 @@ country_event = {
 					}
 				}	
 			}
-			random_war_participant = {
+			every_war_participant = {
 				limit = { is_same_empire = root }
 				prev = {
 					remove_war_participant = prev

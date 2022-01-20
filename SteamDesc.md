@@ -9,7 +9,14 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 
 [hr][/hr]
 
-[h1]Empire Project![/h1]
+[h1]Features:[/h1]
+
+[h1]Origins:[/h1]
+
+- I've added a basic Empire federation origin to the game, similar to the vanilla federation origins. You'll start in an Empire federation, with 2 other members who will be your vassals. Howver, unlike vanilla federation origins where federation memebrs will have similar ethics to you, these vassals can be any combinations of ethics.
+
+
+[h1]Empire Project:[/h1]
 
 - Just like normal federations, the empire federation now has a project. It's the same as the hegemony federation project, with some differences. No subject of an empire federation can reject the project. There are 2 different options subjects can pick. Subjects can either willingly support the project, or [i]unenthusiastically[/i] go along with the project. 
 
@@ -72,17 +79,6 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 I thought of this mod while also using [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2075090029]Exalted Domination - Vassals and Tributaries.[/url] It adds more subject types. One vassal type it adds is Warden, which makes that vassal more militarily minded. Just more options for the administration of your empire.
 
 If you decide to  use this, make sure you grab the patch above!
-
-===
-
-[h1]Origins![/h1]
-
-I've made a comparability patch between this mod and Mithrillion's Feudal Origins! If you select his "Feudal Empire" start, you will start with 2 vassals in an Empire federation.
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2104731315]- Mithrillion's Feudal Origins[/url]
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2116278405]- VF EF - Feudal Origins Patch[/url]
-
 
 [hr][/hr]
 

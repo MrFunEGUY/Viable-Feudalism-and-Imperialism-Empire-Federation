@@ -53,10 +53,10 @@ special_project = {
 
 	on_success = {
 		space_owner = {
-			country_event = { id = vfef.508 }
+			country_event = { id = vfef.3008 }
 		}
 		owner = {
-			country_event = { id = vfef.507 }
+			country_event = { id = vfef.3007 }
 		}
 	}
 	on_fail = {
@@ -86,7 +86,7 @@ special_project = {
 					value = 0
 				}
 				every_member = {
-					country_event = { id = vfef.700 }
+					country_event = { id = vfef.4000 }
 				}
 			}
 		}
@@ -94,7 +94,7 @@ special_project = {
 			limit = { #left federation or federation disbanded
 				has_federation = no
 			}
-			country_event = { id = vfef.701 }
+			country_event = { id = vfef.4001 }
 		}
 		#else: the other country left or destroyed, no event needed
 	}
@@ -238,19 +238,19 @@ special_project = {
 							NOT = { is_same_value = prevprev }
 							is_federation_leader = no
 						}
-						country_event = { id = vfef.511 }
+						country_event = { id = vfef.3011 }
 					}
 					random_member = {
 						limit = { is_federation_leader = yes }
-						country_event = { id = vfef.512 }
+						country_event = { id = vfef.3012 }
 					}
 				}
-				country_event = { id = vfef.510 }
+				country_event = { id = vfef.3010 }
 			}
 		}
 		else = {
 			owner = {
-				country_event = { id = vfef.509 }
+				country_event = { id = vfef.3009 }
 			}
 		}
 	}
@@ -351,11 +351,11 @@ special_project = {
 					limit = {
 						is_federation_leader = no
 					}
-					country_event = { id = vfef.511 }
+					country_event = { id = vfef.3011 }
 				}
 				random_member = {
 					limit = { is_federation_leader = yes }
-					country_event = { id = vfef.512 }
+					country_event = { id = vfef.3012 }
 				}
 			}
 		}
@@ -369,11 +369,11 @@ special_project = {
 			limit = {
 				has_federation = no
 			}
-			country_event = { id = vfef.701 }
+			country_event = { id = vfef.4001 }
 		}
 		else_if = { #Probably federation leader left or is destroyed
 			limit = { from.owner = { NOT = { is_in_federation_with = prev } } }
-			country_event = { id = vfef.702 }
+			country_event = { id = vfef.4002 }
 			if = { #Federation leader lost capital but remains leader
 				limit = {
 					any_federation_ally = {
@@ -382,7 +382,7 @@ special_project = {
 				}
 				random_federation_ally = {
 					limit = { has_special_project = empire_joint_project_leader }
-					country_event = { id = vfef.702 }
+					country_event = { id = vfef.4002 }
 				}
 			}
 		}
