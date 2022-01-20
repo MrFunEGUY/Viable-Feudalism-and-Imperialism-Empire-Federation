@@ -1524,6 +1524,8 @@ country_event = {
 	immediate = {
 		set_country_flag = first_contact_event
 		set_country_flag = Story2 # Already encountered spacefarers
+		add_tradition = tr_diplomacy_adopt
+		add_tradition = tr_diplomacy_the_federation
 
 		if = {
 			limit = { num_guaranteed_colonies >= 2 }
