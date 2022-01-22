@@ -15,7 +15,6 @@ country_event = {
 		federation = { has_federation_type = vf_ef_federation }
 		is_federation_leader = no
 		is_subject_type = devstate
-		
 	}
 
 	immediate = {
@@ -38,18 +37,14 @@ country_event = {
 	immediate = {
 		random_war = {
 			limit = {
-				random_attacker = {
-					limit = {
-						is_overlord_to = root
-						is_war_leader = yes
-					}
+				any_war_participant = {
+					is_overlord_to = root
+					is_war_leader = yes
 				}	
 			}
 			every_war_participant = {
 				limit = { is_same_empire = root }
-				prev = {
-					remove_war_participant = prev
-				}
+				prev = { remove_war_participant = root }
 			}
 		}
 	}
