@@ -9,6 +9,12 @@ create_empire_fed_member_1 = {
 		day_zero_contact = no
 		randomize_ethos = yes
 		effect = {
+			if = {
+				limit = {
+					has_civic = civic_fanatic_purifiers
+				}
+				force_remove_civic = civic_fanatic_purifiers
+			}
 			save_event_target_as = empire_member_1
 			establish_communications_no_message = root
 		}
@@ -25,6 +31,12 @@ create_empire_fed_member_2 = {
 		day_zero_contact = no
 		randomize_ethos = yes
 		effect = {
+			if = {
+				limit = {
+					has_civic = civic_fanatic_purifiers
+				}
+				force_remove_civic = civic_fanatic_purifiers
+			}
 			save_event_target_as = empire_member_2
 			establish_communications_no_message = root
 		}

@@ -184,7 +184,7 @@ allow_subjects_to_join_yes_empire = {
 		custom_tooltip = {
 			fail_text = EMPIRE_LAW_CHANGE
 			NAND = {
-				NOT = { has_federation_law = allow_subjects_to_join_yes }
+				NOT = { has_federation_law = allow_subjects_to_join_yes_empire }
 				has_federation_flag = vf_law_changes_disabled
 			}
 		}

@@ -421,7 +421,7 @@
  # Origins
  origin_vfef_empire: "Empire"
  origin_vfef_empire_desc:0 "This civilization established early contact with their immediate alien neighbors. Gradually, over the span of a century, they came to dominate their neighbors in an imperial fashion."
- origin_tooltip_empire_effects:0 "- Start as the leader of an §HEmpire§! federation with two additional members\n- Members will occupy any Guaranteed Habitable Worlds slots near your home system"
+ origin_tooltip_empire_effects:0 "- Start as the leader of an §HEmpire§! federation with two additional members\n- Members will occupy any Guaranteed Habitable Worlds slots near your home system\n- Start with §HThe Federation§! tradition unlocked"
  origin_tooltip_empire_subject_effects:0 "- Start as a member of an §HEmpire§! federation with two additional members"
 
  origin_vfef_empire_npc:0 "Empire Vassal"
