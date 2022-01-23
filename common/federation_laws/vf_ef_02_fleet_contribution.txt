@@ -616,7 +616,6 @@ fleet_contribution_high_empire = {
 			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
-			}
 		}
 	}
 }

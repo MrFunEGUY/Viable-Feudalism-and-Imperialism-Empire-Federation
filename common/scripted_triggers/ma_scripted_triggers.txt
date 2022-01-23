@@ -42,6 +42,7 @@ is_imperial = { #Has Heir
 		has_authority = auth_imperial
 		has_authority = auth_corporate_imperial
 		has_authority = auth_corporate_fiefdom
+		has_authority = auth_tec_patrocorporate
 	}
 }
 
