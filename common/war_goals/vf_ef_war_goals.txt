@@ -35,17 +35,24 @@ wg_empire = {
 	}
 
 	on_accept = {
+		custom_tooltip = imperialism_wg_tooltip
 		hidden_effect = {
 			from = {
 				add_threat = {
 					who = root
 					amount = 0.5
 				}
+				if = {
+					limit = {
+						has_global_flag = gf_veru_activated
+					}
+					set_subject_of = { who = root subject_type = vervassal }
+				}
+				else = {
+					set_subject_of = { who = root subject_type = vassal }
+				}
+				join_alliance = { who = root override_requirements = yes }
 			}
-		}
-		from = {
-			set_subject_of = { who = root subject_type = vassal }
-			join_alliance = { who = root override_requirements = yes }
 		}
 	}
 

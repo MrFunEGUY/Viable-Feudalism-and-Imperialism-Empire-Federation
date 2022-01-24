@@ -112,7 +112,9 @@
  
  # War Goals
  war_goal_wg_empire:0 "Imperialism"
- war_goal_wg_empire_desc:0 "War is waged to force the enemy to become a member of our empire.\n\n\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new subject of our Empire if they include at least one planet."
+ war_goal_wg_empire_desc:0 "War is waged to force the enemy to become a member of our empire.\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new subject of our Empire if they include at least one planet."
+
+ imperialism_wg_tooltip: "§Y[from.GetName]§! becomes a Vassal under the §Y[root.GetName]§! and joins the §H[root.federation.GetName]§!"
 
  wg_empire_status_quo:0 "Our subject §Y[Root.GetName]§! has partially seceded from the §Y[From.GetAllianceName]§!"
  wg_empire_accept:0 "The empire is strong! §Y[From.GetName]§! is now a subject of the §Y[Root.GetAllianceName]§!"
