@@ -270,7 +270,7 @@ law_category_build_fleets_empire = {
 
 law_category_allow_subjects_to_join_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		always = no
 	}
 	laws = {
 		allow_subjects_to_join_no_empire

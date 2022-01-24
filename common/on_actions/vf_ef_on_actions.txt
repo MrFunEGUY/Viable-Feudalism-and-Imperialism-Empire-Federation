@@ -51,3 +51,10 @@ on_war_beginning = {
 		vfefpulse.2000			# Remove correct subjects from wars
 	}
 }
+
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		vfefpulse.9000			# Potential Bugfix
+	}
+}

@@ -1,5 +1,4 @@
-@cooldown = 720
-
+@cooldown = 7
 
 succession_power_economy_empire = {
 	potential = {
