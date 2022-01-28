@@ -268,16 +268,6 @@ law_category_build_fleets_empire = {
 	}
 }
 
-law_category_allow_subjects_to_join_empire = {
-	potential = {
-		always = no
-	}
-	laws = {
-		allow_subjects_to_join_no_empire
-		allow_subjects_to_join_yes_empire
-	}
-}
-
 law_category_voting_weight_empire = {
 	potential = {
 		has_federation_type = vf_ef_federation

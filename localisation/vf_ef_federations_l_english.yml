@@ -300,7 +300,7 @@
  the_following_nations_said_yes_but:0 "\nThe following nations were §Runenthusiastic§! about the project:"
  no_following_nations_said_yes_but:0 "\nNo nations were §Runenthusiastic§! about the project."
  
- empire_join_operation_happens_tooltip:0 "All participating subjects gain a special project to build a monument on §H[federation_leader.Capital.GetName]§!.\nThe §H[federation_leader.GetName]§! gains special projects to spread the §H[federation_leader.GetHegemonyEthos]§! ethos to up to two subject states."
+ empire_join_operation_happens_tooltip:0 "All participating subjects gain a special project to build a monument on §H[federation_leader.Capital.GetName]§!.\nThe §H[federation_leader.GetName]§! gains special projects to spread the empire's ideals to up to two subject states."
 
 
  vfef.3000.name:0 "A Celebration of the Might, Leadership, and the Glory of the Empire"

@@ -103,6 +103,8 @@ If you decide to  use this, make sure you grab the patch above!
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2452302093]- We Require Borders[/url]
 
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2732567565]- No More Exclaves[/url]
+
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2183551683]- Vassals Expanded and Reworked - FunEFork[/url]
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2177145527]- Intervene: Help Friendly Nations - FunEFork[/url]

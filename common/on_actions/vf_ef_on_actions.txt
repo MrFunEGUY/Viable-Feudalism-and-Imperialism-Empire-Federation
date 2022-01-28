@@ -56,5 +56,6 @@ on_war_beginning = {
 on_monthly_pulse_country = {
 	events = {
 		vfefpulse.9000			# Potential Bugfix
+		vfefpulse.3000			# New vassal joins Empire
 	}
 }
