@@ -57,5 +57,6 @@ on_monthly_pulse_country = {
 	events = {
 		vfefpulse.9000			# Potential Bugfix
 		vfefpulse.3000			# New vassal joins Empire
+		vfefpulse.4000			# Autuonoms State leaves Empire
 	}
 }

@@ -155,8 +155,10 @@ special_project = {
 					NOT = {
 						any_federation_ally = {
 							has_special_project = empire_joint_project_member
-							NOT = { has_completed_special_project_in_log = empire_joint_project_member }
-							NOT = { has_failed_special_project_in_log = empire_joint_project_member }
+							NOR = {
+								has_completed_special_project_in_log = empire_joint_project_member
+								has_failed_special_project_in_log = empire_joint_project_member
+							}
 						}
 					}
 				}
@@ -274,8 +276,10 @@ special_project = {
 				NOT = {
 					any_federation_ally = {
 						has_special_project = empire_joint_project_member
-						NOT = { has_completed_special_project_in_log = empire_joint_project_member }
-						NOT = { has_failed_special_project_in_log = empire_joint_project_member }
+						NOR = {
+							has_completed_special_project_in_log = empire_joint_project_member
+							has_failed_special_project_in_log = empire_joint_project_member
+						}
 					}
 				}
 			}

@@ -3,8 +3,10 @@
 centralization_minimal = {
 	unlocks_centralization = 1
 	 potential = {
-		NOT = { has_federation_type = vf_ef_federation }
-		NOT = { has_federation_flag = special_federation }
+		NOR = {
+			has_federation_type = vf_ef_federation
+			has_federation_flag = special_federation
+		}
 	}
 	allow = {
 		custom_tooltip = {
@@ -106,8 +108,10 @@ centralization_minimal = {
 
 centralization_low = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
-		NOT = { has_federation_flag = special_federation }
+		NOR = {
+			has_federation_type = vf_ef_federation
+			has_federation_flag = special_federation
+		}
 	}
 	display_level = 2
 	unlocks_centralization = 2
@@ -303,8 +307,10 @@ centralization_low = {
 
 centralization_medium = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
-		NOT = { has_federation_flag = special_federation }
+		NOR = {
+			has_federation_type = vf_ef_federation
+			has_federation_flag = special_federation
+		}
 	}
 	display_level = 3
 	unlocks_centralization = 3
@@ -508,8 +514,10 @@ centralization_medium = {
 
 centralization_high = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
-		NOT = { has_federation_flag = special_federation }
+		NOR = {
+			has_federation_type = vf_ef_federation
+			has_federation_flag = special_federation
+		}
 	}
 	display_level = 4
 	unlocks_centralization = 4
@@ -711,8 +719,10 @@ centralization_high = {
 
 centralization_very_high = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
-		NOT = { has_federation_flag = special_federation }
+		NOR = {
+			has_federation_type = vf_ef_federation
+			has_federation_flag = special_federation
+		}
 	}
 	display_level = 5
 	unlocks_centralization = 5

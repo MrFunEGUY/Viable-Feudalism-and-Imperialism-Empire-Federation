@@ -95,10 +95,14 @@ country_event = {
 					}
 					else = {
 						any_owned_fleet = {
-							NOT = { is_ship_class = shipclass_military_station }
-							NOT = { is_ship_class = shipclass_mining_station }
-							NOT = { is_ship_class = shipclass_research_station }
-							NOT = { is_ship_class = shipclass_observation_station }
+							NOR = {
+								is_ship_class = shipclass_military_station
+								is_ship_class = shipclass_mining_station
+							}
+							NOR = {
+								is_ship_class = shipclass_research_station
+								is_ship_class = shipclass_observation_station
+							}
 							is_inside_border = owner
 							can_access_system = root.capital_scope.solar_system
 						}
@@ -209,10 +213,14 @@ country_event = {
 						}
 						else = {
 							any_owned_fleet = {
-								NOT = { is_ship_class = shipclass_military_station }
-								NOT = { is_ship_class = shipclass_mining_station }
-								NOT = { is_ship_class = shipclass_research_station }
-								NOT = { is_ship_class = shipclass_observation_station }
+								NOR = {
+									is_ship_class = shipclass_military_station
+									is_ship_class = shipclass_mining_station
+								}
+								NOR = {
+									is_ship_class = shipclass_research_station
+									is_ship_class = shipclass_observation_station
+								}
 								is_inside_border = owner
 								can_access_system = root.capital_scope.solar_system
 							}
@@ -1127,7 +1135,7 @@ country_event = {
 			federation = {
 				has_federation_flag = empire_joint_operation_partial_failure
 			}
-			has_completed_special_project = empire_joint_project_member
+			has_completed_special_project_in_log = empire_joint_project_member
 		}
 		text = vfef.3011.desc.partial_failure.but_I_did_it
 	}
@@ -1136,7 +1144,7 @@ country_event = {
 			federation = {
 				has_federation_flag = empire_joint_operation_partial_failure
 			}
-			NOT = { has_completed_special_project = empire_joint_project_member }
+			NOT = { has_completed_special_project_in_log = empire_joint_project_member }
 		}
 		text = vfef.3011.desc.partial_failure.haha_no
 	}
@@ -1171,7 +1179,7 @@ country_event = {
 				federation = {
 					has_federation_flag = empire_joint_operation_partial_failure
 				}
-				has_completed_special_project = empire_joint_project_member
+				has_completed_special_project_in_log = empire_joint_project_member
 			}
 		}
 		name = {
@@ -1180,7 +1188,7 @@ country_event = {
 				federation = {
 					has_federation_flag = empire_joint_operation_partial_failure
 				}
-				NOT = { has_completed_special_project = empire_joint_project_member }
+				NOT = { has_completed_special_project_in_log = empire_joint_project_member }
 			}
 		}
 		name = {
