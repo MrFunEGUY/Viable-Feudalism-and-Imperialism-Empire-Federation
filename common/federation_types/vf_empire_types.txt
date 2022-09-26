@@ -64,7 +64,7 @@ vf_ef_federation = {
 			perks = {
 				extra_imperial_envoy_1
 				empire_ship_gain
-				vf_ef_job_output_1
+				empire_trade_value_1
 				emperor_diplo_weight_steal_3
 			}
 		}
@@ -74,7 +74,7 @@ vf_ef_federation = {
 			perks = {
 				imperial_influence_1
 				empire_fleet_size_1
-				empire_trade_value_1
+				vf_ef_job_output_1
 				emperor_diplo_weight_steal_4
 			}
 		}
@@ -111,67 +111,7 @@ vf_ef_federation = {
 			desc = federation_acceptance_empire_other
 			add = -1000
 			from = {
-				NOR = {
-					# Vassals Expanded and Reworked Vanilla Subjects
-					is_subject_type = vassal
-					is_subject_type = vervassal
-					is_subject_type = tributary
-					is_subject_type = vertributary
-					is_subject_type = subsidiary
-					is_subject_type = versubsidiary
-					is_subject_type = protectorate
-					# Exalted Domination
-					is_subject_type = exalted_subject_warden
-					is_subject_type = exalted_subject_automated_assembler
-					is_subject_type = exalted_subject_remote_archive
-					is_subject_type = exalted_subject_dominion
-					is_subject_type = exalted_subject_pet
-					# Zenith of Fallen Empires
-					is_subject_type = dominion
-					is_subject_type = satellite
-					is_subject_type = signatory
-					is_subject_type = thrall
-					is_subject_type = fe_clan_member
-					is_subject_type = fe_demilitarized_state
-					is_subject_type = fe_puppet_state
-					is_subject_type = fe_union_state
-					is_subject_type = fe_satrapy
-					is_subject_type = fe_symbiote
-					is_subject_type = fe_auxiliary
-					is_subject_type = banished_ascendancy
-					# Vassals Expanded and Reworked Normal Subjects
-					is_subject_type = verappendage
-					is_subject_type = verautonomous
-					is_subject_type = verbeneficiary
-					is_subject_type = verdisciple
-					is_subject_type = verfoederatus
-					is_subject_type = verjrpartner
-					is_subject_type = verpuppet
-					is_subject_type = verserf
-					is_subject_type = versister
-					is_subject_type = verorganic
-					is_subject_type = verparallel
-					is_subject_type = verblood
-					# Vassals Expanded and Reworked Corporate Subjects
-					is_subject_type = verdevotee
-					is_subject_type = verkobun
-					is_subject_type = versupplier
-					is_subject_type = verworshipper
-					is_subject_type = verdebtor
-					is_subject_type = versubscriber
-					is_subject_type = verarmsdealer
-					is_subject_type = versubcontractor
-					is_subject_type = verdependency
-					# Decentralized Empires 2.7
-					is_subject_type = member_state
-					# z Expanded Traits, Civics, Pops, and More
-					is_subject_type = duchy
-					# Government Variety Pack
-					is_subject_type = lrsk_gvp_vassal_foundry
-					is_subject_type = lrsk_gvp_vassal_market
-					is_subject_type = lrsk_gvp_vassal_trophy
-					is_subject_type = lrsk_gvp_vassal_prospector
-				}		
+				is_subject = no
 			}
 		}
 
@@ -179,67 +119,7 @@ vf_ef_federation = {
 			desc = federation_acceptance_empire
 			add = 10000
 			from = {
-				OR = {
-					# Vassals Expanded and Reworked Vanilla Subjects
-					is_subject_type = vassal
-					is_subject_type = vervassal
-					is_subject_type = tributary
-					is_subject_type = vertributary
-					is_subject_type = subsidiary
-					is_subject_type = versubsidiary
-					is_subject_type = protectorate
-					# Exalted Domination
-					is_subject_type = exalted_subject_warden
-					is_subject_type = exalted_subject_automated_assembler
-					is_subject_type = exalted_subject_remote_archive
-					is_subject_type = exalted_subject_dominion
-					is_subject_type = exalted_subject_pet
-					# Zenith of Fallen Empires
-					is_subject_type = dominion
-					is_subject_type = satellite
-					is_subject_type = signatory
-					is_subject_type = thrall
-					is_subject_type = fe_clan_member
-					is_subject_type = fe_demilitarized_state
-					is_subject_type = fe_puppet_state
-					is_subject_type = fe_union_state
-					is_subject_type = fe_satrapy
-					is_subject_type = fe_symbiote
-					is_subject_type = fe_auxiliary
-					is_subject_type = banished_ascendancy
-					# Vassals Expanded and Reworked Normal Subjects
-					is_subject_type = verappendage
-					is_subject_type = verautonomous
-					is_subject_type = verbeneficiary
-					is_subject_type = verdisciple
-					is_subject_type = verfoederatus
-					is_subject_type = verjrpartner
-					is_subject_type = verpuppet
-					is_subject_type = verserf
-					is_subject_type = versister
-					is_subject_type = verorganic
-					is_subject_type = verparallel
-					is_subject_type = verblood
-					# Vassals Expanded and Reworked Corporate Subjects
-					is_subject_type = verdevotee
-					is_subject_type = verkobun
-					is_subject_type = versupplier
-					is_subject_type = verworshipper
-					is_subject_type = verdebtor
-					is_subject_type = versubscriber
-					is_subject_type = verarmsdealer
-					is_subject_type = versubcontractor
-					is_subject_type = verdependency
-					# Decentralized Empires 2.7
-					is_subject_type = member_state
-					# z Expanded Traits, Civics, Pops, and More
-					is_subject_type = duchy
-					# Government Variety Pack
-					is_subject_type = lrsk_gvp_vassal_foundry
-					is_subject_type = lrsk_gvp_vassal_market
-					is_subject_type = lrsk_gvp_vassal_trophy
-					is_subject_type = lrsk_gvp_vassal_prospector
-				}		
+				is_subject = yes	
 			}
 		}
 	}

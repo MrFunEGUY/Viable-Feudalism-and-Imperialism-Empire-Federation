@@ -12,7 +12,7 @@ cb_empire = {
 	is_valid = {
 		from = {
 			or = {
-				is_country_type = default
+				is_country_type_with_subjects = yes
 				is_country_type = ascended_empire
 				is_country_type = lost_empire
 			}

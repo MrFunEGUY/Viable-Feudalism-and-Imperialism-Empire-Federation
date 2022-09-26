@@ -15,20 +15,20 @@ wg_empire = {
 	potential = {
 		has_total_war_cb = no
 	}
+	
 	possible = {
 		custom_tooltip = {
 			fail_text = has_claimed_all_systems
 			from = {
+				is_subject = no
 				or = {
-					is_country_type = default
+					is_country_type_with_subjects = yes
 					is_country_type = ascended_empire
 					is_country_type = lost_empire
 				}
 				any_owned_planet = {
 					is_colony = yes
-					root = {
-						NOT = { has_claim = prev.solar_system }
-					}
+					root = { NOT = { has_claim = prev.solar_system } }
 				}
 			}
 		}
@@ -43,14 +43,13 @@ wg_empire = {
 					amount = 0.5
 				}
 				if = {
-					limit = {
-						has_global_flag = gf_veru_activated
+					limit = { is_overlord = yes }
+					every_subject = {
+						limit = { is_country_type_with_subjects = yes }
+						join_alliance = { who = root override_requirements = yes }
 					}
-					set_subject_of = { who = root subject_type = vervassal }
 				}
-				else = {
-					set_subject_of = { who = root subject_type = vassal }
-				}
+				set_subject_of = { who = root preset = preset_vassal }
 				join_alliance = { who = root override_requirements = yes }
 			}
 		}
@@ -60,13 +59,11 @@ wg_empire = {
 		if = {
 			limit = {
 				exists = last_created_country
-				last_created_country = {
-					has_country_flag = released_empire
-				}
+				last_created_country = { has_country_flag = released_empire }
 			}
 
 			last_created_country = {
-				set_subject_of = { who = root subject_type = vassal }
+				set_subject_of = { who = root preset = preset_vassal }
 				join_alliance = { who = root override_requirements = yes }
 			}
 		}

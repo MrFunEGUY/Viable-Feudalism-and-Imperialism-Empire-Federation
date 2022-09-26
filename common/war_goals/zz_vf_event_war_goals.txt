@@ -47,7 +47,9 @@ wg_galactic_civil_war_loyalists = {
 								is_subject = no
 								AND = {
 									is_subject = yes
-									is_subject_type = devstate
+									any_agreement = {
+										agreement_preset = preset_auto_state
+									}
 								}
 							}
 						}
@@ -84,7 +86,9 @@ wg_galactic_civil_war_loyalists = {
 								is_subject = no
 								AND = {
 									is_subject = yes
-									is_subject_type = devstate
+									any_agreement = {
+										agreement_preset = preset_auto_state
+									}
 								}
 							}
 						}
@@ -176,7 +180,9 @@ wg_galactic_civil_war_rebels = {
 									is_subject = no
 									AND = {
 										is_subject = yes
-										is_subject_type = devstate
+										any_agreement = {
+											agreement_preset = preset_auto_state
+										}
 									}
 								}
 							}

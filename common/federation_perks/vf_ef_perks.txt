@@ -76,13 +76,13 @@ empire_federation_passive = {
 
 vf_ef_job_output_1 = {
 	members_modifier = {
-		planet_jobs_productive_produces_mult = 0.15
+		planet_jobs_productive_produces_mult = 0.075
 	}
 }
 
 emperor_unity_1 = {
 	leader_modifier = {
-		country_unity_produces_mult = 0.12
+		country_unity_produces_mult = 0.1
 	}
 	members_modifier = {
 		country_unity_produces_mult = 0.05
@@ -145,7 +145,7 @@ empire_fleet_size_1 = {
 
 empire_trade_value_1 = {
 	members_modifier = {
-		trade_value_mult = 0.15
+		trade_value_mult = 0.1
 	}
 }
 
