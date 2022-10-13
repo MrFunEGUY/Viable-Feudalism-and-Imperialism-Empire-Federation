@@ -30,10 +30,6 @@ empire_propaganda_authoritarian = {
 	pop_ethic_authoritarian_attraction_mult = 0.35
 }
 
-imperial_subject_diplo_decrease = {
-	diplo_weight_mult = -0.5
-}
-
 empire_joint_operation_project_in_progress = {
 	diplo_weight_mult = -0.05
 }

@@ -1756,16 +1756,16 @@ country_event = {
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			set_subject_of = { who = root preset = preset_vassal } # Needs to be above join_alliance
 			join_alliance = { who = root override_requirements = yes }
-			set_subject_of = { who = root preset = preset_vassal }
 			set_name = random # Fixes some naming issues
 		}
 		event_target:empire_member_2 = {
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			set_subject_of = { who = root preset = preset_vassal } # Needs to be above join_alliance
 			join_alliance = { who = root override_requirements = yes }
-			set_subject_of = { who = root preset = preset_vassal }
 			set_name = random # Fixes some naming issues
 		}
 		federation = {
@@ -1775,30 +1775,30 @@ country_event = {
 		}
 		event_target:empire_member_1 = {
 			add_intel = {
-				amount = 40
+				amount = 20
 				who = root
 			}
 			add_intel = {
-				amount = 40
+				amount = 30
 				who = event_target:empire_member_2
 			}
 		}
 		event_target:empire_member_2 = {
 			add_intel = {
-				amount = 40
+				amount = 20
 				who = root
 			}
 			add_intel = {
-				amount = 40
+				amount = 30
 				who = event_target:empire_member_1
 			}
 		}
 		add_intel = {
-			amount = 20
+			amount = 40
 			who = event_target:empire_member_1
 		}
 		add_intel = {
-			amount = 20
+			amount = 40
 			who = event_target:empire_member_2
 		}
 		set_federation_leader = root

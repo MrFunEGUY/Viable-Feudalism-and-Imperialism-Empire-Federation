@@ -142,7 +142,8 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	format = "[This.Leader.GetAdj] <vf_ef_federation_names_1_3>"
+	lookups = "[This.Leader.GetAdj] <vf_ef_federation_names_1_3>"
+	format = format.empire_federation.1
 }
 
 federation_name_format = {
@@ -153,7 +154,8 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	format = "[This.Leader.GetAdj] <vf_ef_federation_names_1_2> <vf_ef_federation_names_1_1>"
+	lookups = "[This.Leader.GetAdj] <vf_ef_federation_names_1_2> <vf_ef_federation_names_1_1>"
+	format = format.empire_federation.2
 }
 
 federation_name_format = {
@@ -164,7 +166,8 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	format = "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
+	lookups = "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
+	format = format.empire_federation.3
 }
 
 federation_name_format = {
@@ -175,7 +178,8 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	format = "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
+	lookups = "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
+	format = format.empire_federation.4
 }
 
 federation_name_format = {
@@ -186,7 +190,8 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	format = "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3>"
+	lookups = "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3>"
+	format = format.empire_federation.5
 }
 
 federation_name_format = {
@@ -197,5 +202,6 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	format = "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3_1>"
+	lookups = "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3_1>"
+	format = format.empire_federation.6
 }

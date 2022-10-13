@@ -1,3 +1,72 @@
+wg_assert_overlordship = {
+	casus_belli = cb_event
+
+	cede_claims = occupied_only
+
+	allowed_peace_offers = {
+		status_quo
+		surrender
+		demand_surrender
+	}
+
+	potential = {
+		always = no # event only
+	}
+	possible = {
+		always = yes
+	}
+
+	on_accept = {
+		custom_tooltip = wg_assert_overlordship_accept
+		hidden_effect = {
+			from = {
+				every_system_within_border = {
+					limit = {
+						root = { has_claim = prev }
+					}
+					remove_claims = { who = root }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						is_variable_set = empire_fed_exp_before_war
+						AND = {
+							has_federation = yes
+							federation = { has_federation_type = vf_ef_federation }
+						}
+					}
+				}
+				from = { join_alliance = { who = root override_requirements = yes } }
+				if = {
+					limit = { is_variable_set = empire_fed_exp_before_war }
+					multiply_variable = { which = empire_fed_exp_before_war value = 0.6 }
+					federation = {
+						set_federation_type = vf_ef_federation
+						set_name = random
+						set_federation_law = succession_term_status_change_empire
+						add_federation_experience = prev.empire_fed_exp_before_war
+					}
+					clear_variable = empire_fed_exp_before_war
+				}
+			}
+		}
+	}
+
+	on_wargoal_set = {
+		every_system_within_border = {
+			limit = {
+				NOT = { from = { has_claim = prev } }
+			}
+			add_claims = { who = from }
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
 wg_galactic_civil_war_loyalists = {
 	casus_belli = cb_event
 

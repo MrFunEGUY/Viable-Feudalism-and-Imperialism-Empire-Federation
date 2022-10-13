@@ -378,7 +378,6 @@ action_invite_to_federation = {
 		hidden_trigger = {
 			if = {
 				limit = { FROM = { is_subject = yes } }
-				has_federation = yes
 				is_overlord_to = FROM
 			}
 		}

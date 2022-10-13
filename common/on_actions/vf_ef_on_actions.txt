@@ -18,8 +18,7 @@ on_game_start_country = {
 # From = subject's overlord
 on_becoming_subject = {
 	events = {
-		vfef.1000				# Join Overlord's Federation if laws permit
-		vfdiplo.1000			# Give empire fed subjects diplo weight modifier.
+		# vfef.1000				# Join Overlord's Federation if laws permit
 	}
 }
 
@@ -34,7 +33,6 @@ on_ask_to_leave_federation_declined = {
 # this = country
 on_yearly_pulse_country = {
 	events = {
-		vfdiplo.1050			# remove diplo weight modifier if not a subject
 		vfefpulse.1000
 	}
 }

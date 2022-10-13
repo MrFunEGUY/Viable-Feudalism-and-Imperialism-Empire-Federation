@@ -10,9 +10,7 @@ create_empire_fed_member_1 = {
 		randomize_ethos = yes
 		effect = {
 			if = {
-				limit = {
-					has_civic = civic_fanatic_purifiers
-				}
+				limit = { has_civic = civic_fanatic_purifiers }
 				force_remove_civic = civic_fanatic_purifiers
 			}
 			save_event_target_as = empire_member_1
@@ -32,9 +30,7 @@ create_empire_fed_member_2 = {
 		randomize_ethos = yes
 		effect = {
 			if = {
-				limit = {
-					has_civic = civic_fanatic_purifiers
-				}
+				limit = { has_civic = civic_fanatic_purifiers }
 				force_remove_civic = civic_fanatic_purifiers
 			}
 			save_event_target_as = empire_member_2

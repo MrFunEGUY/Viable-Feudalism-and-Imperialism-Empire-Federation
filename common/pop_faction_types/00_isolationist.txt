@@ -12,15 +12,12 @@ isolationist = {
 	resources = {
 		category = pop_factions
 		produces = {
-			influence = 2
+			unity = 0.5
 		}
 	}
 
 	is_potential = {
-		years_passed > 10
-		has_encountered_other_species = yes
-		NOT = { has_ethic = ethic_gestalt_consciousness }
-		NOT = { has_country_flag = suppress_vanilla_factions }
+		is_faction_allowed = yes
 	}
 
 	parameters = {
@@ -39,11 +36,14 @@ isolationist = {
 
 	can_join_faction = {
 		is_shackled_robot = no
-		NOT = { has_trait = trait_nerve_stapled }
+		can_think = yes
 		OR = {
 			NOT = { is_same_species = owner_species }
 			owner = {
-				is_pacifist = yes
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
 			}
 		}
 	}
@@ -70,12 +70,20 @@ isolationist = {
 
 		modifier = {
 			factor = 1.5
-			is_xenophobe = yes
+
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
 		}
 
 		modifier = {
 			factor = 0.25
-			is_militarist = yes
+
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
 		}
 
 		# Should really check for citizenship instead
@@ -121,15 +129,15 @@ isolationist = {
 		unfulfilled_title = "ISOLATIONIST_NO_PHILOSOPHY"
 		desc = "ISOLATIONIST_PHILOSOPHY_DESC"
 
-		unfulfilled_effect = -15
-		fulfilled_effect = 5
+		unfulfilled_effect = -25
+		fulfilled_effect = 0.001
 
 		potential = {
 			exists = owner
 			owner = {
 				any_relation = {
 					has_communications = root.owner
-					is_country_type_with_subjects = yes
+					is_country_type = default
 					NOT = { exists = overlord }
 				}
 			}
@@ -174,7 +182,7 @@ isolationist = {
 		desc = "SUPREMACIST_ISOLATIONIST_NO_FEDERATION_DESC"
 
 		unfulfilled_effect = -25
-		fulfilled_effect = 2
+		fulfilled_effect = 0.001
 
 		potential = {
 			exists = owner
@@ -188,9 +196,7 @@ isolationist = {
 				OR = {
 					AND = {
 						has_federation = yes
-						federation = {
-							has_federation_type = vf_ef_federation
-						}
+						federation = { has_federation_type = vf_ef_federation }
 					}
 					has_federation = no
 				}
@@ -239,7 +245,7 @@ isolationist = {
 		unfulfilled_title = "ISOLATIONIST_FEW_NON_AGGRESSION1"
 		desc = "ISOLATIONIST_NON_AGGRESSION_DESC1"
 
-		fulfilled_effect = 7
+		fulfilled_effect = 5
 		unfulfilled_effect = -0.001
 
 		potential = {
@@ -260,11 +266,9 @@ isolationist = {
 
 		trigger = {
 			owner = {
-				any_country = {
-					OR = {
-						has_non_aggression_pact = root.owner
-						has_association_status = root.owner
-					}
+				OR = {
+					num_non_aggression_pacts > 0
+					exists = associated_federation
 				}
 			}
 		}
@@ -275,7 +279,7 @@ isolationist = {
 		unfulfilled_title = "ISOLATIONIST_FEW_NON_AGGRESSION2"
 		desc = "ISOLATIONIST_NON_AGGRESSION_DESC2"
 
-		fulfilled_effect = 14
+		fulfilled_effect = 10
 		unfulfilled_effect = -0.001
 
 		potential = {
@@ -323,7 +327,7 @@ isolationist = {
 		unfulfilled_title = "ISOLATIONIST_FEW_NON_AGGRESSION3"
 		desc = "ISOLATIONIST_NON_AGGRESSION_DESC3"
 
-		fulfilled_effect = 21
+		fulfilled_effect = 15
 		unfulfilled_effect = -0.001
 
 		potential = {
@@ -362,7 +366,7 @@ isolationist = {
 		unfulfilled_title = "ISOLATIONIST_NO_PEACE1"
 		desc = "ISOLATIONIST_PEACE_DESC1"
 
-		fulfilled_effect = 10
+		fulfilled_effect = 5
 		unfulfilled_effect = -0.001
 
 		potential = {
@@ -386,7 +390,7 @@ isolationist = {
 		unfulfilled_title = "ISOLATIONIST_NO_PEACE2"
 		desc = "ISOLATIONIST_PEACE_DESC2"
 
-		fulfilled_effect = 15
+		fulfilled_effect = 10
 		unfulfilled_effect = -0.001
 
 		potential = {
@@ -413,7 +417,7 @@ isolationist = {
 		unfulfilled_title = "ISOLATIONIST_NO_PEACE3"
 		desc = "ISOLATIONIST_PEACE_DESC3"
 
-		fulfilled_effect = 20
+		fulfilled_effect = 15
 		unfulfilled_effect = -0.001
 
 		potential = {
@@ -447,7 +451,7 @@ isolationist = {
 			exists = owner
 			owner = {
 				is_homicidal = no
-				is_country_type_with_subjects = yes
+				is_country_type = default
 				is_megacorp = no
 			}
 		}
@@ -509,7 +513,7 @@ isolationist = {
 			description = "EMBRACE_FACTION_DESC"
 
 			cost = {
-				influence = 500
+				unity = 5000
 			}
 
 			potential = {
@@ -517,11 +521,7 @@ isolationist = {
 				owner = {
 					OR = {
 						is_subject = no
-						NOT = {
-							any_agreement = {
-								agreement_preset = preset_dominion
-							}
-						}
+						NOT = { any_agreement = { agreement_preset = preset_dominion } }
 					}
 				}
 			}
@@ -561,7 +561,7 @@ isolationist = {
 						every_relation = {
 							limit = {
 								is_ai = no
-								is_country_type_with_subjects = yes
+								is_country_type = default
 								has_communications = prev
 								has_intel_level = {
 									who = prev
