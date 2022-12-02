@@ -5,7 +5,7 @@ action_ask_to_leave_empire = {
 		01_ASK_TO_LEAVE_SELECT = {
 			trigger = {
 				NOR = {
-					has_ethic = ethic_gestalt_consciousness
+					is_gestalt = yes
 					is_megacorp = yes
 				}
 			}
@@ -38,7 +38,7 @@ action_ask_to_leave_empire = {
 		}
 		MECH_ASK_TO_LEAVE_SELECT = {
 			trigger = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 			}
 		}
 		KET_ASK_TO_LEAVE_SELECT = {
@@ -61,7 +61,7 @@ action_ask_to_leave_empire = {
 		01_ASK_TO_LEAVE_PROPOSE = {
 			trigger = {
 				NOR = {
-					has_ethic = ethic_gestalt_consciousness
+					is_gestalt = yes
 					is_megacorp = yes
 				}
 			}
@@ -94,7 +94,7 @@ action_ask_to_leave_empire = {
 		}
 		MECH_ASK_TO_LEAVE_PROPOSE = {
 			trigger = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 			}
 		}
 		KET_ASK_TO_LEAVE_PROPOSE = {
@@ -117,7 +117,7 @@ action_ask_to_leave_empire = {
 		01_ASK_TO_LEAVE_ACCEPT = {
 			trigger = {
 				NOR = {
-					has_ethic = ethic_gestalt_consciousness
+					is_gestalt = yes
 					is_megacorp = yes
 				}
 			}
@@ -150,7 +150,7 @@ action_ask_to_leave_empire = {
 		}
 		MECH_ASK_TO_LEAVE_ACCEPT = {
 			trigger = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 			}
 		}
 		KET_ASK_TO_LEAVE_ACCEPT = {
@@ -173,7 +173,7 @@ action_ask_to_leave_empire = {
 		01_ASK_TO_LEAVE_REFUSE = {
 			trigger = {
 				NOR = {
-					has_ethic = ethic_gestalt_consciousness
+					is_gestalt = yes
 					is_megacorp = yes
 				}
 			}
@@ -206,7 +206,7 @@ action_ask_to_leave_empire = {
 		}
 		MECH_ASK_TO_LEAVE_REFUSE = {
 			trigger = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 			}
 		}
 		KET_ASK_TO_LEAVE_REFUSE = {

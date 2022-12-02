@@ -211,16 +211,6 @@
 
  disabled_for_empire:0 "§RA §Y$vf_ef_federation$§! cannot ban subject nations from joining.§!"
 
-
- # Federation Names
- format.empire_federation.1: "[This.Leader.GetAdj] <vf_ef_federation_names_1_3>"
- format.empire_federation.2: "[This.Leader.GetAdj] <vf_ef_federation_names_1_2> <vf_ef_federation_names_1_1>"
- format.empire_federation.3: "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
- format.empire_federation.4: "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
- format.empire_federation.5: "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3>"
- format.empire_federation.6: "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3_1>"
-
- 
  # Federation Laws
  
  law_category_fleet_contribution_empire:0 "Fleet Contribution"
@@ -479,9 +469,3 @@
  
  FEDEXP_political_union_low_empire:0 "Domestic"
  FEDEXP_political_union_low_empire_desc:0 "Subjects of the Crown may decide their own domestic polices."
- 
- 
- 
- 
- 
- 

@@ -36,7 +36,7 @@ is_dictatorial = {
 
 is_autocracy = { #Power of one
 	OR = {
-		has_ethic = ethic_gestalt_consciousness
+		is_gestalt = yes
 		has_authority = auth_imperial
 		has_authority = auth_dictatorial
 		has_authority = auth_corporate_imperial
@@ -58,6 +58,8 @@ is_imperial = { #Has Heir
 		# Other Mods
 		has_authority = auth_corporate_fiefdom
 		has_authority = auth_tec_patrocorporate
+		has_authority = auth_bugged_corporate_imperial
+		has_authority = auth_private
 	}
 }
 

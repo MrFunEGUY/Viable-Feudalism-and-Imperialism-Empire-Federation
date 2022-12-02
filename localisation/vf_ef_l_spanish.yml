@@ -47,11 +47,7 @@ l_spanish:
  edict_empire_law_change_enabled:0 "Empire: Allow Law Changes"
  edict_empire_law_change_enabled_desc:0 "The emperor decrees that some laws may need to be revised."
 
- vf.ef.form.desc:0 "$fedev.500.intro$\n\nThis Empire will ensure the safety of its subjects through the enlightened leadership of its Crown.\n\nA new era of [fed_founder_1.GetAdj] dominance has begun!"
-
- # Modifiers
-
- imperial_subject_diplo_decrease:0 "Imperial Subject"
+ vf.ef.form.desc:0 "$fedev.500.intro$\n\nThis Empire will ensure the safety of its subjects through the enlightened leadership of its Crown nation.\n\nA new era of [fed_founder_1.GetAdj] dominance has begun!"
 
  # Perks
 
@@ -214,7 +210,7 @@ l_spanish:
  succession_power_diplomatic_weight_empire_desc:0 "Our Crown nation should be chosen from the nation with the largest §YDiplomatic Weight§!."
 
  disabled_for_empire:0 "§RA §Y$vf_ef_federation$§! cannot ban subject nations from joining.§!"
- 
+
  # Federation Laws
  
  law_category_fleet_contribution_empire:0 "Fleet Contribution"
@@ -473,9 +469,3 @@ l_spanish:
  
  FEDEXP_political_union_low_empire:0 "Domestic"
  FEDEXP_political_union_low_empire_desc:0 "Subjects of the Crown may decide their own domestic polices."
- 
- 
- 
- 
- 
- 

@@ -142,8 +142,7 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	lookups = "[This.Leader.GetAdj] <vf_ef_federation_names_1_3>"
-	format = format.empire_federation.1
+	format = "{[This.Leader.GetAdj] {<vf_ef_federation_names_1_3>}}"
 }
 
 federation_name_format = {
@@ -154,8 +153,7 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	lookups = "[This.Leader.GetAdj] <vf_ef_federation_names_1_2> <vf_ef_federation_names_1_1>"
-	format = format.empire_federation.2
+	format = "{[This.Leader.GetAdj] {<vf_ef_federation_names_1_2> {<vf_ef_federation_names_1_1>}}}"
 }
 
 federation_name_format = {
@@ -166,8 +164,18 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	lookups = "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
-	format = format.empire_federation.3
+	format = "{<vf_ef_federation_names_2_1> {[This.Leader.GetAdj] {<vf_ef_federation_names_2_2>}}}"
+}
+
+federation_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 25
+			has_federation_type = vf_ef_federation
+		}
+	}
+	format = "{<vf_ef_federation_names_2_1_1> {[This.Leader.GetAdj] {<vf_ef_federation_names_2_2>}}}"
 }
 
 federation_name_format = {
@@ -178,30 +186,16 @@ federation_name_format = {
 			has_federation_type = vf_ef_federation
 		}
 	}
-	lookups = "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2>"
-	format = format.empire_federation.4
+	format = "{<vf_ef_federation_names_2_1> {[This.Leader.GetAdj] {<vf_ef_federation_names_2_2> {<vf_ef_federation_names_2_3>}}}"
 }
 
 federation_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 100
+			add = 25
 			has_federation_type = vf_ef_federation
 		}
 	}
-	lookups = "<vf_ef_federation_names_2_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3>"
-	format = format.empire_federation.5
-}
-
-federation_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 100
-			has_federation_type = vf_ef_federation
-		}
-	}
-	lookups = "<vf_ef_federation_names_2_1_1> [This.Leader.GetAdj] <vf_ef_federation_names_2_2> <vf_ef_federation_names_2_3_1>"
-	format = format.empire_federation.6
+	format = "{<vf_ef_federation_names_2_1_1> {[This.Leader.GetAdj] {<vf_ef_federation_names_2_2> {<vf_ef_federation_names_2_3_1>}}}"
 }
