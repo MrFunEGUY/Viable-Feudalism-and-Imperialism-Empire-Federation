@@ -7,284 +7,288 @@ l_russian:
 # l_braz_por:
 # l_simp_chinese:
 
- IS_YOU:1 "This is you"
+ IS_YOU:1 "Это вы"
 
  # Empire Federation
 
- vf_ef_federation:0 "Empire"
- vf_ef_federation_desc:0 "This system of government is structured around one Crown nation that wields almost absolute control over its subject nations."
+ vf_ef_federation:0 "Империя"
+ vf_ef_federation_desc:0 "Эта система правления структурирована вокруг одной коронной нации, которая обладает почти абсолютным контролем над подвластными ей нациями."
 
- ACTION_RECIPIENT_NO_SATRAPY:0 "Recipient must not be a satrapy under the Great Khan."
+ ACTION_RECIPIENT_NO_SATRAPY:0 "Получатель не должен быть сатрапией при Великом хане."
 
- war_goal_wg_leave_empire:0 "Leave Empire"
- war_goal_wg_leave_empire_desc:0 "War is waged to secede from the Empire. Other subjects who feel as we do may be invited to help us, though they themselves will not secede."
+ war_goal_wg_leave_empire:0 "Покинуть Империю"
+ war_goal_wg_leave_empire_desc:0 "Война ведётся за отделение от Империи. Другие субъекты, которые чувствуют то же, что и мы, могут быть приглашены помочь нам, хотя сами они не отделятся."
  
- war_goal_wg_assert_empire:0 "Assert Imperial Authority"
- war_goal_wg_assert_empire_desc:0 "War is waged to prevent one of our subjects from seceding."
+ war_goal_wg_assert_empire:0 "Утвердить имперскую власть"
+ war_goal_wg_assert_empire_desc:0 "Война ведется для того, чтобы помешать одному из наших подданных отделиться."
  
- wg_leave_empire_accept:0 "§Y[Root.GetName]§! secedes from the §Y[From.GetAllianceName]§! and is now independent. \n§Y[From.GetName]§! revokes all claims on §Y[Root.GetAdj]§! systems."
+ wg_leave_empire_accept:0 "§Y[Root.GetName]§! отделяется от §Y[From.GetAllianceName]§! и теперь независим. \n§Y[From.GetName]§! отзывает все претензии на §Y[Root.GetAdj]§! системы."
  wg_leave_empire_status_quo:0 "§Y[Root.GetName]§! secedes from the §Y[From.GetAllianceName]§!"
  wg_assert_empire_accept:0 "§Y[From.GetName]§! remains a subject of the §Y[Root.GetAllianceName]§!"
 
- opinion_wanted_to_leave_empire:0 "Asked to Leave Empire"
- opinion_denied_to_leave_empire:0 "Denied Request to Leave Empire"
- opinion_broke_empire:0 "Broke Empire"
+ opinion_wanted_to_leave_empire:0 "Попросить покинуть Империю"
+ opinion_denied_to_leave_empire:0 "Отказано в просьбе покинуть Империю"
+ opinion_broke_empire:0 "Разрушенная империя"
  
- requires_actor_not_already_asked_empire:0 "$TRIGGER_FAIL$§RWe recently asked to leave the Empire and were refused. If we want to leave, we will have to declare a war for our independence.§!"
- requires_actor_not_rebelled_empire:0 "$TRIGGER_FAIL$§RWe cannot ask to leave until §!§Y20§!§R years have passed since our last attempt to secede.§!"
+ requires_actor_not_already_asked_empire:0 "$TRIGGER_FAIL$§RНедавно мы попросили покинуть Империю, и нам отказали. Если мы захотим уйти, нам придется объявить войну за нашу независимость.§!"
+ requires_actor_not_rebelled_empire:0 "$TRIGGER_FAIL$§RМы не можем попросить уйти, пока §!§Y20§!§R лет не пройдёт с момента нашей последней попытки отделиться.§!"
  
- federation_actor_no_separate_treaties_empire:0 "§Y$law_category_separate_treaties_empire$§! §Ris §Y$treaties_separate_no$§! by Imperial decree - we cannot have treaties with nations who are not members of our empire.§!"
+ federation_actor_no_separate_treaties_empire:0 "Поскольку §Y$law_category_separate_treaties_empire$§! §Rэто §Y$treaties_separate_no$§! - по Имперскому указу - мы не можем иметь договоров с народами, не входящими в Империю.§!"
 
- federation_recipient_no_separate_treaties_empire:0 "§RTheir §Y$law_category_separate_treaties_empire$§! is §Y$treaties_separate_no$§! by Imperial decree, so they cannot enter into such an agreement.§!"
+ federation_recipient_no_separate_treaties_empire:0 "§RИх §Y$law_category_separate_treaties_empire$§! это §Y$treaties_separate_no$§! по Имперскому указу, они не могут вступать в такие соглашения.§!"
 
- ACTION_RECIPIENT_NOT_YOURS:0 "§RThis nation is a subject of another empire.§!"
+ ACTION_RECIPIENT_NOT_YOURS:0 "§RЭта нация - субъект другой империи.§!"
 
- EMPIRE_LAW_CHANGE:0 "The empire is §Rnot currently allowing revisions§! to the law."
+ EMPIRE_LAW_CHANGE:0 "Империя §Rне позволяет пересмотр§! законов."
 
- edict_empire_law_change_disabled:0 "Empire: Disallow Law Changes"
- edict_empire_law_change_disabled_desc:0 "There shall be no law changes within the empire until the emperor decrees otherwise."
+ edict_empire_law_change_disabled:0 "Империя: Запретить изменения законодательства"
+ edict_empire_law_change_disabled_desc:0 "Не должно быть никаких изменений в имперском законе, покуда император не скажет обратного."
 
- edict_empire_law_change_enabled:0 "Empire: Allow Law Changes"
- edict_empire_law_change_enabled_desc:0 "The emperor decrees that some laws may need to be revised."
+ edict_empire_law_change_enabled:0 "Империя: Разрешить изменения законодательства"
+ edict_empire_law_change_enabled_desc:0 "Император постановляет, что некоторые законы нуждаются в пересмотре."
 
- vf.ef.form.desc:0 "$fedev.500.intro$\n\nThis Empire will ensure the safety of its subjects through the enlightened leadership of its Crown nation.\n\nA new era of [fed_founder_1.GetAdj] dominance has begun!"
+ vf.ef.form.desc:0 "$fedev.500.intro$\n\nЭта Империя гарантирует сохранность и стабильность своих субъектов под просвещённым правлением Короны.\n\nНовая эра для [fed_founder_1.GetAdj] господства начинается!"
+
+ # Modifiers
+
+ imperial_subject_diplo_decrease:0 "Имперский субъект"
 
  # Perks
 
- empire_federation_passive:0 "Imperial Authority"
- empire_federation_passive_desc:0 "The strength of the empire must not be undermined by personal ambition."
- empire_federation_passive_effect:1 "Subjects cannot freely leave the empire. If their emperor refuses their request for independence, the subject gains the §YSecession§! Casus Belli and may try to secede from the empire."
+ empire_federation_passive:0 "Имперская Власть"
+ empire_federation_passive_desc:0 "Сила империи не должна подрываться личными амбициями."
+ empire_federation_passive_effect:1 "Субъекты не могут свободно покидать империю. Если император отказывает в запросе на отделение, субъект получает Казус Бели §YОтделение§! и может попытаться отделиться от империи силой."
  
- emperor_empire_cb_1:0 "Imperial Might"
- emperor_empire_cb_1_desc:0 "For the glory of our empire, we shall expand."
- emperor_empire_cb_1_effect:1 "Crown gets the §YImperialism Wargoal§! to force a sovereign nation to submit to imperial authority."
+ emperor_empire_cb_1:0 "Имперская Мощь"
+ emperor_empire_cb_1_desc:0 "Во имя славы империи, мы должны расширяться."
+ emperor_empire_cb_1_effect:1 "Корона получает повод для войны §YИмпериализм§!, позволяющий силой призвать суверенную нацию признать имперскую власть."
 
- emperor_diplo_weight_steal_1:0 "Imperial Affairs"
- emperor_diplo_weight_steal_2:0 "Imperial Affairs II"
- emperor_diplo_weight_steal_3:0 "Imperial Affairs III"
- emperor_diplo_weight_steal_4:0 "Imperial Affairs IV"
- emperor_diplo_weight_steal_5:0 "Imperial Affairs V"
- emperor_diplo_weight_steal_1_desc:0 "Subject nations may have a wide measure of control over their domestic affairs, but foreign affairs are the responsibility of the Crown."
- emperor_diplo_weight_steal_1_effect:1 "Every subject transfers §Y40%§! of their §Y$MOD_DIPLO_WEIGHT_MULT$§! to the Crown. For every empire level, this increases by §Y10%§!, such that at level 5 subjects transfer §Y80%§! of their §Y$MOD_DIPLO_WEIGHT_MULT$§! to the Crown."
+ emperor_diplo_weight_steal_1:0 "Имперские Дела"
+ emperor_diplo_weight_steal_2:0 "Имперские Дела II"
+ emperor_diplo_weight_steal_3:0 "Имперские Дела III"
+ emperor_diplo_weight_steal_4:0 "Имперские Дела IV"
+ emperor_diplo_weight_steal_5:0 "Имперские Дела V"
+ emperor_diplo_weight_steal_1_desc:0 "Подданные могут иметь широкий контроль на их собственных землях, но бремя дипломатических обязанностей за пределами империи лежит на плечах Короны."
+ emperor_diplo_weight_steal_1_effect:1 "Каждый субъект передаёт §Y40%§! их §Y$MOD_DIPLO_WEIGHT_MULT$§! Короне. За каждый уровень империи, этот параметр увеличивается на §Y10%§!, вплоть до §Y80%§! их §Y$MOD_DIPLO_WEIGHT_MULT$§! Короне на пятом уровне."
  
- vf_ef_job_output_1:0 "Imperial Administration"
- vf_ef_job_output_1_desc:0 "The efficient and capable administration of our empire has led to massive improvements in production."
+ vf_ef_job_output_1:0 "Имперская администрация"
+ vf_ef_job_output_1_desc:0 "Эффективная и способная администрация позволит нашей империи выйти на небывалый уровень промышленного прогресса."
  
- emperor_unity_1:0 "Imperial Destiny"
- emperor_unity_1_desc:0 "The citizens of our empire are proud of what they have accomplished."
+ emperor_unity_1:0 "Имперская судьба"
+ emperor_unity_1_desc:0 "Жители нашей империи будут гордиться тем путём, который избрали."
  
- imperial_upkeep_1:0 "Imperial Research Infrastructure"
- imperial_upkeep_1_desc:0 "Mutually beneficial agreements between our subject nations are much easier to coordinate when our supervisory agents are directly embedded in each subjects's governing apparatus."
- imperial_upkeep_1_effect:0 "Research Agreements and Migration Pacts between subject nations cost no £influence£ Influence in their upkeep."
+ imperial_upkeep_1:0 "Имперская исследовательская инфраструктура"
+ imperial_upkeep_1_desc:0 "Взаимовыгодные соглашения между нашими странами-субъектами гораздо легче координировать, когда наши надзорные агенты непосредственно внедрены в управленческий аппарат каждого субъекта."
+ imperial_upkeep_1_effect:0 "Соглашения об исследованиях и миграционные пакты между исследуемыми странами не стоят £influence£ Влияния на их содержание."
  
- empire_research_boost_1:0 "Imperial Research Initiative"
- empire_research_boost_1_desc:0 "Through the efficiency of Imperial administration, the finest scientists and researchers throughout all holdings of our empire are better able to communicate ideas and share knowledge with each other. This increased collaboration has led to remarkable advances in all fields."
- empire_research_boost_1_effect:0 "Every member of the empire gains §Y7.5%§! research speed."
+ empire_research_boost_1:0 "Имперская исследовательская инициатива"
+ empire_research_boost_1_desc:0 "Благодаря эффективности имперской администрации лучшие ученые и исследователи во всех владениях нашей империи имеют лучшую возможность передавать идеи и делиться знаниями друг с другом. Это расширяющееся сотрудничество привело к значительным достижениям во всех областях."
+ empire_research_boost_1_effect:0 "Каждый член империи получает §Y7.5%§! скорости исследований."
  
- extra_imperial_envoy_1:0 "Imperial Envoys"
- extra_imperial_envoy_1_desc:1 "The diplomatic corps serve a vital role in the maintenance of our empire."
+ extra_imperial_envoy_1:0 "Имперские послы"
+ extra_imperial_envoy_1_desc:1 "Дипломатический корпус играет жизненно важную роль в поддержании нашей империи."
 
- imperial_influence_1:0 "Ultimate Responsibility"
- imperial_influence_1_desc:0 "Rising to become the empire we are today wasn't easy. All that we have now will take work to protect."
+ imperial_influence_1:0 "Ультимативная ответственность"
+ imperial_influence_1_desc:0 "Подняться, чтобы стать империей, которой мы являемся сегодня, было нелегко. Все, что у нас есть сейчас, потребует работы по защите."
  imperial_influence_1_effect:0 "Empire Influence Gain: §G+2§!"
  
- empire_fleet_speed_1:0 "Interior Lines"
- empire_fleet_speed_1_desc:1 "Well-charted and patrolled hyperspace corridors within our territory permit unparalleled freedom of movement, allowing our navies to rapidly concentrate wherever required."
- empire_fleet_speed_effect:0 "§YShip Speed§! is increased by §G+10%§! while within our empire."
+ empire_fleet_speed_1:0 "Внутренние линии"
+ empire_fleet_speed_1_desc:1 "Хорошо нанесенные на карту и патрулируемые гиперпространственные коридоры на нашей территории обеспечивают беспрецедентную свободу передвижения, позволяя нашим военно-морским силам быстро концентрироваться там, где это необходимо."
+ empire_fleet_speed_effect:0 "§YСкорость кораблей§! увеличивается на §G+10%§! в пределах нашей империи."
  
- empire_ship_gain:0 "Shipyard Grants"
- empire_ship_gain_desc:0 "The security and prosperity of the empire must be maintained by our top-of-the-line fleets. To this end, the empire will focus time and resources towards making our shipyards the best in the galaxy."
- empire_ship_gain_effect:0 "§YShip Build Speed§! is increased by §G+20%§! throughout our empire."
+ empire_ship_gain:0 "Гранты верфям"
+ empire_ship_gain_desc:0 "Безопасность и процветание империи должны поддерживаться нашими первоклассными флотами. С этой целью империя сосредоточит время и ресурсы на том, чтобы сделать наши верфи лучшими в галактике."
+ empire_ship_gain_effect:0 "§YСкорость сборки кораблей§! увеличивается на §G+20%§! по всей нашей империи."
  
- emperor_megastructure_1:0 "Imperial Construction Initiative"
- emperor_megastructure_1_desc:0 "The ability of the Crown to concentrate the logistical power of our entire empire on grand projects will help to ensure the longevity of the empire."
- emperor_megastructure_1_effect:0 "§YMegastructure Capacity§! is increased by §G2§! for the Crown."
+ emperor_megastructure_1:0 "Имперская строительная инициатива"
+ emperor_megastructure_1_desc:0 "Способность короны концентрировать логистическую мощь всей нашей империи на грандиозных проектах поможет обеспечить долговечность империи."
+ emperor_megastructure_1_effect:0 "§YВместимость мегасооружений§! увеличивается на §G2§! для Короны."
  
- cohesion_empire_join_1:0 "Strength through Unity"
- cohesion_empire_join_1_desc:0 "Our empire will not allow new subjects to threaten our unity."
- cohesion_empire_join_1_effect:0 "§YCohesion Loss§! from new subjects is decreased by §G-65%§!."
+ cohesion_empire_join_1:0 "Сила через единство"
+ cohesion_empire_join_1_desc:0 "Наша империя не позволит новым подданным угрожать нашему единству."
+ cohesion_empire_join_1_effect:0 "§YПотеря сплоченности§! от новых субъектах снижается на §G-65%§!."
  
- empire_fleet_size_1:0 "Unified Imperial Fleet"
- empire_fleet_size_1_desc:0 "A grand unified imperial fleet is the only way to ensure the autonomy of our subjects and the security of the empire." 
- empire_fleet_size_1_effect:0 "The amount members of the empire contribute towards the §YImperial Naval Capacity§! counts for §G+15%§! more."
+ empire_fleet_size_1:0 "Объединенный имперский флот"
+ empire_fleet_size_1_desc:0 "Великий объединенный имперский флот - это единственный способ обеспечить автономию наших подданных и безопасность империи." 
+ empire_fleet_size_1_effect:0 "Сумма, которую члены империи вносят во §Yвместимость Имперского флота§! учитывается на §G+15%§! больше."
  
- empire_trade_value_1:0 "Imperial Trade Routes"
- empire_trade_value_1_desc:0 "The Imperial Navy has stamped out most of the piracy that used to plague the trade routes throughout our empire. Additionally, imperial administration by the finest economists and merchants of our our empire has standardized the way business is down throughout the majority of our domain."
+ empire_trade_value_1:0 "Имперские торговые пути"
+ empire_trade_value_1_desc:0 "Имперский флот уничтожил большую часть пиратства, которое раньше наводняло торговые пути по всей нашей империи. Кроме того, имперская администрация, возглавляемая лучшими экономистами и торговцами нашей империи, стандартизировала ведение бизнеса на большей части нашей территории."
  
  # Casus Belli
- casus_belli_cb_empire:0 "Subjugation"
+ casus_belli_cb_empire:0 "Подчинение"
  
  # War Goals
- war_goal_wg_empire:0 "Imperialism"
- war_goal_wg_empire_desc:0 "War is waged to force the enemy to become a member of our empire.\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new subject of our Empire if they include at least one planet."
+ war_goal_wg_empire:0 "Империализм"
+ war_goal_wg_empire_desc:0 "Война ведется для того, чтобы заставить врага стать членом нашей империи.\n\nВ случае установления мира на условиях статус-кво, системы, которые мы занимаем, будут освобождены в качестве нового субъекта нашей империи, если они включают в себя хотя бы одну планету."
 
- imperialism_wg_tooltip: "§Y[from.GetName]§! becomes a Vassal under the §Y[root.GetName]§! and joins the §H[root.federation.GetName]§!"
+ imperialism_wg_tooltip: "§Y[from.GetName]§! становится вассалом §Y[root.GetName]§! и присоединяется к §H[root.federation.GetName]§!"
 
- wg_empire_status_quo:0 "Our subject §Y[Root.GetName]§! has partially seceded from the §Y[From.GetAllianceName]§!"
- wg_empire_accept:0 "The empire is strong! §Y[From.GetName]§! is now a subject of the §Y[Root.GetAllianceName]§!"
+ wg_empire_status_quo:0 "Наш субъект §Y[Root.GetName]§! частично отделился от §Y[From.GetAllianceName]§!"
+ wg_empire_accept:0 "Империя сильна! §Y[From.GetName]§! теперь субъект §Y[Root.GetAllianceName]§!"
 
  
  # Federation
  
- requires_feudal_1:0 "§RRequires you to have the §Y$civic_feudal_realm$§! civic.§!"
+ requires_feudal_1:0 "§RТребует, чтобы у вас была гражданская модель §Y$civic_feudal_realm$§!.§!"
  
- federation_acceptance_empire_federation:0 "Subject"
- federation_acceptance_empire:0 "Our subjects will do as we command"
- federation_acceptance_empire_other:0 "No desire to give up autonomy"
+ federation_acceptance_empire_federation:0 "Субъект"
+ federation_acceptance_empire:0 "Наши подданные будут делать то, что мы прикажем"
+ federation_acceptance_empire_other:0 "Нет желания отказываться от автономии"
  
- declare_war_unanimous_vote_empire:0 "Unanimous"
- declare_war_unanimous_vote_empire_desc:0 "We fight the best when every member of our empire is dedicated to the effort."
+ declare_war_unanimous_vote_empire:0 "Единодушие"
+ declare_war_unanimous_vote_empire_desc:0 "Мы сражаемся лучше всех, когда каждый член нашей империи предан делу."
  
  declare_war_majority_vote_empire:0 "$declare_war_majority_vote$"
- declare_war_majority_vote_empire_desc:0 "If the majority of the subjects of the empire will it, then it shall come to pass."
+ declare_war_majority_vote_empire_desc:0 "Если этого пожелает большинство подданных империи, то это сбудется."
  
- declare_war_president_vote_empire:0 "Emperor's Right"
- declare_war_president_vote_empire_desc:0 "It is the sole right of the emperor to declare war.\n\n§RDue to a bug, while this law is active subjects will be unable to declare wars of secession. This is not intended functionality.§!"
+ declare_war_president_vote_empire:0 "Право Императора"
+ declare_war_president_vote_empire_desc:0 "Это право императора - объявлять войну.\n\n§RИз-за ошибки, пока этот закон действует, субъекты не смогут объявлять войны за отделение. Это не предполагаемая функциональность.§!"
  
- fleet_contribution_none_empire:0 "None"
- fleet_contribution_none_empire_desc:0 "The empire has no need of its subjects ships."
+ fleet_contribution_none_empire:0 "Нет"
+ fleet_contribution_none_empire_desc:0 "Империя не нуждается в кораблях своих подданных."
  fleet_contribution_low_empire:0 "$fleet_contribution_low$"
- fleet_contribution_low_empire_desc:0 "Some limited form of Imperial Navy is good for morale and cohesion."
+ fleet_contribution_low_empire_desc:0 "Некоторая ограниченная форма имперского флота хороша для поддержания боевого духа и сплоченности."
  fleet_contribution_medium_empire:0 "$fleet_contribution_medium$"
- fleet_contribution_medium_empire_desc:0 "For strategic purposes, the empire must maintain a modest Imperial Navy."
+ fleet_contribution_medium_empire_desc:0 "В стратегических целях империя должна поддерживать имперский флот."
  fleet_contribution_high_empire:0 "$fleet_contribution_high$"
- fleet_contribution_high_empire_desc:0 "The strength of the empire comes before the strength of any one subject."
+ fleet_contribution_high_empire_desc:0 "Сила империи важнее силы любого отдельного подданного."
  
- fleet_contribution_empire_low_effect:0 "Members of our empire transfer §Y10%§! of their Naval Capacity to the Imperial Navy."
- fleet_contribution_empire_medium_effect:0 "Members of our empire transfer §Y25%§! of their Naval Capacity to the Imperial Navy."
- fleet_contribution_empire_high_effect:0 "Members of our empire transfer §Y50%§! of their Naval Capacity to the Imperial Navy."
+ fleet_contribution_empire_low_effect:0 "Члены нашей империи передают §Y10%§! от их вместимости флота в Имперский флот"
+ fleet_contribution_empire_medium_effect:0 "Члены нашей империи передают §Y25%§! от их вместимости флота в Имперский флот"
+ fleet_contribution_empire_high_effect:0 "Члены нашей империи передают §Y50%§! от их вместимости флота в Имперский флот"
 
- succession_type_strongest_empire:0 "Strongest"
- succession_type_strongest_empire_desc:2 "The Crown will be chosen from the most powerful nation, depending on which §Y$law_category_succession_power$§! is chosen. The $law_category_succession_power$ laws will become available when this law is active."
+ succession_type_strongest_empire:0 "Сильнейший"
+ succession_type_strongest_empire_desc:2 "Корона будет выбрана от самой могущественной нации, в зависимости от того, какая §Y$law_category_succession_power$§! выбрана. $law_category_succession_power$ законы станут доступны, когда этот закон вступит в силу."
  
- succession_type_challenge_empire:0 "Challenge"
- succession_type_challenge_empire_desc:0 "The empire chooses its leader by lawful challenge."
+ succession_type_challenge_empire:0 "Вызов"
+ succession_type_challenge_empire_desc:0 "Империя выбирает своего лидера путем законного вызова."
 
- succession_term_status_change_empire:0 "Status Change"
- succession_term_status_change_empire_desc:0 "A new crown nation is chosen if any subject nation ever surpasses them by §Y25%§!."
+ succession_term_status_change_empire:0 "Изменение статуса"
+ succession_term_status_change_empire_desc:0 "Новая коронная нация выбирается, если какая-либо подданная нация когда-либо превосходит их на §Y25%§!."
  
- federation_build_fleets_only_leader_empire:0 "Only Crown"
- federation_build_fleets_only_leader_empire_desc:0 "Only the Crown may order the construction of new ships to the imperial fleet."
- federation_build_fleets_everyone_empire:0 "Everyone"
- federation_build_fleets_everyone_empire_desc:0 "All subject nations may order the construction of new ships to the imperial fleet."
+ federation_build_fleets_only_leader_empire:0 "Только Корона"
+ federation_build_fleets_only_leader_empire_desc:0 "Только Корона может отдавать приказы о строительстве новых кораблей для имперского флота."
+ federation_build_fleets_everyone_empire:0 "Все"
+ federation_build_fleets_everyone_empire_desc:0 "Все подвластные нации могут отдавать приказы о строительстве новых кораблей для имперского флота."
 
- vote_weight_equal_empire:0 "Equal"
- vote_weight_equal_empire_desc:0 "We, as well as our subjects, all have 1 vote of equal weight."
- vote_weight_diplomatic_empire:0 "Diplomatic"
- vote_weight_diplomatic_empire_desc:0 "Votes are determined by Diplomatic Weight. More influential subject nations will wield more power."
+ vote_weight_equal_empire:0 "Равный"
+ vote_weight_equal_empire_desc:0 "Мы, так же как и наши подданные, все имеем по одному голосу равного веса."
+ vote_weight_diplomatic_empire:0 "Дипломатический"
+ vote_weight_diplomatic_empire_desc:0 "Голоса определяются дипломатическим весом. Более влиятельные подчиненные нации будут обладать большей властью."
  
- invite_members_president_vote_empire:0 "Emperor's Right"
- invite_members_president_vote_empire_desc:0 "It is the right of the emperor to decide their subjects."
- invite_members_majority_vote_empire:0 "Majority Vote"
- invite_members_majority_vote_empire_desc:0 "If a majority of our subjects agree, we shall take in another."
- invite_members_unanimous_vote_empire:0 "Unanimous Vote"
- invite_members_unanimous_vote_empire_desc:0 "New subjects of the empire need to meet the approval of the entire empire."
+ invite_members_president_vote_empire:0 "Право Императора"
+ invite_members_president_vote_empire_desc:0 "Это право императора решать за своих подданных."
+ invite_members_majority_vote_empire:0 "Большинством голосов"
+ invite_members_majority_vote_empire_desc:0 "Если большинство наших подданных согласятся, мы примем другого подданного."
+ invite_members_unanimous_vote_empire:0 "Единогласное голосование"
+ invite_members_unanimous_vote_empire_desc:0 "Новые подданные империи должны получить одобрение всей империи."
 
- kick_members_president_vote_empire:0 "Emperor's Right"
- kick_members_president_vote_empire_desc:0 "The emperor wields the power to decide if a member should be removed from the empire."
- kick_members_majority_vote_empire:0 "Majority Vote"
- kick_members_majority_vote_empire_desc:0 "A member can be removed from the empire by a majority vote."
+ kick_members_president_vote_empire:0 "Право Императора"
+ kick_members_president_vote_empire_desc:0 "Император обладает властью решать, следует ли удалить того или иного члена из империи."
+ kick_members_majority_vote_empire:0 "Большинством голосов"
+ kick_members_majority_vote_empire_desc:0 "Участник может быть исключен из империи большинством голосов."
 
- free_migration_no_empire:0 "Disabled"
- free_migration_no_empire_desc:0 "Subjects have to sign individual Migration Treaties."
- free_migration_yes_empire:0 "Enabled"
- free_migration_yes_empire_desc:0 "Migration Treaties are free and automatic between all subjects."
+ free_migration_no_empire:0 "Выключена"
+ free_migration_no_empire_desc:0 "Субъекты должны подписать индивидуальные миграционные договоры."
+ free_migration_yes_empire:0 "Включена"
+ free_migration_yes_empire_desc:0 "Миграционные соглашения являются свободными и автоматическими между всеми субъектами."
 
- treaties_separate_yes_empire:0 "Allowed"
- treaties_separate_yes_empire_desc:0 "Subject nations are allowed to sign diplomatic agreements with nations outside the empire."
- treaties_separate_no_empire:0 "Prohibited"
- treaties_separate_no_empire_desc:0 "Subject nations are prohibited from having Research Agreements, Migration Treaties, or Commercial Pacts with nations outside the empire."
+ treaties_separate_yes_empire:0 "Разрешены"
+ treaties_separate_yes_empire_desc:0 "Подвластным нациям разрешается подписывать дипломатические соглашения с государствами за пределами империи."
+ treaties_separate_no_empire:0 "Запрещены"
+ treaties_separate_no_empire_desc:0 "Подчиненным нациям запрещено заключать соглашения об исследованиях, договоры о миграции или коммерческие пакты с государствами за пределами империи."
 
- allow_subjects_to_join_no_empire:0 "No"
- allow_subjects_to_join_no_empire_desc:0 "Subjects may not join the empire."
- allow_subjects_to_join_yes_empire:0 "Yes"
- allow_subjects_to_join_yes_empire_desc:0 "Subjects are allowed to join the empire."
+ allow_subjects_to_join_no_empire:0 "Нет"
+ allow_subjects_to_join_no_empire_desc:0 "Подданные не могут присоединиться к империи."
+ allow_subjects_to_join_yes_empire:0 "Да"
+ allow_subjects_to_join_yes_empire_desc:0 "Подданным разрешается вступать в империю."
  
- succession_power_economy_empire:0 "Economy"
- succession_power_economy_empire_desc:0 "Our Crown nation should be chosen from the nation with the strongest §Yeconomy§!."
- succession_power_tech_empire:0 "Technology"
- succession_power_tech_empire_desc:0 "Our Crown nation should be chosen from the nation with the most advanced §Ytechnology§!."
- succession_power_fleet_empire:0 "Fleets"
- succession_power_fleet_empire_desc:0 "Our Crown nation should be chosen from the nation with the largest and most powerful §Ynavy§!."
- succession_power_diplomatic_weight_empire:0 "Diplomatic Weight"
- succession_power_diplomatic_weight_empire_desc:0 "Our Crown nation should be chosen from the nation with the largest §YDiplomatic Weight§!."
+ succession_power_economy_empire:0 "Экономика"
+ succession_power_economy_empire_desc:0 "Наша коронная нация должна быть выбрана из нации с самой сильной §Yэкономикой§!."
+ succession_power_tech_empire:0 "Технологии"
+ succession_power_tech_empire_desc:0 "Наша коронная нация должна быть выбрана из нации с наиболее передовыми §Yтехнологиями§!."
+ succession_power_fleet_empire:0 "Флот"
+ succession_power_fleet_empire_desc:0 "Наша коронная нация должна быть выбрана из нации с самым большим и могущественным §Yфлотом§!."
+ succession_power_diplomatic_weight_empire:0 "Дипломатический вес"
+ succession_power_diplomatic_weight_empire_desc:0 "Наша коронная нация должна быть выбрана из нации с самым большим §Yдипломатическим весом§!."
 
- disabled_for_empire:0 "§RA §Y$vf_ef_federation$§! cannot ban subject nations from joining.§!"
-
+ disabled_for_empire:0 "§R§Y$vf_ef_federation$§! не может запретить подчиненным нациям присоединяться.§!"
+ 
  # Federation Laws
  
- law_category_fleet_contribution_empire:0 "Fleet Contribution"
- law_category_fleet_contribution_empire_desc:0 "These laws determine how much Naval Capacity our subjects contribute to the Imperial Navy."
+ law_category_fleet_contribution_empire:0 "Вклад флота"
+ law_category_fleet_contribution_empire_desc:0 "Эти законы определяют, какой вклад вносят наши подданные в Имперский флот."
 
- law_category_succession_type_empire:0 "Means of Succession"
- law_category_succession_type_empire_desc:0 "These laws determine how our Crown nation is chosen."
+ law_category_succession_type_empire:0 "Средства наследования"
+ law_category_succession_type_empire_desc:0 "Эти законы определяют, как выбирается наша коронная нация."
  
- law_category_succession_power_empire:0 "Succession"
- law_category_succession_power_empire_desc:0 "These laws determines which category is measured for choosing the strongest Crown nation."
+ law_category_succession_power_empire:0 "Наследование"
+ law_category_succession_power_empire_desc:0 "Эти законы определяют, какая категория используется для выбора сильнейшей коронной нации."
 
- law_category_succession_term_empire:0 "Reign Length"
- law_category_succession_term_empire_desc:0 "This law determines the length of the reign of the emperor."
+ law_category_succession_term_empire:0 "Продолжительность правления"
+ law_category_succession_term_empire_desc:0 "Этот закон определяет продолжительность правления императора."
  
- law_category_challenge_empire:0 "Succession Challenge Type"
- law_category_challenge_empire_desc:0 "Defines which challenge type will be used to determine the next Crown nation."
+ law_category_challenge_empire:0 "Тип вызова наследования"
+ law_category_challenge_empire_desc:0 "Определяет, какой тип вызова будет использоваться для определения следующей коронной нации."
  
- law_category_build_fleets_empire:0 "Imperial Fleet Construction"
- law_category_build_fleets_empire_desc:0 "This establishes who can construct ships for the Imperial Navy."
+ law_category_build_fleets_empire:0 "Строительство императорского флота"
+ law_category_build_fleets_empire_desc:0 "Это определяет, кто может строить корабли для Императорского флота."
  
- law_category_allow_subjects_to_join_empire:0 "Subject Membership"
- law_category_allow_subjects_to_join_empire_desc:0 "This determines if we allow subjects to join our empire."
+ law_category_allow_subjects_to_join_empire:0 "Членство субвассалов"
+ law_category_allow_subjects_to_join_empire_desc:0 "Это определяет, позволим ли мы подданным присоединиться к нашей империи."
  
- law_category_voting_weight_empire:0 "Vote Weight"
- law_category_voting_weight_empire_desc:0 "This determines the weight of 'votes' within the empire."
+ law_category_voting_weight_empire:0 "Вес голоса"
+ law_category_voting_weight_empire_desc:0 "Это определяет вес "голосов" внутри империи."
  
- law_category_war_declaration_vote_empire:0 "War Declaration"
- law_category_war_declaration_vote_empire_desc:0 "These laws determine how the empire shall declare war."
+ law_category_war_declaration_vote_empire:0 "Объявление войны"
+ law_category_war_declaration_vote_empire_desc:0 "Эти законы определяют, как империя должна объявлять войну."
  
- law_category_invite_members_vote_empire:0 "Invite Members"
- law_category_invite_members_vote_empire_desc:0 "These laws determine how we decide on accepting new subjects into the empire."
+ law_category_invite_members_vote_empire:0 "Приглашение членов"
+ law_category_invite_members_vote_empire_desc:0 "Эти законы определяют, как мы принимаем решение о приеме новых подданных в империю."
  
- law_category_kick_members_vote_empire:0 "Kick Members"
- law_category_kick_members_vote_empire_desc:0 "These laws determine how we decide eject subjects from our empire."
+ law_category_kick_members_vote_empire:0 "Исключение членов"
+ law_category_kick_members_vote_empire_desc:0 "Эти законы определяют, как мы решаем изгнать подданных из нашей империи."
  
- law_category_free_migration_empire:0 "Free Migration"
- law_category_free_migration_empire_desc:0 "These laws determine if we allow for the free migration of species throughout our empire."
+ law_category_free_migration_empire:0 "Свободная миграция"
+ law_category_free_migration_empire_desc:0 "Эти законы определяют, допускаем ли мы свободную миграцию видов по всей территории нашей империи."
  
- law_category_separate_treaties_empire:0 "Separate Treaties"
- law_category_separate_treaties_empire_desc:0 "This determines if we allow our subjects to have their own individual treaties with other nations."
+ law_category_separate_treaties_empire:0 "Отдельные договора"
+ law_category_separate_treaties_empire_desc:0 "Это определяет, разрешаем ли мы нашим подданным заключать свои собственные индивидуальные договоры с другими нациями."
  
- challenge_type_arena_combat_empire:0 "Arena Combat"
- challenge_type_arena_combat_empire_desc:0 "The only reasonable way to determine who should be leading our empire is to drop the rulers of all member nations into a large arena where they must fight to the death. The survivor, having proven their strength, should lead rule the empire.\n\n§YVictory will depend on:\n- The Ruler's Leader and Species traits\n- The Empire's Ethics and Civics§!\n\n§RGestalt Consciousness nations have no rulers that can participate and must forfeit.§!"
- 
- 
- challenge_type_psionic_battle_empire:0 "Psionic Battle"
- challenge_type_psionic_battle_empire_desc:0 "The matter of who should be leading our empire is too important to be decided within the mundane limits of our corporeal realm. Each nation will send their most powerful psychics to face off against one another in a titanic battle that will momentarily rend the very fabric of reality.\n\n§YVictory will depend on:\n- The number of Pops with psionic traits\n- The number of Pops with the Telepath job\n- Zro offerings§!\n\n§RNations without psionic Pops cannot participate and must forfeit.§!"
+ challenge_type_arena_combat_empire:0 "Бой на арене"
+ challenge_type_arena_combat_empire_desc:0 "Единственный разумный способ определить, кто должен возглавить нашу империю, - это вывести правителей всех стран-участниц на большую арену, где они должны сражаться не на жизнь, а на смерть. Выживший, доказав свою силу, должен возглавить правление империей.\n\n§YПобеда будет зависеть от:\n- Черт лидера и видовых черт\n- Гражданских моделей и этик империи§!\n\n§RУ наций с гештальт-сознанием нет правителей, которые могут участвовать и должны потерпеть поражение.§!"
  
  
- challenge_type_bidding_war_empire:0 "Golden Rule"
- challenge_type_bidding_war_empire_desc:0 "All the wonders of advanced civilizations can ultimately be traced back to one simple concept: available resources. The right to rule should not be measured by the size of the brain or the strength in the arm, but in the depth of the pocket.\n\n§YVictory will depend on:\n- Energy Credits (£energy£) available.\n- Energy Credits (£energy£) spent.§!\n\n§HBids are paid upfront. The final pot is at the winner's discretion.§!"
+ challenge_type_psionic_battle_empire:0 "Псионическая битва"
+ challenge_type_psionic_battle_empire_desc:0 "Вопрос о том, кто должен возглавить нашу империю, слишком важен, чтобы его можно было решать в обыденных пределах нашего материального царства. Каждая нация пошлет своих самых могущественных экстрасенсов сразиться друг с другом в титанической битве, которая на мгновение разорвет саму ткань реальности.\n\n§YПобеда будет зависеть от:\n- Количества поселений с псионическими чертами\n- Количества поселений с работой Телепата\n- Предложения Зро§!\n\n§RНации без псионических поселений не могут участвовать и должны потерпеть поражение.§!"
  
  
- challenge_type_thesis_empire:0 "Thesis Defense"
- challenge_type_thesis_empire_desc:0 "The title of Emperor must never be granted to the foolish or ignorant. Instead we choose trial by science: exposing the wisdom and insights of ruler and nation alike to the scrutiny of public examination, as each investigates an issue currently facing our empire.\n\n§YVictory will depend on:\n- The Ruler's Leader and Scientist traits\n- Technology level§!\n\n§HEach thesis will be reviewed within 60 days.§!\n\n§RNations which lack a ruler and at least one scientist at the time of the examination will forfeit.§!"
+ challenge_type_bidding_war_empire:0 "Золотое правило"
+ challenge_type_bidding_war_empire_desc:0 "Все чудеса развитых цивилизаций в конечном счете можно свести к одной простой концепции: доступные ресурсы. Право править должно измеряться не размером мозга или силой руки, а глубиной кармана.\n\n§YПобеда будет зависеть от:\n- Доступных (£energy£) энергокредитов.\n- Потраченных (£energy£) энергокредитов.§!\n\n§HСтавки оплачиваются авансом. Окончательный банк остается на усмотрение победителя.§!"
  
  
- law_category_centralization_empire:0 "Empire Centralization"
- law_category_centralization_empire_desc:0 "Some few laws are difficult even for an emperor to pass. The empire must further come together for some laws to become viable."
+ challenge_type_thesis_empire:0 "Защита тезиса"
+ challenge_type_thesis_empire_desc:0 "Титул императора никогда не должен предоставляться глупым или невежественным. Вместо этого мы выбираем испытание наукой: выставление мудрости и проницательности как правителя, так и нации на всеобщее обозрение, поскольку каждый из них исследует проблему, с которой в настоящее время сталкивается наша империя.\n\n§YПобеда будет зависеть от:\n- Черт лидера и ученого\n- Уровня технологий§!\n\n§HКаждая диссертация будет рассмотрена в течение 60 дней.§!\n\n§RНации, у которых на момент экзамена не было правителя и хотя бы одного ученого, проиграют.§!"
  
- centralization_minimal_empire:0 "Minimal"
- centralization_minimal_empire_desc:0 "The Crown's influence over its subject is kept to a minimum."
  
- centralization_low_empire:0 "Low"
- centralization_low_empire_desc:0 "The level of influence the Crown has over its subject states is kept very low."
+ law_category_centralization_empire:0 "Централизация империи"
+ law_category_centralization_empire_desc:0 "Некоторые законы трудно принять даже императору. Империя должна еще больше объединиться, чтобы некоторые законы стали жизнеспособными."
  
- centralization_medium_empire:0 "Medium"
- centralization_medium_empire_desc:0 "The Crown has a good deal of influence over its subjects, while still allowing some independent governing."
+ centralization_minimal_empire:0 "Минимальная"
+ centralization_minimal_empire_desc:0 "Влияние короны на своих подданных сведено к минимуму."
  
- centralization_high_empire:0 "High"
- centralization_high_empire_desc:0 "The Crown's influence over its subject states is almost absolute."
+ centralization_low_empire:0 "Низкая"
+ centralization_low_empire_desc:0 "Уровень влияния короны на подчиненные ей государства поддерживается на очень низком уровне."
  
- centralization_very_high_empire:0 "Very High"
- centralization_very_high_empire_desc:0 "The Crown has sovereign control over how subject states are governed."
+ centralization_medium_empire:0 "Средняя"
+ centralization_medium_empire_desc:0 "Корона имеет большое влияние на своих подданных, но при этом допускает некоторое независимое управление."
+ 
+ centralization_high_empire:0 "Высокая"
+ centralization_high_empire_desc:0 "Влияние короны на подвластные ей государства почти абсолютное."
+ 
+ centralization_very_high_empire:0 "Очень высокая"
+ centralization_very_high_empire_desc:0 "Корона обладает суверенным контролем над тем, как управляются подвластные государства."
 
 
 ##############################
@@ -400,38 +404,38 @@ l_russian:
  vfef.4002.A:0 "Good riddance."
 
 
- empire_propaganda_militarist:0 "Imperialist Propaganda"
- empire_propaganda_militarist_desc:0 "The Crown nation of our Empire is spreading militarist values in our nation."
+ empire_propaganda_militarist:0 "Империалистическая пропаганда"
+ empire_propaganda_militarist_desc:0 "Коронная нация нашей империи распространяет милитаристские ценности в нашей стране."
  empire_propaganda_pacifist:0 "$empire_propaganda_militarist$"
- empire_propaganda_pacifist_desc:0 "The Crown nation of our Empire is spreading pacifist values in our nation."
+ empire_propaganda_pacifist_desc:0 "Коронная нация нашей империи распространяет пацифистские ценности в нашей стране."
  empire_propaganda_xenophobe:0 "$empire_propaganda_militarist$"
- empire_propaganda_xenophobe_desc:0 "The Crown nation of our Empire is spreading xenophobia in our nation."
+ empire_propaganda_xenophobe_desc:0 "Коронная нация нашей империи распространяет ксенофобию в нашей стране."
  empire_propaganda_xenophile:0 "$empire_propaganda_militarist$"
- empire_propaganda_xenophile_desc:0 "The Crown nation of our Empire is spreading xenophilia in our nation."
+ empire_propaganda_xenophile_desc:0 "Коронная нация нашей империи распространяет ксенофилию в нашей стране."
  empire_propaganda_materialist:0 "$empire_propaganda_militarist$"
- empire_propaganda_materialist_desc:0 "The Crown nation of our Empire is spreading materialist values in our nation."
+ empire_propaganda_materialist_desc:0 "Коронная нация нашей империи распространяет материалистические ценности в нашей стране."
  empire_propaganda_spiritualist:0 "$empire_propaganda_militarist$"
- empire_propaganda_spiritualist_desc:0 "The Crown nation of our Empire is spreading spiritualist values in our nation."
+ empire_propaganda_spiritualist_desc:0 "Коронная нация нашей империи распространяет спиритуалистические ценности в нашей стране."
  empire_propaganda_egalitarian:0 "$empire_propaganda_militarist$"
- empire_propaganda_egalitarian_desc:0 "The Crown nation of our Empire is spreading egalitarian values in our nation."
+ empire_propaganda_egalitarian_desc:0 "Коронная нация нашей империи распространяет эгалитарные ценности в нашей стране."
  empire_propaganda_authoritarian:0 "$empire_propaganda_militarist$"
- empire_propaganda_authoritarian_desc:0 "The Crown nation of our Empire is spreading authoritarian values in our nation."
- empire_joint_operation_project_in_progress:0 "Imperial Monument Contributions"
+ empire_propaganda_authoritarian_desc:0 "Коронная нация нашей империи распространяет авторитарные ценности в нашей стране."
+ empire_joint_operation_project_in_progress:0 "Вклады в имперский памятник"
 
- d_federation_empire_monument_1:0 "Imperial Monument"
- d_federation_empire_monument_1_desc:0 "This spaceborne monument stands witness to the unity, strength and splendor of the interstellar empire that constructed it."
+ d_federation_empire_monument_1:0 "Имперский памятник"
+ d_federation_empire_monument_1_desc:0 "Этот космический монумент свидетельствует о единстве, силе и великолепии межзвездной империи, которая его построила."
 
  d_federation_empire_monument_2:0 "$d_federation_empire_monument_1$"
  d_federation_empire_monument_2_desc:0 "$d_federation_empire_monument_1_desc$"
 
  # Origins
- origin_vfef_empire: "Empire"
- origin_vfef_empire_desc:0 "This civilization established early contact with their immediate alien neighbors. Gradually, over the span of a century, they came to dominate their neighbors in an imperial fashion."
- origin_tooltip_empire_effects:0 "- Start as the leader of an §HEmpire§! federation with two additional members\n- Members will occupy any Guaranteed Habitable Worlds slots near your home system\n- Start with §HThe Federation§! tradition unlocked"
+ origin_vfef_empire: "Империя"
+ origin_vfef_empire_desc:0 "Эта цивилизация установила ранний контакт со своими непосредственными инопланетными соседями. Постепенно, в течение столетия, они стали доминировать над своими соседями по-имперски."
+ origin_tooltip_empire_effects:0 "- Начать в качестве лидера федерации типа §HИмперия§! с двумя дополнительными членами\n- Участники будут занимать любые гарантированные места в обитаемых мирах рядом с вашей домашней системой\n- Начать с открытой традицией §HФедерация§!"
  origin_tooltip_empire_subject_effects:0 "- Start as a member of an §HEmpire§! federation with two additional members"
 
- origin_vfef_empire_npc:0 "Empire Vassal"
- origin_vfef_empire_npc_desc:0 "This civilization established early contact with their immediate alien neighbors. Gradually, over the span of a century, they were made into a client state of one of those neighbors."
+ origin_vfef_empire_npc:0 "Вассал империи"
+ origin_vfef_empire_npc_desc:0 "Эта цивилизация установила ранний контакт со своими непосредственными инопланетными соседями. Постепенно, в течение столетия, они превратились в клиентское государство одного из этих соседей."
 
  # Overwrites
 
@@ -445,27 +449,27 @@ l_russian:
 
 
  # Federations Expanded
- law_category_FEDEXP_defend_associates_empire:0 "Associate Protection"
- law_category_FEDEXP_defend_associates_empire_desc:0 "A series of treaties regarding external guarantees of allied nations outside of the empire itself."
+ law_category_FEDEXP_defend_associates_empire:0 "Защита ассоциаций"
+ law_category_FEDEXP_defend_associates_empire_desc:0 "Ряд договоров, касающихся внешних гарантий союзных государств за пределами самой империи."
  
- FEDEXP_defend_associates_none_empire:0 "No Intervention"
- FEDEXP_defend_associates_none_empire_desc:0 "The Empire will not intervene to secure the protection of associates."
- FEDEXP_defend_associates_rivals_empire:0 "Threat Protection"
- FEDEXP_defend_associates_rivals_empire_desc:0 "The Empire will project some degree of intergalactic security, and subjects will only come to the aid of associates who are attacked by the Crown's rivals."
- FEDEXP_defend_associates_all_empire:0 "Imperial Guarantees"
- FEDEXP_defend_associates_all_empire_desc:0 "Empire associates are subjects in potential, and thus must be treated as such. They will be protected by the entire Empire from any and all kinds of aggressions."
+ FEDEXP_defend_associates_none_empire:0 "Без вмешательства"
+ FEDEXP_defend_associates_none_empire_desc:0 "Империя не будет вмешиваться, чтобы обеспечить защиту соратников."
+ FEDEXP_defend_associates_rivals_empire:0 "Защита от угроз"
+ FEDEXP_defend_associates_rivals_empire_desc:0 "Империя будет обеспечивать некоторую степень межгалактической безопасности, и подданные будут приходить на помощь только тем соратникам, на которых нападают соперники Короны."
+ FEDEXP_defend_associates_all_empire:0 "Имперские гарантии"
+ FEDEXP_defend_associates_all_empire_desc:0 "Партнеры Империи являются потенциальными подданными, и поэтому к ним следует относиться как к таковым. Они будут защищены всей Империей от любых видов агрессии."
  
- FEDEXP_defend_associates_rivals_empire_effect:0 "When a nation possessing §YAssociation Status§! with our Empire is attacked by any country declared by the Crown as a §YRival§!, all members of the empire will join the war on the side of the §YDefender§!."
- FEDEXP_defend_associates_all_empire_effect:0 "When a nation possessing §YAssociation Status§! with our Empire is attacked by any country, all members of the empire will join the war on the side of the §YDefender§!."
+ FEDEXP_defend_associates_rivals_empire_effect:0 "Когда нация, обладающая §Yстатусом Ассоциации§! с нашей империей подвергается нападению со стороны любой страны, объявленной Короной в качестве §YСоперника§!, все члены империи присоединятся к войне на стороне §YЗащитника§!."
+ FEDEXP_defend_associates_all_empire_effect:0 "Когда нация, обладающая §Yстатусом Ассоциации§! с нашей империей подвергается нападению со стороны любой страны, все члены империи присоединятся к войне на стороне §YЗащитника§!."
 
- FEDEXP_political_union_medium_empire_effect:0 "While §YCohesion§! is positive, subjects will try to follow each §YPolicy§! changed by the Crown.\n§YAny Policy altered by the Crown while this Law is active reduces Cohesion by 10 points for every suject of the empire.§!\nCohesion Penalty From Ethics: §R+50%§!"
- FEDEXP_political_union_high_empire_effect:0 "Only the Crown may alter most §YPolicies§!, and our subjects will always be forced to comply with changes.\n§YAny Policy altered by the Crown while this Law is active reduces Cohesion by 10 points for every subject of the Empire.§!\n§REnacting this Law represents a serious breach of autonomy, and immediately reduces Cohesion to -100.§!"
+ FEDEXP_political_union_medium_empire_effect:0 "Пока §YСплочённой§! положительная, субъекты будут стараться следовать каждой §YПолитике§! изменённой короной.\n§YЛюбая политика, измененная короной во время действия этого Закона, снижает сплоченность на 10 пунктов для каждого подданного империи.§!\nНаказание Сплоченности от этик: §R+50%§!"
+ FEDEXP_political_union_high_empire_effect:0 "Только Корона может изменить большинство §YПолитик§!, и наши подданные всегда будут вынуждены подчиняться изменениям.\n§YЛюбая политика, измененная Короной во время действия этого Закона, снижает сплоченность на 10 пунктов для каждого подданного Империи.§!\n§RПринятие этого закона представляет собой серьезное нарушение автономии и немедленно снижает сплоченность до -100.§!"
  
- FEDEXP_political_union_high_empire:0 "Supranational"
- FEDEXP_political_union_high_empire_desc:0 "For the sake of unified public policies, subjects cede the legislative competency of most issues to the authority of the Crown."
+ FEDEXP_political_union_high_empire:0 "Наднациональная"
+ FEDEXP_political_union_high_empire_desc:0 "Ради единой государственной политики подданные передают законодательную компетенцию по большинству вопросов полномочиям короны."
  
- FEDEXP_political_union_medium_empire:0 "Vinculative"
- FEDEXP_political_union_medium_empire_desc:0 "Despite our subjects retaining some autonomy, our advisors will attempt to persuade our subjects towards our way of thinking."
+ FEDEXP_political_union_medium_empire:0 "Винкулятивная"
+ FEDEXP_political_union_medium_empire_desc:0 "Несмотря на то, что наши подданные сохраняют некоторую автономию, наши консультанты попытаются склонить наших подданных к нашему образу мышления."
  
- FEDEXP_political_union_low_empire:0 "Domestic"
- FEDEXP_political_union_low_empire_desc:0 "Subjects of the Crown may decide their own domestic polices."
+ FEDEXP_political_union_low_empire:0 "Местная"
+ FEDEXP_political_union_low_empire_desc:0 "Подданные короны могут сами определять свою внутреннюю политику."

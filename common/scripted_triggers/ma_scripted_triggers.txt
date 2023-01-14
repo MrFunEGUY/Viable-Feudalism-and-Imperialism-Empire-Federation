@@ -1,11 +1,14 @@
 # My mods that use these triggers, ie this file.
 ################################################
 # Civil Wars
+# Fatherland: Colonial Empires
 # More Authorites
 # Useful Heirs
 # Vassals Expanded and Reworked
 # Viable Feudalism
 # We Require Borders
+
+has_more_authorities_triggers = { always = yes }
 
 is_megacorp = {
 	OR = {
@@ -34,23 +37,6 @@ is_dictatorial = {
 	}
 }
 
-is_autocracy = { #Power of one
-	OR = {
-		is_gestalt = yes
-		has_authority = auth_imperial
-		has_authority = auth_dictatorial
-		has_authority = auth_corporate_imperial
-		AND = {
-			has_authority = auth_democratic_dictatorship
-			is_authoritarian = yes
-		}
-		# Other Mods
-		has_authority = auth_corporate_fiefdom
-		has_authority = auth_tec_patrocorporate
-		has_authority = auth_bugged_corporate_imperial
-	}
-}
-
 is_imperial = { #Has Heir
 	OR = {
 		has_authority = auth_imperial
@@ -60,6 +46,21 @@ is_imperial = { #Has Heir
 		has_authority = auth_tec_patrocorporate
 		has_authority = auth_bugged_corporate_imperial
 		has_authority = auth_private
+	}
+}
+
+is_autocracy = { #Power of one
+	OR = {
+		is_gestalt = yes
+		is_imperial = yes
+		is_dictatorial = yes
+	}
+}
+
+is_imp_or_dict = { #Power of one
+	OR = {
+		is_imperial = yes
+		is_dictatorial = yes
 	}
 }
 

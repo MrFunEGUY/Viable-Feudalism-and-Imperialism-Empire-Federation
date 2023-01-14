@@ -44,6 +44,9 @@ on_five_year_random_pulse_country = {
 	}
 }
 
+# A war is beginning, executed for every country in the war.
+# Root = Country
+# From = War
 on_war_beginning = {
 	events = {
 		vfefpulse.2000			# Remove correct subjects from wars
