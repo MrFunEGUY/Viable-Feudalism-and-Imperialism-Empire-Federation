@@ -40,10 +40,8 @@ isolationist = {
 		OR = {
 			NOT = { is_same_species = owner_species }
 			owner = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				
+				is_pacifist = yes
 			}
 		}
 	}
@@ -71,19 +69,15 @@ isolationist = {
 		modifier = {
 			factor = 1.5
 
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			
+			is_xenophobe = yes
 		}
 
 		modifier = {
 			factor = 0.25
 
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			
+			is_militarist = yes
 		}
 
 		# Should really check for citizenship instead
@@ -540,18 +534,18 @@ isolationist = {
 			}
 
 			effect = {
-				add_modifier = { modifier = embraced_faction days = 3600 }
+				add_modifier = { modifier = embraced_faction years = 10 }
 				parameter:empire = {
 					shift_ethic = ethic_xenophobe
 					hidden_effect = {
 						every_pop_faction = { # embraces xenophobe ethos
 							limit = { is_pop_faction_type = supremacist }
-							add_modifier = { modifier = embraced_faction days = 3600 }
+							add_modifier = { modifier = embraced_faction years = 10 }
 						}
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						add_modifier = { modifier = embraced_faction_timer years = 10 }
 						every_pop_faction = {
 							limit = { NOT = { is_same_value = root } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
+							add_modifier = { modifier = embraced_another_faction years = 10 }
 						}
 					}
 				}

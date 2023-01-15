@@ -113,10 +113,7 @@ challenge_type_psionic_battle_empire = {
 			fail_text = "requires_psionic_pops"
 			any_member = {
 				any_owned_species = {
-					OR = {
-						has_trait = trait_latent_psionic
-						has_trait = trait_psionic
-					}
+					has_psionic_species_trait = yes
 				}
 			}
 		}
@@ -162,10 +159,7 @@ challenge_type_psionic_battle_empire = {
 			add = -100
 			NOT = {
 				any_owned_species = {
-					OR = {
-						has_trait = trait_latent_psionic
-						has_trait = trait_psionic
-					}
+					has_psionic_species_trait = yes
 				}			
 			}
 		}
@@ -174,10 +168,7 @@ challenge_type_psionic_battle_empire = {
 			add = 25
 			count_owned_pop = {
 				limit = {
-					OR = {
-						has_trait = trait_psionic
-						has_trait = trait_latent_psionic
-					}
+					has_psionic_species_trait = yes
 				}
 				count > 20
 			}
@@ -187,10 +178,7 @@ challenge_type_psionic_battle_empire = {
 			add = 30
 			count_owned_pop = {
 				limit = {
-					OR = {
-						has_trait = trait_psionic
-						has_trait = trait_latent_psionic
-					}
+					has_psionic_species_trait = yes
 				}
 				count > 40
 			}
@@ -200,10 +188,7 @@ challenge_type_psionic_battle_empire = {
 			add = 35
 			count_owned_pop = {
 				limit = {
-					OR = {
-						has_trait = trait_psionic
-						has_trait = trait_latent_psionic
-					}
+					has_psionic_species_trait = yes
 				}
 				count > 60
 			}
@@ -213,10 +198,7 @@ challenge_type_psionic_battle_empire = {
 			add = 40
 			count_owned_pop = {
 				limit = {
-					OR = {
-						has_trait = trait_psionic
-						has_trait = trait_latent_psionic
-					}
+					has_psionic_species_trait = yes
 				}
 				count > 80
 			}
@@ -226,10 +208,7 @@ challenge_type_psionic_battle_empire = {
 			add = 45
 			count_owned_pop = {
 				limit = {
-					OR = {
-						has_trait = trait_psionic
-						has_trait = trait_latent_psionic
-					}
+					has_psionic_species_trait = yes
 				}
 				count > 100
 			}

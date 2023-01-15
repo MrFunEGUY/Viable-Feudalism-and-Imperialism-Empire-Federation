@@ -171,7 +171,7 @@ special_project = {
 						}
 						set_timed_country_flag = {
 							flag = empire_challenge_failed
-							days = 3600
+							years = 10
 						}
 					}
 					random_member = {
@@ -269,7 +269,7 @@ special_project = {
 		}
 		set_timed_country_flag = {
 			flag = empire_challenge_failed
-			days = 5400
+			years = 15
 		}
 		if = {
 			limit = {
@@ -290,7 +290,7 @@ special_project = {
 					}
 					set_timed_country_flag = {
 						flag = empire_challenge_failed
-						days = 3600
+						years = 10
 					}
 				}
 				if = {

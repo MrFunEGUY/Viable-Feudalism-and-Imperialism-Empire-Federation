@@ -33,8 +33,6 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 
 - Need to be either authoritarian or have the Feudal Society civic to form the federation.
 
-- You can demand vassalization of empires of Equivalent strength if you have the Feudal Society civic.
-
 - Imperial (federation) Fleet has no hard cap.
 
 - Empire Federation subjects have -50% Diplomatic Weight.
@@ -63,26 +61,9 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 
 [hr][/hr]
 
-[h1]Compatibility & Patches:[/h1]
-
-- If you use Exalted Domination, make sure this mod is loaded after.
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2129609827]- Federations Expanded[/url]
-
-
-[hr][/hr]
-
-[h1]Recommended:[/h1]
-
-I thought of this mod while also using [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2075090029]Exalted Domination - Vassals and Tributaries.[/url] It adds more subject types. One vassal type it adds is Warden, which makes that vassal more militarily minded. Just more options for the administration of your empire.
-
-If you decide to  use this, make sure you grab the patch above!
-
-[hr][/hr]
-
 [h1]Credits:[/h1]
 
-- Credit to Mog Kupo for his code for being able to demand vassalization of equivalent empires. I just used the code from his amazing Exalted Domination mod. You should check it out.
+- Russian Localisation by [url=https://steamcommunity.com/profiles/99006664646]Anti4iteR[/url]. Thank you!
 
 - Crown and star vectors for the federation icon by Vecteezy
 
@@ -121,4 +102,4 @@ If you decide to  use this, make sure you grab the patch above!
 
 For the best support, find me at [b]#mrfuneguys-mods[/b] on the Stellaris Modding Den Discord:
 
-[url=https://discord.gg/REvVK2fjJF][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+[url=https://discord.gg/REvVK2fjJF][img]https://i.imgur.com/jZkBbLR.png[/img][/url]

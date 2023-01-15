@@ -35,7 +35,7 @@ country_event = {
 				}
 				set_timed_country_flag = {
 					flag = asked_to_leave_empire
-					days = 3600
+					years = 10
 				}
 				add_opinion_modifier = {
 					who = from
@@ -611,7 +611,7 @@ country_event = {
 					fromfrom.owner = {
 						add_modifier = {
 							modifier = empire_propaganda_militarist
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -619,7 +619,7 @@ country_event = {
 					fromfrom.owner = {
 						add_modifier = {
 							modifier = empire_propaganda_pacifist
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -627,7 +627,7 @@ country_event = {
 					fromfrom.owner = {
 						add_modifier = {
 							modifier = empire_propaganda_xenophobe
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -635,7 +635,7 @@ country_event = {
 					fromfrom.owner = {
 						add_modifier = {
 							modifier = empire_propaganda_xenophile
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -643,7 +643,7 @@ country_event = {
 					fromfrom.owner = {
 						add_modifier = {
 							modifier = empire_propaganda_materialist
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -651,7 +651,7 @@ country_event = {
 					fromfrom.owner = {
 						add_modifier = {
 							modifier = empire_propaganda_spiritualist
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -659,7 +659,7 @@ country_event = {
 					fromfrom.owner = {
 						add_modifier = {
 							modifier = empire_propaganda_egalitarian
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -667,7 +667,7 @@ country_event = {
 					fromfrom.owner = {
 						add_modifier = {
 							modifier = empire_propaganda_authoritarian
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -907,7 +907,7 @@ country_event = {
 					root = {
 						add_modifier = {
 							modifier = empire_propaganda_militarist
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -915,7 +915,7 @@ country_event = {
 					root = {
 						add_modifier = {
 							modifier = empire_propaganda_pacifist
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -923,7 +923,7 @@ country_event = {
 					root = {
 						add_modifier = {
 							modifier = empire_propaganda_xenophobe
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -931,7 +931,7 @@ country_event = {
 					root = {
 						add_modifier = {
 							modifier = empire_propaganda_xenophile
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -939,7 +939,7 @@ country_event = {
 					root = {
 						add_modifier = {
 							modifier = empire_propaganda_materialist
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -947,7 +947,7 @@ country_event = {
 					root = {
 						add_modifier = {
 							modifier = empire_propaganda_spiritualist
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -955,7 +955,7 @@ country_event = {
 					root = {
 						add_modifier = {
 							modifier = empire_propaganda_egalitarian
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -963,7 +963,7 @@ country_event = {
 					root = {
 						add_modifier = {
 							modifier = empire_propaganda_authoritarian
-							days = 7200
+							years = 20
 						}
 					}
 				}
@@ -1571,7 +1571,7 @@ country_event = {
 							NOT = { has_star_flag = neighbor_t1_first_colony }
 							has_owner = no
 							any_system_planet = {
-								is_ringworld = no
+								has_ringworld_output_boost = no
 								is_asteroid = no
 								is_star = no
 								is_moon = no
@@ -1590,7 +1590,7 @@ country_event = {
 						else = {
 							random_system_planet = {
 								limit = {
-									is_ringworld = no
+									has_ringworld_output_boost = no
 									is_asteroid = no
 									is_star = no
 									is_moon = no
@@ -1623,7 +1623,7 @@ country_event = {
 						else = {
 							random_system_planet = {
 								limit = {
-									is_ringworld = no
+									has_ringworld_output_boost = no
 									is_asteroid = no
 									is_star = no
 									is_moon = no
@@ -1638,7 +1638,7 @@ country_event = {
 							NOT = { has_star_flag = fed_origin_system_1 }
 							has_owner = no
 							any_system_planet = {
-								is_ringworld = no
+								has_ringworld_output_boost = no
 								is_asteroid = no
 								is_star = no
 								is_moon = no
@@ -1657,7 +1657,7 @@ country_event = {
 						else = {
 							random_system_planet = {
 								limit = {
-									is_ringworld = no
+									has_ringworld_output_boost = no
 									is_asteroid = no
 									is_star = no
 									is_moon = no
