@@ -46,12 +46,6 @@ emperor_diplo_weight_steal_5 = {
 	}
 }
 
-emperor_empire_cb_1 = {
-	leader_modifier = {
-		description = emperor_empire_cb_1_effect
-	}
-}
-
 # empire_federation_passive = {
 # 	members_modifier = {
 # 		description = empire_federation_passive_effect

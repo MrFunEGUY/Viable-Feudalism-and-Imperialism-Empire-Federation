@@ -6,6 +6,8 @@
 # l_russian:
 # l_braz_por:
 # l_simp_chinese:
+# l_japanese:
+# l_korean:
 
  IS_YOU:1 "This is you"
 
@@ -15,6 +17,8 @@
  vf_ef_federation_desc:0 "This system of government is structured around one Crown nation that wields almost absolute control over its subject nations."
 
  ACTION_RECIPIENT_NO_SATRAPY:0 "Recipient must not be a satrapy under the Great Khan."
+
+ requires_not_empire_federation: "They have no desire to give up their autonomy."
 
  war_goal_wg_leave_empire:0 "Leave Empire"
  war_goal_wg_leave_empire_desc:0 "War is waged to secede from the Empire. Other subjects who feel as we do may be invited to help us, though they themselves will not secede."
@@ -66,6 +70,9 @@
  emperor_diplo_weight_steal_5:0 "Imperial Affairs V"
  emperor_diplo_weight_steal_1_desc:0 "Subject nations may have a wide measure of control over their domestic affairs, but foreign affairs are the responsibility of the Crown."
  emperor_diplo_weight_steal_1_effect:1 "Every subject transfers §Y40%§! of their §Y$MOD_DIPLO_WEIGHT_MULT$§! to the Crown. For every empire level, this increases by §Y10%§!, such that at level 5 subjects transfer §Y80%§! of their §Y$MOD_DIPLO_WEIGHT_MULT$§! to the Crown."
+
+ emperor_diplo_weight_steal_2_desc:0 "$emperor_diplo_weight_steal_1_desc$"
+ emperor_diplo_weight_steal_2_effect:1 "$emperor_diplo_weight_steal_1_effect$"
  
  vf_ef_job_output_1:0 "Imperial Administration"
  vf_ef_job_output_1_desc:0 "The efficient and capable administration of our empire has led to massive improvements in production."
@@ -114,10 +121,6 @@
  # Casus Belli
  casus_belli_cb_empire:0 "Subjugation"
  
- # War Goals
- war_goal_wg_empire:0 "Imperialism"
- war_goal_wg_empire_desc:0 "War is waged to force the enemy to become a member of our empire.\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new subject of our Empire if they include at least one planet."
-
  imperialism_wg_tooltip: "§Y[from.GetName]§! becomes a Vassal under the §Y[root.GetName]§! and joins the §H[root.federation.GetName]§!"
 
  wg_empire_status_quo:0 "Our subject §Y[Root.GetName]§! has partially seceded from the §Y[From.GetAllianceName]§!"

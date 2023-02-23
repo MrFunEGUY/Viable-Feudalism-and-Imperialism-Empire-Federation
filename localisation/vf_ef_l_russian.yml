@@ -6,6 +6,8 @@
 l_russian:
 # l_braz_por:
 # l_simp_chinese:
+# l_japanese:
+# l_korean:
 
  IS_YOU:1 "Это вы"
 
@@ -70,6 +72,9 @@ l_russian:
  emperor_diplo_weight_steal_5:0 "Имперские Дела V"
  emperor_diplo_weight_steal_1_desc:0 "Подданные могут иметь широкий контроль на их собственных землях, но бремя дипломатических обязанностей за пределами империи лежит на плечах Короны."
  emperor_diplo_weight_steal_1_effect:1 "Каждый субъект передаёт §Y40%§! их §Y$MOD_DIPLO_WEIGHT_MULT$§! Короне. За каждый уровень империи, этот параметр увеличивается на §Y10%§!, вплоть до §Y80%§! их §Y$MOD_DIPLO_WEIGHT_MULT$§! Короне на пятом уровне."
+
+ emperor_diplo_weight_steal_2_desc:0 "$emperor_diplo_weight_steal_1_desc$"
+ emperor_diplo_weight_steal_2_effect:1 "$emperor_diplo_weight_steal_1_effect$"
  
  vf_ef_job_output_1:0 "Имперская администрация"
  vf_ef_job_output_1_desc:0 "Эффективная и способная администрация позволит нашей империи выйти на небывалый уровень промышленного прогресса."

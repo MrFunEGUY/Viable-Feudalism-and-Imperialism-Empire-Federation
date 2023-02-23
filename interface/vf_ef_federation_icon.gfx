@@ -5,11 +5,6 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-		name = "GFX_wg_empire"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isvassal.dds"
-	}
-	
-	spriteType = {
 		name = "GFX_wg_leave_empire"
 		texturefile = "gfx/interface/icons/diplomacy/diplomacy_integrating.dds"
 	}

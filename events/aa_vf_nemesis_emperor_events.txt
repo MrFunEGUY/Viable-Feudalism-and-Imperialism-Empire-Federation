@@ -91,9 +91,7 @@ country_event = {
 			shift_ethic = "ethic_fanatic_authoritarian"
 			force_add_civic = civic_galactic_sovereign_megacorp
 			if = {
-				limit = {
-					has_global_flag = more_authorities_activated
-				}
+				limit = { has_global_flag = more_authorities_activated }
 				change_government = {
 					authority = auth_corporate_imperial
 					cooldown = no

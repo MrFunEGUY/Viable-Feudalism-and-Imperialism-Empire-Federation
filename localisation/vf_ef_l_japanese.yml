@@ -1,12 +1,12 @@
 ﻿# l_english:
-l_spanish:
+# l_spanish:
 # l_german:
 # l_french:
 # l_polish:
 # l_russian:
 # l_braz_por:
 # l_simp_chinese:
-# l_japanese:
+l_japanese:
 # l_korean:
 
  IS_YOU:1 "This is you"
@@ -74,7 +74,6 @@ l_spanish:
  
  vf_ef_job_output_1:0 "Imperial Administration"
  vf_ef_job_output_1_desc:0 "The efficient and capable administration of our empire has led to massive improvements in production."
-
  
  emperor_unity_1:0 "Imperial Destiny"
  emperor_unity_1_desc:0 "The citizens of our empire are proud of what they have accomplished."
@@ -120,10 +119,6 @@ l_spanish:
  # Casus Belli
  casus_belli_cb_empire:0 "Subjugation"
  
- # War Goals
- war_goal_wg_empire:0 "Imperialism"
- war_goal_wg_empire_desc:0 "War is waged to force the enemy to become a member of our empire.\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new subject of our Empire if they include at least one planet."
-
  imperialism_wg_tooltip: "§Y[from.GetName]§! becomes a Vassal under the §Y[root.GetName]§! and joins the §H[root.federation.GetName]§!"
 
  wg_empire_status_quo:0 "Our subject §Y[Root.GetName]§! has partially seceded from the §Y[From.GetAllianceName]§!"
