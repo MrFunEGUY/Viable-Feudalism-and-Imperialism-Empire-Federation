@@ -34,9 +34,7 @@ country_event = {
 		if = {
 			limit = {
 				has_federation = yes
-				federation = {
-					NOT = { has_federation_type = vf_ef_federation }
-				}
+				federation = { NOT = { has_federation_type = vf_ef_federation } }
 			}
 			leave_alliance = { override_requirements = yes }
 		}
@@ -64,15 +62,21 @@ country_event = {
 			}
 		}
 		store_galactic_community_leader_backup_data = {
-			flag = yes
-			name = yes
-			ethics = yes
-			government = yes
+			FLAG = yes
+			NAME = yes
+			ETHICS = yes
+			GOVERNMENT = yes
 		}
 		if = {
 			limit = {
 				is_gestalt = no
 				is_megacorp = no
+			}
+			if = {
+				limit = {
+					has_origin = origin_legendary_leader_dictatorial
+				}
+				set_origin = origin_legendary_leader_imperial
 			}
 			shift_ethic = "ethic_fanatic_authoritarian"
 			change_government = {
@@ -173,9 +177,7 @@ country_event = {
 		federation = {
 			NAND = {
 				has_federation_type = vf_ef_federation
-				any_member = {
-					is_galactic_emperor = yes
-				}
+				any_member = { is_galactic_emperor = yes }
 			}
 		}
 	}

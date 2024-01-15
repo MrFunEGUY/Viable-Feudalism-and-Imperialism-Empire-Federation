@@ -51,7 +51,7 @@
  edict_empire_law_change_enabled:0 "Empire: Allow Law Changes"
  edict_empire_law_change_enabled_desc:0 "The emperor decrees that some laws may need to be revised."
 
- vf.ef.form.desc:0 "$fedev.500.intro$\n\nThis Empire will ensure the safety of its subjects through the enlightened leadership of its Crown nation.\n\nA new era of [fed_founder_1.GetAdj] dominance has begun!"
+ vf.ef.form.desc:0 "Let history record that on this day, §Y[fed_founder_1.ruler.GetTitle]§!  §H[fed_founder_1.ruler.GetName]§! was recognized as the official Head of State of the §H[fed_founder_2.GetName]§!, as the nation has been regorganized into a constituent member of a new supranational empire, the §H[Root.GetAllianceName]§!.  \n\nThis Empire will ensure the safety of its subjects through the enlightened leadership of its Crown nation.\n\nA new era of [fed_founder_1.GetAdj] dominance has begun!"
 
  # Perks
 

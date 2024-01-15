@@ -1,40 +1,254 @@
-# Feudal Empire: vassals can be anything
-create_empire_fed_member_1 = {
-	create_country = {
-		name_list = random
-		species = event_target:empire_planet_1_species
-		type = default
-		origin = "origin_vfef_empire_npc"
-		ignore_initial_colony_error = yes
-		day_zero_contact = no
-		randomize_ethos = yes
-		effect = {
-			if = {
-				limit = { has_civic = civic_fanatic_purifiers }
-				force_remove_civic = civic_fanatic_purifiers
+create_empire_member = {
+	# If the federation member species is a machine, make them a machine intelligence.
+	if = {
+		limit = {
+			event_target:fed_planet_$NUM$_species = {
+				is_species_class = MACHINE
 			}
-			save_event_target_as = empire_member_1
-			establish_communications_no_message = root
+		}
+		event_target:fed_planet_$NUM$_species = {
+			modify_species = {
+				species = this
+				add_trait = trait_machine_unit
+				effect = {
+					save_event_target_as = fed_planet_$NUM$_species
+				}
+			}
+		}
+		create_country = {
+			name_list = random
+			species = event_target:fed_planet_$NUM$_species
+			type = default
+			origin = "origin_default"
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			ethos = {
+				ethic = "ethic_gestalt_consciousness"
+			}
+			authority = auth_machine_intelligence
+			effect = {
+				machine_federation_member_civic_fix = yes
+				save_event_target_as = fed_member_$NUM$
+				establish_communications_no_message = root
+			}
 		}
 	}
-}
-
-create_empire_fed_member_2 = {
-	create_country = {
-		name_list = random
-		species = event_target:empire_planet_2_species
-		type = default
-		origin = "origin_vfef_empire_npc"
-		ignore_initial_colony_error = yes
-		day_zero_contact = no
-		randomize_ethos = yes
-		effect = {
-			if = {
-				limit = { has_civic = civic_fanatic_purifiers }
-				force_remove_civic = civic_fanatic_purifiers
+	else = {
+		random_list = {
+			1 = {	# Hive-Mind
+				modifier = {
+					factor = 10
+					root = { is_hive_empire = yes }
+				}
+				modifier = {
+					factor = 0
+					has_utopia = no
+				}
+				event_target:fed_planet_$NUM$_species = {
+					modify_species = {
+						species = this
+						add_trait = trait_hive_mind
+						effect = {
+							save_event_target_as = fed_planet_$NUM$_species
+						}
+					}
+				}
+				create_country = {
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_default"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					ethos = {
+						ethic = "ethic_gestalt_consciousness"
+					}
+					authority = auth_hive_mind
+					effect = {
+						hive_federation_member_civic_fix = yes
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
 			}
-			save_event_target_as = empire_member_2
-			establish_communications_no_message = root
+			1 = {	# Fanatic Spiritualist
+				modifier = {
+					factor = 10
+					root = { is_spiritualist = yes }
+				}
+				modifier = {
+					factor = 0
+					root = { is_machine_empire = yes }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_vfef_empire_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_spiritualist"
+						ethic = "ethic_fanatic_spiritualist"
+					}
+					effect = {
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
+			}
+			1 = {	# Fanatic Militarist
+				modifier = {
+					factor = 10
+					root = { is_militarist = yes }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_vfef_empire_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_militarist"
+						ethic = "ethic_fanatic_militarist"
+					}
+					effect = {
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
+			}
+			1 = {	# Fanatic Pacifist
+				modifier = {
+					factor = 10
+					root = { is_pacifist = yes }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_vfef_empire_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_pacifist"
+						ethic = "ethic_fanatic_pacifist"
+					}
+					effect = {
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
+			}
+			1 = {	# Fanatic Materialist
+				modifier = {
+					factor = 10
+					root = {
+						OR = {
+							is_materialist = yes
+							is_machine_empire = yes
+						}
+					}
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_vfef_empire_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_materialist"
+						ethic = "ethic_fanatic_materialist"
+					}
+					effect = {
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
+			}
+			1 = {	# Fanatic Authoritarian
+				modifier = {
+					factor = 10
+					root = { is_authoritarian = yes }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_vfef_empire_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_authoritarian"
+						ethic = "ethic_fanatic_authoritarian"
+					}
+					effect = {
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
+			}
+			1 = {	# Fanatic Egalitarian
+				modifier = {
+					factor = 10
+					root = { is_egalitarian = yes }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_vfef_empire_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_egalitarian"
+						ethic = "ethic_fanatic_egalitarian"
+					}
+					effect = {
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
+			}
+			5 = {	# Regular Xenophile
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_vfef_empire_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile" # intentional outlier
+					}
+					effect = {
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
+			}
 		}
 	}
 }

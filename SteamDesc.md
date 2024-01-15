@@ -11,7 +11,7 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 
 [h1]Origin:[/h1]
 
-- I've added a basic Empire federation origin to the game, similar to the vanilla federation origins. You'll start in an Empire federation, with 2 other members who will be your vassals. Howver, unlike vanilla federation origins where federation memebrs will have similar ethics to you, these vassals can be any combinations of ethics.
+- I've added a basic Empire federation origin to the game, similar to the vanilla federation origins. You'll start in an Empire federation, with 2 other members who will be your vassals. However, unlike vanilla federation origins where federation memebrs will have similar ethics to you, these vassals can be any combinations of ethics.
 
 
 [h1]Empire Project:[/h1]
@@ -31,13 +31,9 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 
 - [url=https://steamcommunity.com/workshop/filedetails/discussion/2114559224/2574319728561262634/]Perks and their effects.[/url]
 
-- Need to be either authoritarian or have the Feudal Society civic to form the federation.
+- Need to be either Authoritarian or have the Feudal Society civic to form the federation.
 
 - Imperial (federation) Fleet has no hard cap.
-
-- Empire Federation subjects have -50% Diplomatic Weight.
-
-- Members of the Empire federation have to ask to leave. If the Emperor denies their request, the only way for them to leave is for them to use the Independence casus belli and break free of their overlord.
 
 - Federation Law cooldown is 2 years. For some reason, the cooldown timer doesn't seem to show up. Sorry about that.
 
@@ -45,7 +41,7 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 
 ---
 
-- If you choose to invite someone to your Empire Federation (which will be extremely difficult as no one wants to give up their autonomy to an emperor), they don't automatically become your vassal. Doing this breaks the War in Heaven, so it's not an option. Thing is, I don't know how many sovereign nations would accept invites to become vassals in an empire as opposed to remaining independent, and I didn't make this mod with the intention of inviting independent nations. If you want to conquer an independent nation, use the Imperialism war-goal. On winning the war, they will become your vassal and a member of the federation. If you're now asking why I can do it for the war goal and not for a regular invite: no idea, game's screwy.
+- If you had the ability to choose to invite someone to your Empire Federation (which will be extremely difficult as no one wants to give up their autonomy to an emperor), they don't automatically become your vassal. Doing this breaks the War in Heaven, so it's not an option. You cannot invite independend empires to the Empire federation. Thing is, I don't know how many sovereign nations would accept invites to become vassals in an empire as opposed to remaining independent, and I didn't make this mod with the intention of inviting independent nations. A state does not usually willingly give up sovereignty. If you want them in your empire, subjugate them.
 
 - The voting benefits only extend to the AI, so this doesn't work well when other players are in the Empire federation. This is because other players can also propose votes, and because the AI will always say yes, they basically have the same voting power privilege as the emperor. I don't know a way around this at the moment.
 
@@ -86,17 +82,24 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2732567565]- No More Exclaves[/url]
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2183551683]- Vassals Expanded and Reworked - FunEFork[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581]- Ethics and Civics Alternative - FunEFork[/url]
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2956036384]- Galactic Bank - FunEFork[/url]
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2177145527]- Intervene: Help Friendly Nations - FunEFork[/url]
 
-===
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2183551683]- Vassals Expanded and Reworked - FunEFork[/url]
 
-[url=https://ko-fi.com/mrfuneguy][img]https://i.imgur.com/EEyEFg6.png[/img][/url]
+
+[hr][/hr]
 
 [url=https://www.patreon.com/mrfuneguy][img]https://i.imgur.com/pdV33j3.png[/img][/url]
 
-===
+[url=https://paypal.me/Abreuhaha][img]https://i.imgur.com/OwoGCrW.png[/img][/url]
+
+[url=https://ko-fi.com/mrfuneguy][img]https://i.imgur.com/EEyEFg6.png[/img][/url]
+
+[hr][/hr]
 
 [h1]Support:[/h1]
 

@@ -13,15 +13,6 @@ on_game_start_country = {
 	}
 }
 
-
-# This = subject
-# From = subject's overlord
-on_becoming_subject = {
-	events = {
-		# vfef.1000				# Join Overlord's Federation if laws permit
-	}
-}
-
 # This = empire trying to leave federation
 # From = empire who declined (federation leader)
 on_ask_to_leave_federation_declined = {

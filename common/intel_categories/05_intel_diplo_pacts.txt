@@ -51,6 +51,8 @@ overlord = {
 	intel_level = {
 		intel_economy_systems_low
 		intel_economy_colonies_low
+		specialist_subject_tier
+		resource_production
 	}
 }
 
@@ -62,6 +64,7 @@ commercial_pact = {
 	intel_level = {
 		intel_economy_relative_power
 		intel_economy_systems_med
+		intel_economy_colonies_high
 	}
 }
 
@@ -91,6 +94,12 @@ associate_status = {
 }
 
 embassy = {
+	intel_level = {
+		diplomatic_pacts
+	}
+}
+
+secret_fealty = {
 	intel_level = {
 		diplomatic_pacts
 	}
