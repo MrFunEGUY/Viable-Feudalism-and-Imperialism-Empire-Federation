@@ -11,7 +11,7 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 
 [h1]Origin:[/h1]
 
-- I've added a basic Empire federation origin to the game, similar to the vanilla federation origins. You'll start in an Empire federation, with 2 other members who will be your vassals. However, unlike vanilla federation origins where federation memebrs will have similar ethics to you, these vassals can be any combinations of ethics.
+- I've added a basic Empire federation origin to the game, similar to the vanilla federation origins. You'll start in an §YEmpire§! federation, with 2 other members who will be your vassals. However, unlike vanilla federation origins where federation memebrs will have similar ethics to you, these vassals can be any combinations of ethics.
 
 
 [h1]Empire Project:[/h1]

@@ -4,7 +4,7 @@ centralization_minimal = {
 	unlocks_centralization = 1
 	 potential = {
 		NOR = {
-			has_federation_type = vf_ef_federation
+			has_federation_type = empire_federation
 			has_federation_flag = special_federation
 		}
 	}
@@ -109,7 +109,7 @@ centralization_minimal = {
 centralization_low = {
 	potential = {
 		NOR = {
-			has_federation_type = vf_ef_federation
+			has_federation_type = empire_federation
 			has_federation_flag = special_federation
 		}
 	}
@@ -308,7 +308,7 @@ centralization_low = {
 centralization_medium = {
 	potential = {
 		NOR = {
-			has_federation_type = vf_ef_federation
+			has_federation_type = empire_federation
 			has_federation_flag = special_federation
 		}
 	}
@@ -515,7 +515,7 @@ centralization_medium = {
 centralization_high = {
 	potential = {
 		NOR = {
-			has_federation_type = vf_ef_federation
+			has_federation_type = empire_federation
 			has_federation_flag = special_federation
 		}
 	}
@@ -720,7 +720,7 @@ centralization_high = {
 centralization_very_high = {
 	potential = {
 		NOR = {
-			has_federation_type = vf_ef_federation
+			has_federation_type = empire_federation
 			has_federation_flag = special_federation
 		}
 	}
@@ -855,7 +855,7 @@ centralization_very_high = {
 centralization_minimal_empire = {
 	unlocks_centralization = 1
 	 potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	allow = {
 		custom_tooltip = {
@@ -964,7 +964,7 @@ centralization_minimal_empire = {
 centralization_low_empire = {
 	display_level = 2
 	 potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	unlocks_centralization = 2
 	allow = {
@@ -1121,7 +1121,7 @@ centralization_low_empire = {
 centralization_medium_empire = {
 	display_level = 3
 	 potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	unlocks_centralization = 3
 	allow = {
@@ -1286,7 +1286,7 @@ centralization_medium_empire = {
 centralization_high_empire = {
 	display_level = 4
 	 potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	unlocks_centralization = 4
 	allow = {
@@ -1448,7 +1448,7 @@ centralization_high_empire = {
 centralization_very_high_empire = {
 	display_level = 5
 	 potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	unlocks_centralization = 5
 	allow = {

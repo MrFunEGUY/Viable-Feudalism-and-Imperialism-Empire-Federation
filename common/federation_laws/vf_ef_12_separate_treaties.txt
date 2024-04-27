@@ -3,7 +3,7 @@
 treaties_separate_no_empire = {
 	potential = {
 		host_has_dlc = Federations
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	allow = {
 		custom_tooltip = {
@@ -65,7 +65,7 @@ treaties_separate_no_empire = {
 treaties_separate_yes_empire = {
 	potential = {
 		host_has_dlc = Federations
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	allow = {
 		custom_tooltip = {

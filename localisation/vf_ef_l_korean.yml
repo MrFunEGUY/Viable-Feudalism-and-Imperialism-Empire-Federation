@@ -13,8 +13,12 @@ l_korean:
 
  # Empire Federation
 
- vf_ef_federation:0 "Empire"
- vf_ef_federation_desc:0 "This system of government is structured around one Crown nation that wields almost absolute control over its subject nations."
+ empire_federation:0 "Empire"
+ empire_federation_desc:0 "This system of government is structured around one ['concept_crown_nation'] that wields almost absolute control over its subject nations."
+ concept_empire_federation: "$empire_federation$"
+ concept_empire_federation_desc: "$empire_federation_desc$"
+ concept_crown_nation: "Crown"
+ concept_crown_nation_desc: "The Crown is the ruling nation in an §YEmpire§! federation. They have sovereignty over the other nations in their federation."
 
  ACTION_RECIPIENT_NO_SATRAPY:0 "Recipient must not be a satrapy under the Great Khan."
 
@@ -49,13 +53,13 @@ l_korean:
  edict_empire_law_change_enabled:0 "Empire: Allow Law Changes"
  edict_empire_law_change_enabled_desc:0 "The emperor decrees that some laws may need to be revised."
 
- vf.ef.form.desc:0 "$fedev.500.intro$\n\nThis Empire will ensure the safety of its subjects through the enlightened leadership of its Crown nation.\n\nA new era of [fed_founder_1.GetAdj] dominance has begun!"
+ vf.ef.form.desc:0 "$fedev.500.intro$\n\nThis Empire will ensure the safety of its subjects through the enlightened leadership of its ['concept_crown_nation'].\n\nA new era of [fed_founder_1.GetAdj] dominance has begun!"
 
  # Perks
 
  empire_federation_passive:0 "Imperial Authority"
- empire_federation_passive_desc:0 "The strength of the empire must not be undermined by personal ambition."
- empire_federation_passive_effect:1 "Subjects cannot freely leave the empire. If their emperor refuses their request for independence, the subject gains the §YSecession§! Casus Belli and may try to secede from the empire."
+ empire_federation_passive_desc:0 "The strength of the empire must not be undermined by nationalist ambition."
+ empire_federation_passive_effect:1 "Subjects cannot freely leave the empire. If the ['concept_crown_nation'] refuses their request for independence, the subject may try to secede from the empire."
  
  emperor_empire_cb_1:0 "Imperial Might"
  emperor_empire_cb_1_desc:0 "For the glory of our empire, we shall expand."
@@ -118,8 +122,12 @@ l_korean:
  
  # Casus Belli
  casus_belli_cb_empire:0 "Subjugation"
+
+ # War Goals
+ war_goal_wg_empire:0 "Imperialism"
+ war_goal_wg_empire_desc:0 "War is waged to force a state to become a subject of our empire.\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new subject of our Empire if they include at least one planet."
  
- imperialism_wg_tooltip: "§Y[from.GetName]§! becomes a Vassal under the §Y[root.GetName]§! and joins the §H[root.federation.GetName]§!"
+ imperialism_wg_tooltip: "§Y[from.GetName]§! joins the §H[root.federation.GetName]§!"
 
  wg_empire_status_quo:0 "Our subject §Y[Root.GetName]§! has partially seceded from the §Y[From.GetAllianceName]§!"
  wg_empire_accept:0 "The empire is strong! §Y[From.GetName]§! is now a subject of the §Y[Root.GetAllianceName]§!"
@@ -202,15 +210,15 @@ l_korean:
  allow_subjects_to_join_yes_empire_desc:0 "Subjects are allowed to join the empire."
  
  succession_power_economy_empire:0 "Economy"
- succession_power_economy_empire_desc:0 "Our Crown nation should be chosen from the nation with the strongest §Yeconomy§!."
+ succession_power_economy_empire_desc:0 "Our ['concept_crown_nation'] should be chosen from the nation with the strongest §Yeconomy§!."
  succession_power_tech_empire:0 "Technology"
- succession_power_tech_empire_desc:0 "Our Crown nation should be chosen from the nation with the most advanced §Ytechnology§!."
+ succession_power_tech_empire_desc:0 "Our ['concept_crown_nation'] should be chosen from the nation with the most advanced §Ytechnology§!."
  succession_power_fleet_empire:0 "Fleets"
- succession_power_fleet_empire_desc:0 "Our Crown nation should be chosen from the nation with the largest and most powerful §Ynavy§!."
+ succession_power_fleet_empire_desc:0 "Our ['concept_crown_nation'] should be chosen from the nation with the largest and most powerful §Ynavy§!."
  succession_power_diplomatic_weight_empire:0 "Diplomatic Weight"
- succession_power_diplomatic_weight_empire_desc:0 "Our Crown nation should be chosen from the nation with the largest §YDiplomatic Weight§!."
+ succession_power_diplomatic_weight_empire_desc:0 "Our ['concept_crown_nation'] should be chosen from the nation with the largest §YDiplomatic Weight§!."
 
- disabled_for_empire:0 "§RA §Y$vf_ef_federation$§! cannot ban subject nations from joining.§!"
+ disabled_for_empire:0 "§RA §Y$empire_federation$§! cannot ban subject nations from joining.§!"
 
  # Federation Laws
  
@@ -218,16 +226,16 @@ l_korean:
  law_category_fleet_contribution_empire_desc:0 "These laws determine how much Naval Capacity our subjects contribute to the Imperial Navy."
 
  law_category_succession_type_empire:0 "Means of Succession"
- law_category_succession_type_empire_desc:0 "These laws determine how our Crown nation is chosen."
+ law_category_succession_type_empire_desc:0 "These laws determine how our ['concept_crown_nation'] is chosen."
  
  law_category_succession_power_empire:0 "Succession"
- law_category_succession_power_empire_desc:0 "These laws determines which category is measured for choosing the strongest Crown nation."
+ law_category_succession_power_empire_desc:0 "These laws determines which category is measured for choosing the strongest ['concept_crown_nation']."
 
  law_category_succession_term_empire:0 "Reign Length"
  law_category_succession_term_empire_desc:0 "This law determines the length of the reign of the emperor."
  
  law_category_challenge_empire:0 "Succession Challenge Type"
- law_category_challenge_empire_desc:0 "Defines which challenge type will be used to determine the next Crown nation."
+ law_category_challenge_empire_desc:0 "Defines which challenge type will be used to determine the next ['concept_crown_nation']."
  
  law_category_build_fleets_empire:0 "Imperial Fleet Construction"
  law_category_build_fleets_empire_desc:0 "This establishes who can construct ships for the Imperial Navy."
@@ -388,7 +396,7 @@ l_korean:
 
 
  vfef.4000.name:0 "Monument over [FromFrom.GetName] Cancelled"
- vfef.4000.desc:0 "With a change in the Crown nation, the old plans to glorify the rulers of the [FromFrom.Owner.GetName] have been duly shelved."
+ vfef.4000.desc:0 "With a change in the ['concept_crown_nation'], the old plans to glorify the rulers of the [FromFrom.Owner.GetName] have been duly shelved."
  vfef.4000.A:0 "The old king is dead; long live the king."
 
 
@@ -402,21 +410,21 @@ l_korean:
 
 
  empire_propaganda_militarist:0 "Imperialist Propaganda"
- empire_propaganda_militarist_desc:0 "The Crown nation of our Empire is spreading militarist values in our nation."
+ empire_propaganda_militarist_desc:0 "The ['concept_crown_nation'] of our Empire is spreading militarist values in our nation."
  empire_propaganda_pacifist:0 "$empire_propaganda_militarist$"
- empire_propaganda_pacifist_desc:0 "The Crown nation of our Empire is spreading pacifist values in our nation."
+ empire_propaganda_pacifist_desc:0 "The ['concept_crown_nation'] of our Empire is spreading pacifist values in our nation."
  empire_propaganda_xenophobe:0 "$empire_propaganda_militarist$"
- empire_propaganda_xenophobe_desc:0 "The Crown nation of our Empire is spreading xenophobia in our nation."
+ empire_propaganda_xenophobe_desc:0 "The ['concept_crown_nation'] of our Empire is spreading xenophobia in our nation."
  empire_propaganda_xenophile:0 "$empire_propaganda_militarist$"
- empire_propaganda_xenophile_desc:0 "The Crown nation of our Empire is spreading xenophilia in our nation."
+ empire_propaganda_xenophile_desc:0 "The ['concept_crown_nation'] of our Empire is spreading xenophilia in our nation."
  empire_propaganda_materialist:0 "$empire_propaganda_militarist$"
- empire_propaganda_materialist_desc:0 "The Crown nation of our Empire is spreading materialist values in our nation."
+ empire_propaganda_materialist_desc:0 "The ['concept_crown_nation'] of our Empire is spreading materialist values in our nation."
  empire_propaganda_spiritualist:0 "$empire_propaganda_militarist$"
- empire_propaganda_spiritualist_desc:0 "The Crown nation of our Empire is spreading spiritualist values in our nation."
+ empire_propaganda_spiritualist_desc:0 "The ['concept_crown_nation'] of our Empire is spreading spiritualist values in our nation."
  empire_propaganda_egalitarian:0 "$empire_propaganda_militarist$"
- empire_propaganda_egalitarian_desc:0 "The Crown nation of our Empire is spreading egalitarian values in our nation."
+ empire_propaganda_egalitarian_desc:0 "The ['concept_crown_nation'] of our Empire is spreading egalitarian values in our nation."
  empire_propaganda_authoritarian:0 "$empire_propaganda_militarist$"
- empire_propaganda_authoritarian_desc:0 "The Crown nation of our Empire is spreading authoritarian values in our nation."
+ empire_propaganda_authoritarian_desc:0 "The ['concept_crown_nation'] of our Empire is spreading authoritarian values in our nation."
  empire_joint_operation_project_in_progress:0 "Imperial Monument Contributions"
 
  d_federation_empire_monument_1:0 "Imperial Monument"
@@ -428,7 +436,7 @@ l_korean:
  # Origins
  origin_vfef_empire: "Empire"
  origin_vfef_empire_desc:0 "This civilization established early contact with their immediate alien neighbors. Gradually, over the span of a century, they came to dominate their neighbors in an imperial fashion."
- origin_tooltip_empire_effects:0 "- Start as the leader of an §HEmpire§! federation with two additional members\n- Members will occupy any Guaranteed Habitable Worlds slots near your home system\n- Start with §HThe Federation§! tradition unlocked"
+ origin_tooltip_empire_effects:0 "- Leader of an ['concept_empire_federation'] ['concept_federation']$empire_origin_end$"
  origin_tooltip_empire_subject_effects:0 "- Start as a member of an §HEmpire§! federation with two additional members"
 
  origin_vfef_empire_npc:0 "Empire Vassal"
@@ -436,7 +444,7 @@ l_korean:
 
  # Overwrites
 
- # FEDERATION_VIEW_ASK_TO_LEAVE_FEDERATION_BUTTON_DESC:0 "We will ask the Emperor for permission to leave the empire. If this request is refused, we will be granted the §YSecession§! Casus Belli against the Crown nation."
+ # FEDERATION_VIEW_ASK_TO_LEAVE_FEDERATION_BUTTON_DESC:0 "We will ask the Emperor for permission to leave the empire. If this request is refused, we will be granted the §YSecession§! Casus Belli against the ['concept_crown_nation']."
  
  # ACTION_ASK_TO_LEAVE_FEDERATION_TITLE:0 "Ask to Leave Empire"
 

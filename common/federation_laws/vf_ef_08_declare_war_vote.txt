@@ -3,7 +3,7 @@
 declare_war_unanimous_vote_empire = {
 	potential = { 
 		host_has_dlc = Federations
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	
 	allow = {
@@ -62,7 +62,7 @@ declare_war_unanimous_vote_empire = {
 			desc = federation_acceptance_empire_federation
 			add = 200
 			federation = {
-				has_federation_type = vf_ef_federation
+				has_federation_type = empire_federation
 			}
 		}
 		modifier = {
@@ -76,7 +76,7 @@ declare_war_unanimous_vote_empire = {
 declare_war_majority_vote_empire = {
 	potential = { 
 		host_has_dlc = Federations
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	
 	allow = {
@@ -147,7 +147,7 @@ declare_war_majority_vote_empire = {
 declare_war_president_vote_empire = {
 	potential = { 
 		host_has_dlc = Federations
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	
 	allow = {
@@ -212,7 +212,7 @@ declare_war_president_vote_empire = {
 			desc = federation_acceptance_empire_federation
 			add = 200
 			federation = {
-				has_federation_type = vf_ef_federation
+				has_federation_type = empire_federation
 			}
 		}
 		modifier = {

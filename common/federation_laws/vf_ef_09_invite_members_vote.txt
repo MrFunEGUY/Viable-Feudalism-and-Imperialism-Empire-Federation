@@ -2,7 +2,7 @@
 
 
 invite_members_unanimous_vote_empire = {
-	potential = { has_federation_type = vf_ef_federation }
+	potential = { has_federation_type = empire_federation }
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -52,7 +52,7 @@ invite_members_unanimous_vote_empire = {
 invite_members_president_vote_empire = {
 	potential = {
 		host_has_dlc = Federations
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	allow = {
 		custom_tooltip = {
@@ -115,7 +115,7 @@ invite_members_president_vote_empire = {
 invite_members_majority_vote_empire = {
 	potential = {
 		host_has_dlc = Federations
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	allow = {
 		custom_tooltip = {

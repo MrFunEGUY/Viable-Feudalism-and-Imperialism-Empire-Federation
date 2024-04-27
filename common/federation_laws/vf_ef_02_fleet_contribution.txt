@@ -30,7 +30,7 @@ fleet_contribution_none_empire = {
 		}
 	}
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	modifier = 	{
 		federation_fleet_contribution_factor = 0
@@ -136,7 +136,7 @@ fleet_contribution_low_empire = {
 		}
 	}
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	modifier = 	{
 		description = "fleet_contribution_empire_low_effect"
@@ -288,7 +288,7 @@ fleet_contribution_medium_empire = {
 		}
 	}
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	required_centralization = {
 		base = 1
@@ -434,7 +434,7 @@ fleet_contribution_high_empire = {
 		}
 	}
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	required_centralization = {
 		base = 1

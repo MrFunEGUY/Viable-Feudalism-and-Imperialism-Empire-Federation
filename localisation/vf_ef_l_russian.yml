@@ -13,8 +13,8 @@ l_russian:
 
  # Empire Federation
 
- vf_ef_federation:0 "Империя"
- vf_ef_federation_desc:0 "Эта система правления структурирована вокруг одной коронной нации, которая обладает почти абсолютным контролем над подвластными ей нациями."
+ empire_federation:0 "Империя"
+ empire_federation_desc:0 "Эта система правления структурирована вокруг одной коронной нации, которая обладает почти абсолютным контролем над подвластными ей нациями."
 
  ACTION_RECIPIENT_NO_SATRAPY:0 "Получатель не должен быть сатрапией при Великом хане."
 
@@ -218,7 +218,7 @@ l_russian:
  succession_power_diplomatic_weight_empire:0 "Дипломатический вес"
  succession_power_diplomatic_weight_empire_desc:0 "Наша коронная нация должна быть выбрана из нации с самым большим §Yдипломатическим весом§!."
 
- disabled_for_empire:0 "§R§Y$vf_ef_federation$§! не может запретить подчиненным нациям присоединяться.§!"
+ disabled_for_empire:0 "§R§Y$empire_federation$§! не может запретить подчиненным нациям присоединяться.§!"
  
  # Federation Laws
  
@@ -396,7 +396,7 @@ l_russian:
 
 
  vfef.4000.name:0 "Monument over [FromFrom.GetName] Cancelled"
- vfef.4000.desc:0 "With a change in the Crown nation, the old plans to glorify the rulers of the [FromFrom.Owner.GetName] have been duly shelved."
+ vfef.4000.desc:0 "With a change in the ['concept_crown_nation'], the old plans to glorify the rulers of the [FromFrom.Owner.GetName] have been duly shelved."
  vfef.4000.A:0 "The old king is dead; long live the king."
 
 
@@ -444,7 +444,7 @@ l_russian:
 
  # Overwrites
 
- # FEDERATION_VIEW_ASK_TO_LEAVE_FEDERATION_BUTTON_DESC:0 "We will ask the Emperor for permission to leave the empire. If this request is refused, we will be granted the §YSecession§! Casus Belli against the Crown nation."
+ # FEDERATION_VIEW_ASK_TO_LEAVE_FEDERATION_BUTTON_DESC:0 "We will ask the Emperor for permission to leave the empire. If this request is refused, we will be granted the §YSecession§! Casus Belli against the ['concept_crown_nation']."
  
  # ACTION_ASK_TO_LEAVE_FEDERATION_TITLE:0 "Ask to Leave Empire"
 

@@ -46,27 +46,33 @@ emperor_diplo_weight_steal_5 = {
 	}
 }
 
-# empire_federation_passive = {
-# 	members_modifier = {
-# 		description = empire_federation_passive_effect
-# 	}
-# 	on_activate = {
-# 		set_diplomacy_action_setting = {
-# 			action = action_ask_to_leave_federation
-# 			settings = {
-# 				acceptance_type = leader
-# 			}
-# 		}
-# 	}
-# 	on_deactivate = {
-# 		set_diplomacy_action_setting = {
-# 			action = action_ask_to_leave_federation 
-# 			settings = {
-# 				acceptance_type = default
-# 			}
-# 		}
-# 	}
-# }
+emperor_empire_cb_1 = {
+	leader_modifier = {
+		description = emperor_empire_cb_1_effect
+	}
+}
+
+empire_federation_passive = {
+	members_modifier = {
+		description = empire_federation_passive_effect
+	}
+	on_activate = {
+		set_diplomacy_action_setting = {
+			action = action_ask_to_leave_federation
+			settings = {
+				acceptance_type = leader
+			}
+		}
+	}
+	on_deactivate = {
+		set_diplomacy_action_setting = {
+			action = action_ask_to_leave_federation
+			settings = {
+				acceptance_type = default
+			}
+		} 
+	}
+}
 
 vf_ef_job_output_1 = {
 	members_modifier = {

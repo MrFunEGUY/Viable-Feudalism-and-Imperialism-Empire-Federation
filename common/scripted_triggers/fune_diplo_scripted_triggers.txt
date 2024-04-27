@@ -9,7 +9,6 @@
 # this = country, actor
 # from = country, recipient
 diplomacy_is_not_homicidal = {
-	optimize_memory
 	diplomacy_actor_is_not_homicidal = yes
 	diplomacy_recipient_is_not_homicidal = yes
 }
@@ -17,7 +16,6 @@ diplomacy_is_not_homicidal = {
 # this = country, actor
 # from = country, recipient
 diplomacy_is_not_homicidal_non_gestalt = {
-	optimize_memory
 	diplomacy_actor_is_not_homicidal_non_gestalt = yes
 	diplomacy_recipient_is_not_homicidal_non_gestalt = yes
 }
@@ -25,7 +23,6 @@ diplomacy_is_not_homicidal_non_gestalt = {
 # this = country, actor
 # from = country, recipient
 diplomacy_is_not_homicidal_gestalt = {
-	optimize_memory
 	diplomacy_actor_is_not_homicidal_gestalt = yes
 	diplomacy_recipient_is_not_homicidal_gestalt = yes
 }
@@ -33,7 +30,6 @@ diplomacy_is_not_homicidal_gestalt = {
 # this = country, actor
 # from = country, recipient
 diplomacy_actor_is_not_homicidal = {
-	optimize_memory
 	diplomacy_actor_is_not_homicidal_non_gestalt = yes
 	diplomacy_actor_is_not_homicidal_gestalt = yes
 }
@@ -41,7 +37,6 @@ diplomacy_actor_is_not_homicidal = {
 # this = country, actor
 # from = country, recipient
 diplomacy_recipient_is_not_homicidal = {
-	optimize_memory
 	diplomacy_recipient_is_not_homicidal_non_gestalt = yes
 	diplomacy_recipient_is_not_homicidal_gestalt = yes
 }
@@ -49,7 +44,6 @@ diplomacy_recipient_is_not_homicidal = {
 # this = country, actor
 # from = country, recipient
 diplomacy_recipient_is_not_pompous = {
-	optimize_memory
 	if = {
 		limit = {
 			from = { has_valid_civic = civic_pompous_purists }
@@ -77,7 +71,6 @@ diplomacy_recipient_is_not_pompous = {
 }
 
 diplomacy_recipient_is_not_pompous_bypass = {
-	optimize_memory
 	if = {
 		limit = {
 			from = { has_valid_civic = civic_pompous_purists }
@@ -108,7 +101,6 @@ diplomacy_recipient_is_not_pompous_bypass = {
 # this = country, actor
 # from = country, recipient
 diplomacy_is_not_inward_perfection = {
-	optimize_memory
 	if = {
 		limit = { from = { has_valid_civic = civic_inwards_perfection } }
 		if = {
@@ -139,7 +131,6 @@ diplomacy_is_not_inward_perfection = {
 # this = country, actor
 # from = country, recipient
 diplomacy_actor_is_not_homicidal_non_gestalt = {
-	optimize_memory
 	custom_tooltip = {
 		fail_text = "requires_actor_not_fanatic_purifiers"
 		OR = {
@@ -166,7 +157,6 @@ diplomacy_actor_is_not_homicidal_non_gestalt = {
 # this = country, actor
 # from = country, recipient
 diplomacy_actor_is_not_homicidal_gestalt = {
-	optimize_memory
 	custom_tooltip = {
 		fail_text = "requires_actor_not_devouring_swarm"
 		NOT = { has_valid_civic = civic_hive_devouring_swarm }
@@ -187,7 +177,6 @@ diplomacy_actor_is_not_homicidal_gestalt = {
 # this = country, actor
 # from = country, recipient
 diplomacy_recipient_is_not_homicidal_non_gestalt = {
-	optimize_memory
 	if = {
 		limit = {
 			has_intel = {
@@ -236,7 +225,6 @@ diplomacy_recipient_is_not_homicidal_non_gestalt = {
 # this = country, actor
 # from = country, recipient
 diplomacy_recipient_is_not_homicidal_gestalt = {
-	optimize_memory
 	if = {
 		limit = {
 			has_intel = {

@@ -142,7 +142,7 @@ hegemony_federation = {
 	}
 }
 
-vf_ef_federation = {
+empire_federation = {
 	intel_level = {
 		intel_economy_systems_low
 	}

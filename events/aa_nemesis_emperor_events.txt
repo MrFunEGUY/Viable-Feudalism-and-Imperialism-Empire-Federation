@@ -34,7 +34,7 @@ country_event = {
 		if = {
 			limit = {
 				has_federation = yes
-				federation = { NOT = { has_federation_type = vf_ef_federation } }
+				federation = { NOT = { has_federation_type = empire_federation } }
 			}
 			leave_alliance = { override_requirements = yes }
 		}
@@ -176,7 +176,7 @@ country_event = {
 		has_federation = yes
 		federation = {
 			NAND = {
-				has_federation_type = vf_ef_federation
+				has_federation_type = empire_federation
 				any_member = { is_galactic_emperor = yes }
 			}
 		}
@@ -192,7 +192,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					exists = federation #last empire to leave is no longer in a federation
+					has_federation = yes #last empire to leave is no longer in a federation
 				}
 				leave_alliance = { override_requirements = yes }
 			}

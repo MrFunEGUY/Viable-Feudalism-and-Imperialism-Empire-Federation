@@ -1,0 +1,7 @@
+concept_empire_federation = {
+	icon = "gfx/interface/icons/federation/federation_types/empire_federation.dds"
+}
+
+concept_crown_nation = {
+	icon = "gfx/interface/icons/federation/federation_types/empire_federation.dds"
+}

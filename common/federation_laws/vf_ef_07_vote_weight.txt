@@ -2,7 +2,7 @@
 
 vote_weight_equal_empire = {
 	potential = { 
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	allow = {
 		custom_tooltip = {
@@ -48,7 +48,7 @@ vote_weight_equal_empire = {
 vote_weight_diplomatic_empire = {
 	potential = {
 		host_has_dlc = Federations
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	allow = {
 		custom_tooltip = {

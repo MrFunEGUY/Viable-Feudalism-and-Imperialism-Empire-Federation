@@ -1,0 +1,9 @@
+# Empire
+part = {
+	location = 0
+	localization = "START_SCREEN_EMPIRE"
+
+	trigger = {
+		has_origin = origin_vfef_empire
+	}
+}

@@ -4,7 +4,7 @@
 @xp_to_level_4 = 4800
 @xp_to_level_5 = 9600
 
-vf_ef_federation = {
+empire_federation = {
 	base_intel = 10
 	icon = "GFX_empire_federation"
 	potential = {
@@ -21,7 +21,7 @@ vf_ef_federation = {
 		level_1 = { # Starting rank
 			experience = @xp_to_level_2 # Experience until next rank
 			perks = {
-				# empire_federation_passive
+				empire_federation_passive
 				cohesion_empire_join_1
 				emperor_diplo_weight_steal_1
 			}
@@ -30,6 +30,7 @@ vf_ef_federation = {
 		level_2 = {
 			experience = @xp_to_level_3
 			perks = {
+				emperor_empire_cb_1
 				empire_trade_value_1
 				empire_fleet_speed_1
 				emperor_diplo_weight_steal_2
@@ -84,12 +85,6 @@ vf_ef_federation = {
 	}
 	ai_weight = {
 		base = -50000
-
-		# modifier = {
-		# 	desc = federation_acceptance_empire_other
-		# 	add = -50000
-		# 	from = { is_subject = no }
-		# }
 
 		modifier = {
 			desc = federation_acceptance_empire

@@ -10,7 +10,6 @@
 has_ecaf_triggers = { always = yes }
 
 is_megacorp = {
-	optimize_memory
 	OR = {
 		has_authority = auth_corporate
 		has_authority = auth_corporate_imperial
@@ -28,7 +27,6 @@ is_megacorp = {
 }
 
 has_corporate_government = {
-	optimize_memory
 	OR = {
 		is_megacorp = yes
 		has_civic = civic_galactic_sovereign_megacorp
@@ -36,7 +34,6 @@ has_corporate_government = {
 }
 
 is_dictatorial = {
-	optimize_memory
 	OR = {
 		has_authority = auth_dictatorial
 		AND = {
@@ -47,7 +44,6 @@ is_dictatorial = {
 }
 
 is_imperial = { #Has Heir
-	optimize_memory
 	OR = {
 		has_authority = auth_imperial
 		has_authority = auth_corporate_imperial
@@ -60,7 +56,6 @@ is_imperial = { #Has Heir
 }
 
 is_autocracy = { #Power of one
-	optimize_memory
 	OR = {
 		is_gestalt = yes
 		is_imperial = yes
@@ -69,7 +64,6 @@ is_autocracy = { #Power of one
 }
 
 is_imp_or_dict = { #Power of one
-	optimize_memory
 	OR = {
 		is_imperial = yes
 		is_dictatorial = yes
@@ -77,7 +71,6 @@ is_imp_or_dict = { #Power of one
 }
 
 is_democracy = { #Power of many
-	optimize_memory
 	OR = {
 		has_authority = auth_democratic
 		has_authority = auth_strict_democratic

@@ -9,7 +9,7 @@
 
 namespace = origin
 
-# Common Ground/Hegemon Setup
+# Common Ground/Hegemon/Empire Setup
 country_event = {
 	id = origin.55
 	hide_window = yes
@@ -18,8 +18,11 @@ country_event = {
 	immediate = {
 		set_country_flag = first_contact_event
 		set_country_flag = Story2 # Already encountered spacefarers
-		add_tradition = tr_diplomacy_adopt
-		add_tradition = tr_diplomacy_the_federation
+		if = {
+			limit = { NOT = { has_origin = origin_vfef_empire } }
+			add_tradition = tr_diplomacy_adopt
+			add_tradition = tr_diplomacy_the_federation
+		}
 
 		# Replace prescripted ideal planets with barren worlds and spawn federation partners.
 		if = {
@@ -492,6 +495,83 @@ country_event = {
 			}
 			add_intel = {
 				amount = 40
+				who = event_target:fed_member_2
+			}
+			set_closed_borders = {
+				who = event_target:fed_member_2
+				status = no
+			}
+		}
+		if = {
+			limit = { has_origin = origin_vfef_empire}
+			federation = {
+				set_federation_type = empire_federation
+				set_federation_leader = root
+				set_name = random
+				remove_federation_flag = enable_federation_cooldowns
+				set_federation_law = centralization_minimal_empire
+				set_federation_law = succession_type_strongest_empire
+				set_federation_law = succession_power_diplomatic_weight_empire
+				set_federation_law = succession_term_status_change_empire
+				set_federation_law = fleet_contribution_low_empire
+				set_federation_law = federation_build_fleets_only_leader_empire
+				set_federation_law = vote_weight_diplomatic_empire
+				set_federation_law = declare_war_majority_vote_empire
+				set_federation_law = invite_members_president_vote_empire
+				set_federation_law = kick_members_president_vote_empire
+				set_federation_law = free_migration_no_empire
+				set_federation_law = treaties_separate_no_empire
+				set_federation_flag = enable_federation_cooldowns
+				set_federation_flag = vf_law_changes_enabled
+				add_federation_experience = 600
+				add_cohesion = 100
+			}
+			event_target:fed_member_1 = {
+				add_intel = {
+					amount = 30
+					who = root
+				}
+				add_intel = {
+					amount = 40
+					who = event_target:fed_member_2
+				}
+				set_closed_borders = {
+					who = root
+					status = no
+				}
+				set_closed_borders = {
+					who = event_target:fed_member_2
+					status = no
+				}
+			}
+			event_target:fed_member_2 = {
+				add_intel = {
+					amount = 30
+					who = root
+				}
+				add_intel = {
+					amount = 40
+					who = event_target:fed_member_1
+				}
+				set_closed_borders = {
+					who = root
+					status = no
+				}
+				set_closed_borders = {
+					who = event_target:fed_member_1
+					status = no
+				}
+			}
+			add_intel = {
+				amount = 60
+				who = event_target:fed_member_1
+			}
+			set_closed_borders = {
+				who = event_target:fed_member_1
+				status = no
+			}
+			add_intel = {
+				amount = 60
 				who = event_target:fed_member_2
 			}
 			set_closed_borders = {

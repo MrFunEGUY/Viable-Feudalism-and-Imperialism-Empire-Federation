@@ -74,7 +74,7 @@ special_project = {
 			limit = { #no longer federation leader
 				is_federation_leader = no
 				has_federation = yes
-				exists = federation
+				has_federation = yes
 			}
 			federation = {
 				set_variable = {

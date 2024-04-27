@@ -1,6 +1,6 @@
 law_category_centralization = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	centralization = yes
 	laws = {
@@ -14,7 +14,7 @@ law_category_centralization = {
 
 law_category_fleet_contribution = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	laws = {
 		fleet_contribution_none
@@ -37,7 +37,7 @@ law_category_fleet_contribution = {
 
 law_category_succession_type = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	laws = {
 		succession_type_rotation
@@ -50,7 +50,7 @@ law_category_succession_type = {
 
 law_category_succession_power = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 		OR = {
 			has_federation_law = succession_type_strongest
 			has_federation_law = succession_type_strongest_hegemony
@@ -66,7 +66,7 @@ law_category_succession_power = {
 
 law_category_succession_term = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	show_succession_date = yes
 	laws = {
@@ -80,7 +80,7 @@ law_category_succession_term = {
 
 law_category_challenge = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 		or = {
 			has_federation_law = succession_type_challenge
 		}
@@ -97,7 +97,7 @@ law_category_build_fleets = {
 	potential = {
 		NOT = {
 			has_federation_law = fleet_contribution_none
-			has_federation_type = vf_ef_federation
+			has_federation_type = empire_federation
 		}
 	}
 	laws = {
@@ -108,7 +108,7 @@ law_category_build_fleets = {
 
 law_category_allow_subjects_to_join = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	laws = {
 		allow_subjects_to_join_no
@@ -118,7 +118,7 @@ law_category_allow_subjects_to_join = {
 
 law_category_voting_weight = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	laws = {
 		vote_weight_equal
@@ -128,7 +128,7 @@ law_category_voting_weight = {
 
 law_category_war_declaration_vote = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	laws = {
 		declare_war_unanimous_vote
@@ -140,7 +140,7 @@ law_category_war_declaration_vote = {
 
 law_category_invite_members_vote = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	laws = {
 		invite_members_unanimous_vote
@@ -152,7 +152,7 @@ law_category_invite_members_vote = {
 
 law_category_kick_members_vote = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	laws = {
 		kick_members_majority_vote
@@ -163,7 +163,7 @@ law_category_kick_members_vote = {
 
 law_category_free_migration = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	laws = {
 		free_migration_no
@@ -173,7 +173,7 @@ law_category_free_migration = {
 
 law_category_separate_treaties = {
 	potential = {
-		NOT = { has_federation_type = vf_ef_federation }
+		NOT = { has_federation_type = empire_federation }
 	}
 	laws = {
 		treaties_separate_yes
@@ -187,7 +187,7 @@ law_category_separate_treaties = {
 
 law_category_centralization_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	centralization = yes
 	laws = {
@@ -201,7 +201,7 @@ law_category_centralization_empire = {
 
 law_category_fleet_contribution_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	laws = {
 		fleet_contribution_none_empire
@@ -213,7 +213,7 @@ law_category_fleet_contribution_empire = {
 
 law_category_succession_type_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	laws = {
 		succession_type_rotation_empire
@@ -257,7 +257,7 @@ law_category_challenge_empire = {
 
 law_category_build_fleets_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 		NOT = {
 			has_federation_law = fleet_contribution_none_empire
 		}
@@ -270,7 +270,7 @@ law_category_build_fleets_empire = {
 
 law_category_voting_weight_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	laws = {
 		vote_weight_equal_empire
@@ -280,7 +280,7 @@ law_category_voting_weight_empire = {
 
 law_category_war_declaration_vote_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	laws = {
 		declare_war_unanimous_vote_empire
@@ -291,7 +291,7 @@ law_category_war_declaration_vote_empire = {
 
 law_category_invite_members_vote_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	laws = {
 		invite_members_unanimous_vote_empire
@@ -302,7 +302,7 @@ law_category_invite_members_vote_empire = {
 
 law_category_kick_members_vote_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	laws = {
 		kick_members_majority_vote_empire
@@ -312,7 +312,7 @@ law_category_kick_members_vote_empire = {
 
 law_category_free_migration_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	laws = {
 		free_migration_no_empire
@@ -322,7 +322,7 @@ law_category_free_migration_empire = {
 
 law_category_separate_treaties_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	laws = {
 		treaties_separate_no_empire
@@ -332,7 +332,7 @@ law_category_separate_treaties_empire = {
 
 law_category_succession_term_empire = {
 	potential = {
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	show_succession_date = yes
 	laws = {

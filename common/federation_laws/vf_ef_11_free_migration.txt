@@ -1,7 +1,7 @@
 @cooldown = 7
 
 free_migration_no_empire = {
-	potential = { has_federation_type = vf_ef_federation }
+	potential = { has_federation_type = empire_federation }
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -53,7 +53,7 @@ free_migration_no_empire = {
 free_migration_yes_empire = {
 	potential = {
 		host_has_dlc = Federations
-		has_federation_type = vf_ef_federation
+		has_federation_type = empire_federation
 	}
 	allow = {
 		custom_tooltip = {

@@ -1,0 +1,259 @@
+wg_leave_empire = {
+	casus_belli = cb_secession
+
+	hide_if_no_cb = yes
+	set_defender_wargoal = wg_assert_empire
+
+	allowed_peace_offers = {
+		status_quo
+		surrender
+		demand_surrender
+	}
+
+	potential = {
+		federation = { has_federation_type = empire_federation }
+	}
+	possible = {
+		federation = { has_federation_type = empire_federation }
+	}
+
+	on_status_quo = {
+		custom_tooltip = wg_leave_hegemony_status_quo
+		hidden_effect = {
+			leave_alliance = { override_requirements = yes }
+			fromfrom = {
+				every_war_participant = {
+					limit = {
+						fromfrom = {
+							is_war_participant = {
+								who = prev
+								side = Root
+							}
+						}
+						has_overlord = Root.from
+					}
+					set_subject_of = { who = none }
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		custom_tooltip = wg_leave_hegemony_accept
+		hidden_effect = {
+			leave_alliance = { override_requirements = yes }
+			every_system_within_border = {
+				limit = { from = { has_claim = prev } }
+				remove_claims = { who = from }
+			}
+			fromfrom = {
+				every_war_participant = {
+					limit = {
+						fromfrom = {
+							is_war_participant = {
+								who = prev
+								side = Root
+							}
+						}
+						has_overlord = Root.from
+					}
+					set_subject_of = { who = none }
+					every_system_within_border = {
+						limit = { Root.from = { has_claim = prev } }
+						remove_claims = { who = Root.from }
+					}
+				}
+			}
+		}
+	}
+
+	on_wargoal_set = {
+		every_system_within_border = {
+			limit = { NOT = { from = { has_claim = prev } } }
+			add_claims = { who = from }
+		}
+		remove_country_flag = asked_to_leave_empire
+		leave_alliance = { override_requirements = yes } # Temporary leave federation during war
+		if = {
+			limit = {
+				has_opinion_modifier = {
+					who = from
+					modifier = opinion_denied_to_leave_empire
+				}
+			}
+			remove_opinion_modifier = {
+				who = from
+				modifier = opinion_denied_to_leave_empire
+			}
+		}
+		if = {
+			limit = {
+				from = {
+					has_opinion_modifier = {
+						who = root
+						modifier = opinion_wanted_to_leave_empire
+					}
+				}
+			}
+			from = {
+				remove_opinion_modifier = {
+					who = root
+					modifier = opinion_wanted_to_leave_empire
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+wg_assert_empire = {
+	casus_belli = cb_event
+
+	cede_claims = occupied_only
+
+	allowed_peace_offers = {
+		status_quo
+		surrender
+		demand_surrender
+	}
+
+	potential = {
+		always = no # event only
+	}
+	possible = {
+		always = yes
+	}
+
+	on_accept = {
+		custom_tooltip = wg_assert_empire_accept
+		hidden_effect = {
+			from = {
+				every_system_within_border = {
+					limit = { root = { has_claim = prev } }
+					remove_claims = { who = root }
+				}
+				join_alliance = { who = root override_requirements = yes }
+			}
+			if = {
+				limit = {
+					has_opinion_modifier = {
+						who = from
+						modifier = opinion_broke_empire
+					}
+				}
+				remove_opinion_modifier = {
+					who = from
+					modifier = opinion_broke_empire
+				}
+			}
+			add_opinion_modifier = {
+				who = from
+				modifier = opinion_tried_to_secede
+			}
+			from = {
+				add_opinion_modifier = {
+					who = root
+					modifier = opinion_forced_to_remain
+				}
+				set_timed_country_flag = {
+					flag = failed_empire_rebellion
+					days = 7200
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+wg_empire = {
+	casus_belli = cb_empire
+
+	hide_if_no_cb = yes
+	release_occupied_systems_on_status_quo = yes
+
+	allowed_peace_offers = {
+		status_quo
+		surrender
+		demand_surrender
+	}
+
+	surrender_acceptance = -75
+
+	potential = {
+		has_total_war_cb = no
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = has_claimed_all_systems
+			from = {
+				is_subject = no
+				OR = {
+					is_country_type_with_subjects = yes
+					is_country_type = ascended_empire
+					is_country_type = lost_empire
+				}
+				any_owned_planet = {
+					is_colony = yes
+					root = { NOT = { has_claim = prev.solar_system } }
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		custom_tooltip = imperialism_wg_tooltip
+		hidden_effect = {
+			from = {
+				add_threat = {
+					who = root
+					amount = 0.5
+				}
+			}
+		}
+		from = {
+			join_alliance = { who = root override_requirements = yes }
+			if = {
+				limit = { is_overlord = yes }
+				every_subject = {
+					limit = { is_country_type_with_subjects = yes }
+					join_alliance = { who = root override_requirements = yes }
+				}
+			}
+		}
+	}
+
+	on_status_quo = {
+		if = {
+			limit = {
+				exists = last_created_country
+				last_created_country = { has_country_flag = released_empire }
+			}
+
+			last_created_country = {
+				set_origin_effect = yes
+				join_alliance = { who = root override_requirements = yes }
+			}
+
+			if = {
+				limit = {
+					root = { is_megacorp = yes }
+					last_created_country = { is_megacorp = yes }
+				}
+				last_created_country = {
+					set_merchant_government_effect = yes
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}

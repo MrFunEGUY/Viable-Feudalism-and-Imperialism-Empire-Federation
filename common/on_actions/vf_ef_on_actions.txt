@@ -21,13 +21,6 @@ on_ask_to_leave_federation_declined = {
 	}
 }
 
-# this = country
-on_yearly_pulse_country = {
-	events = {
-		vfefpulse.1000
-	}
-}
-
 # this = country, fired via action.220 from on_five_year_pulse_country
 on_five_year_random_pulse_country = {
 	random_events = {
@@ -47,8 +40,6 @@ on_war_beginning = {
 # this = country
 on_monthly_pulse_country = {
 	events = {
-		vfefpulse.9000			# Potential Bugfix
 		vfefpulse.3000			# New vassal joins Empire
-		vfefpulse.4000			# Autuonoms State leaves Empire
 	}
 }

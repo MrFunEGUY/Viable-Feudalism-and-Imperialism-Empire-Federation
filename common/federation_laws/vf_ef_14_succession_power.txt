@@ -58,7 +58,7 @@ succession_power_economy_empire = {
 			desc = federation_acceptance_empire_federation
 			add = 200
 			federation = {
-				has_federation_type = vf_ef_federation
+				has_federation_type = empire_federation
 			}
 		}
 		modifier = {
@@ -151,7 +151,7 @@ succession_power_diplomatic_weight_empire = {
 			desc = federation_acceptance_empire_federation
 			add = 200
 			federation = {
-				has_federation_type = vf_ef_federation
+				has_federation_type = empire_federation
 			}
 		}
 		modifier = {
@@ -160,12 +160,7 @@ succession_power_diplomatic_weight_empire = {
 		}
 		modifier = {
 			add = 50
-			federation = { 
-				OR = {
-					has_federation_type = default_federation
-					has_federation_type = hegemony_federation				
-				}
-			}
+			federation = { is_domineering_federation_type = yes }
 		}
 		modifier = {
 			add = 100
@@ -251,7 +246,7 @@ succession_power_tech_empire = {
 			desc = federation_acceptance_empire_federation
 			add = 200
 			federation = {
-				has_federation_type = vf_ef_federation
+				has_federation_type = empire_federation
 			}
 		}
 		modifier = {
@@ -338,7 +333,7 @@ succession_power_fleet_empire = {
 			desc = federation_acceptance_empire_federation
 			add = 200
 			federation = {
-				has_federation_type = vf_ef_federation
+				has_federation_type = empire_federation
 			}
 		}
 		modifier = {

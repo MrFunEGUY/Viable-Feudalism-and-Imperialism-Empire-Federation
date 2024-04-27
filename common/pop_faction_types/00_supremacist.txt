@@ -441,7 +441,7 @@ supremacist = {
 			owner = {
 				OR = {
 					has_federation = no
-					federation = { has_federation_type = vf_ef_federation }
+					federation = { has_federation_type = empire_federation }
 				}
 			}
 		}

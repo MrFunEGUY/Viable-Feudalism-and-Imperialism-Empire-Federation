@@ -1,0 +1,11 @@
+
+#######################################
+### Viable Feudalism by MrFunEGUY ###
+#######################################
+
+is_domineering_federation_type = {
+	OR = {
+		has_federation_type = empire_federation
+		has_federation_type = hegemony_federation
+	}
+}

@@ -9,6 +9,56 @@
 # Federation Events
 namespace = fedev
 
+### First Federation Formed Events
+country_event = {
+	id = fedev.499
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		federation = {
+			any_member = {
+				is_ai = no
+				NOR = {
+					has_origin = origin_common_ground
+					has_origin = origin_hegemon
+					has_origin = origin_vfef_empire
+				}
+			}
+			count_member = {
+				count = 2
+			}
+		}
+	}
+
+	immediate = {
+		save_event_target_as = fed_founder_1
+		from = { save_event_target_as = fed_founder_2 }
+		federation = {
+			every_member = {
+				limit = {
+					is_ai = no
+					NOR = {
+						has_origin = origin_legendary_leader_dictatorial
+						has_origin = origin_legendary_leader_imperial
+					}
+				}
+				country_event = { id = fedev.500 }
+			}
+			every_member = {
+				limit = {
+					OR = {
+						has_origin = origin_legendary_leader_dictatorial
+						has_origin = origin_legendary_leader_imperial
+					}
+				}
+				country_event = { id = paragon.5023 }
+			}
+		}
+	}
+}
+
 ### First Federation Formed Event
 country_event = {
 	id = fedev.500
@@ -45,7 +95,7 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			federation = { has_federation_type = vf_ef_federation }
+			federation = { has_federation_type = empire_federation }
 		}
 		text = "vf.ef.form.desc"
 	}
