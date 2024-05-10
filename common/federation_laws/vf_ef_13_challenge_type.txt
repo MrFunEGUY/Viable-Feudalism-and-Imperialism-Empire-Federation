@@ -9,7 +9,7 @@ challenge_type_arena_combat_empire = {
 				AND = {
 					NOT = { has_federation_law = challenge_type_arena_combat_empire }
 					has_modifier = federation_law_category_challenge_cooldown
-					has_any_federation_law_in_category = law_category_empire_challenge
+					has_any_federation_law_in_category = law_category_succession_type_empire
 				}
 			}
 		}
@@ -122,7 +122,7 @@ challenge_type_psionic_battle_empire = {
 				AND = {
 					NOT = { has_federation_law = challenge_type_psionic_battle_empire }
 					has_modifier = federation_law_category_challenge_cooldown
-					has_any_federation_law_in_category = law_category_empire_challenge
+					has_any_federation_law_in_category = law_category_succession_type_empire
 				}
 			}
 		}
@@ -240,7 +240,7 @@ challenge_type_bidding_war_empire = {
 				AND = {
 					NOT = { has_federation_law = challenge_type_bidding_war_empire }
 					has_modifier = federation_law_category_challenge_cooldown
-					has_any_federation_law_in_category = law_category_empire_challenge
+					has_any_federation_law_in_category = law_category_succession_type_empire
 				}
 			}
 		}
@@ -310,7 +310,7 @@ challenge_type_thesis_empire = {
 				AND = {
 					NOT = { has_federation_law = challenge_type_thesis_empire }
 					has_modifier = federation_law_category_challenge_cooldown
-					has_any_federation_law_in_category = law_category_empire_challenge
+					has_any_federation_law_in_category = law_category_succession_type_empire
 				}
 			}
 		}

@@ -13,7 +13,6 @@ empire_federation = {
 	allow = {
 		OR = {
 			is_authoritarian = yes
-			is_gestalt = yes
 			has_civic = civic_feudal_realm
 		}
 	}

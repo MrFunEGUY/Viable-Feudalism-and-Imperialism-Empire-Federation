@@ -59,7 +59,7 @@ l_korean:
 
  empire_federation_passive:0 "Imperial Authority"
  empire_federation_passive_desc:0 "The strength of the empire must not be undermined by nationalist ambition."
- empire_federation_passive_effect:1 "Subjects cannot freely leave the empire. If the ['concept_crown_nation'] refuses their request for independence, the subject may try to secede from the empire."
+ empire_federation_passive_effect:1 "Members cannot freely leave the empire. If the ['concept_crown_nation'] refuses their request for independence, they will gain the §YSecession§! Casus Belli."
  
  emperor_empire_cb_1:0 "Imperial Might"
  emperor_empire_cb_1_desc:0 "For the glory of our empire, we shall expand."
@@ -437,14 +437,12 @@ l_korean:
  origin_vfef_empire: "Empire"
  origin_vfef_empire_desc:0 "This civilization established early contact with their immediate alien neighbors. Gradually, over the span of a century, they came to dominate their neighbors in an imperial fashion."
  origin_tooltip_empire_effects:0 "- Leader of an ['concept_empire_federation'] ['concept_federation']$empire_origin_end$"
- origin_tooltip_empire_subject_effects:0 "- Start as a member of an §HEmpire§! federation with two additional members"
 
  origin_vfef_empire_npc:0 "Empire Vassal"
  origin_vfef_empire_npc_desc:0 "This civilization established early contact with their immediate alien neighbors. Gradually, over the span of a century, they were made into a client state of one of those neighbors."
+ origin_tooltip_empire_subject_effects:0 "- Start as a member of an ['concept_empire_federation'] ['concept_federation'] with two additional members"
 
  # Overwrites
-
- # FEDERATION_VIEW_ASK_TO_LEAVE_FEDERATION_BUTTON_DESC:0 "We will ask the Emperor for permission to leave the empire. If this request is refused, we will be granted the §YSecession§! Casus Belli against the ['concept_crown_nation']."
  
  # ACTION_ASK_TO_LEAVE_FEDERATION_TITLE:0 "Ask to Leave Empire"
 
@@ -452,6 +450,7 @@ l_korean:
 
  # POPUP_ASK_TO_LEAVE_FEDERATION_DESC:0 "Do you want to send a request to the Emperor of the $FEDERATION|H$ for permission to leave the empire?"
 
+ FEDERATION_VIEW_ASK_TO_LEAVE_FEDERATION_BUTTON_DESC:0 "We will ask for permission to leave. If this request is refused, we will be granted the §YSecession§! Casus Belli.\n\n"
 
  # Federations Expanded
  law_category_FEDEXP_defend_associates_empire:0 "Associate Protection"

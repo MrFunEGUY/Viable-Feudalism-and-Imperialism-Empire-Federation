@@ -4,8 +4,6 @@ origin_vfef_empire = {
 	icon = "gfx/interface/icons/origins/origins_hegemon.dds"
 	picture = GFX_origin_hegemon
 	max_once_global = yes
-	
-	initializers = {}
 
 	playable = {
 		host_has_dlc = "Federations"
@@ -14,11 +12,12 @@ origin_vfef_empire = {
 	possible = {
 		ethics = {
 			OR = {
-				value = ethic_gestalt_consciousness
+				text = civic_tooltip_authoritarian
 				value = ethic_authoritarian
 				value = ethic_fanatic_authoritarian
 			}
 		}
+
 		civics = {
 			NOR = {
 				value = civic_fanatic_purifiers
@@ -28,9 +27,6 @@ origin_vfef_empire = {
 	}
 
 	description = "origin_tooltip_empire_effects"
-	modifier = {
-		country_subject_power_penalty_mult = -0.5
-	}
 	flags = { custom_start_screen }
 
 	traits = {

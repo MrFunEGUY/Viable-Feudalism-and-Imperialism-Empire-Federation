@@ -362,8 +362,8 @@ action_invite_to_federation = {
 
 	potential = {
 		hidden_trigger = {
-			is_fallen_machine_empire = no
-			from = { is_fallen_machine_empire = no }
+			is_fallen_empire_machine = no
+			from = { is_fallen_empire_machine = no }
 		}
 		hidden_trigger = {
 			OR = {
@@ -490,8 +490,8 @@ action_ask_to_join_federation = {
 
 	potential = {
 		hidden_trigger = {
-			is_fallen_machine_empire = no
-			from = { is_fallen_machine_empire = no }
+			is_fallen_empire_machine = no
+			from = { is_fallen_empire_machine = no }
 		}
 		hidden_trigger = { # No one wants to join an Empire
 			from = {
@@ -543,28 +543,38 @@ action_ask_to_join_federation = {
 			}
 		}
 		if = {
-			limit = { federation = { has_federation_type = empire_federation } }
-			custom_tooltip = {
-				fail_text = requires_actor_to_be_empire_leader
-				from = {
-					if = {
-						limit = { federation = { has_federation_law = invite_members_president_vote_empire } }
-						is_federation_leader = yes
+			limit = { exists = federation }
+			if = {
+				limit = { federation = { has_federation_type = empire_federation } }
+				custom_tooltip = {
+					fail_text = requires_actor_to_be_empire_leader
+					from = {
+						if = {
+							limit = {
+								exists = federation
+								federation = { has_federation_law = invite_members_president_vote_empire }
+							}
+							is_federation_leader = yes
+						}
+					}
+				}
+			}
+			else = {
+				custom_tooltip = {
+					fail_text = requires_actor_to_be_federation_leader
+					from = {
+						if = {
+							limit = {
+								exists = federation
+								federation = { has_federation_law = invite_members_president_vote_hegemony }
+							}
+							is_federation_leader = yes
+						}
 					}
 				}
 			}
 		}
-		else = {
-			custom_tooltip = {
-				fail_text = requires_actor_to_be_federation_leader
-				from = {
-					if = {
-						limit = { federation = { has_federation_law = invite_members_president_vote_hegemony } }
-						is_federation_leader = yes
-					}
-				}
-			}
-		}
+
 
 		# Shared Borders
 		get_border_test = yes
@@ -582,6 +592,43 @@ action_ask_to_join_federation = {
 		# }
 	}
 }
+
+# Leave a federation. Harms relations and sets a 10 year truce with whole federation.
+action_leave_federation = {
+	icon = "GFX_diplomacy_status_federation"
+	auto_accepted = yes
+	requires_actor_peace = yes
+	show_to_alliance_members = yes
+	should_notify_all_communications = yes
+	action_type = negative
+
+	# We do not want the AI to leave federations because it does not like its subjects
+	should_ai_propose = {
+		weight = 1
+		modifier = {
+			factor = 0
+			exists = from
+			from = { is_subject = yes }
+		}
+	}
+
+	potential = {
+		hidden_trigger = {
+			is_subject = no
+			OR = {
+				is_ai = no
+				is_federation_leader = no
+			}
+		}
+	}
+	proposable = {
+		custom_tooltip = {
+			fail_text = requires_federation_leader_exists
+			federation = { federation_election_underway = no } #messes up federation election chains
+		}
+	}
+}
+
 
 action_ask_to_leave_federation = {
 	icon = "GFX_diplomacy_status_federation"
@@ -603,9 +650,16 @@ action_ask_to_leave_federation = {
 
 	potential = {
 		hidden_trigger = {
-			NOT = { is_at_war_with = federation.leader } # In case you are in wg_independence war
+			NAND = {
+				is_subject = yes
+				is_at_war_with = root.overlord
+			}
 			has_federation = yes
 			federation = { is_domineering_federation_type = yes }
+			OR = {
+				is_ai = no
+				is_federation_leader = no
+			}
 		}
 	}
 

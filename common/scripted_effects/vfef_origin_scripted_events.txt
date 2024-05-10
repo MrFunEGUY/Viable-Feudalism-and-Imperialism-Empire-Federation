@@ -230,6 +230,56 @@ create_empire_member = {
 					}
 				}
 			}
+			1 = {	# Fanatic Socialism
+				modifier = {
+					factor = 10
+					root = { is_socialism = yes }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_vfef_empire_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_socialism"
+						ethic = "ethic_fanatic_socialism"
+					}
+					effect = {
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
+			}
+			1 = {	# Fanatic Capitalism
+				modifier = {
+					factor = 10
+					root = { is_capitalism = yes }
+				}
+				create_country = {
+					name = random
+					name_list = random
+					species = event_target:fed_planet_$NUM$_species
+					type = default
+					origin = "origin_vfef_empire_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_xenophile"
+						ethic = "ethic_capitalism"
+						ethic = "ethic_fanatic_capitalism"
+					}
+					effect = {
+						save_event_target_as = fed_member_$NUM$
+						establish_communications_no_message = root
+					}
+				}
+			}
 			5 = {	# Regular Xenophile
 				create_country = {
 					name = random
