@@ -138,6 +138,9 @@ l_japanese:
  requires_feudal_1: "§RRequires you to have the §Y$civic_feudal_realm$§! civic.§!"
  
  federation_acceptance_empire_federation: "Subject"
+ federation_acceptance_capitalism: "Competitive"
+ federation_acceptance_current_crown_under_this_law:0 "Currently ['concept_crown_nation'] by this Law"
+ federation_acceptance_crown: "Is Empire ['concept_crown_nation']"
  federation_acceptance_empire: "Our subjects will do as we command"
  federation_acceptance_empire_other: "No desire to give up autonomy"
  

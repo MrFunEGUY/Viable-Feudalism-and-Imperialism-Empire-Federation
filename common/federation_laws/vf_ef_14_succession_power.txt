@@ -1,4 +1,4 @@
-@cooldown = 7
+@cooldown = 60
 
 succession_power_economy_empire = {
 	potential = {
@@ -41,6 +41,7 @@ succession_power_economy_empire = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_would_win
 			add = 25
 			federation = {
 				NOT = {
@@ -55,22 +56,28 @@ succession_power_economy_empire = {
 			}
 		}
 		modifier = {
-			desc = federation_acceptance_empire_federation
-			add = 200
-			federation = {
-				has_federation_type = empire_federation
-			}
-		}
-		modifier = {
+			desc = personality_ruthless_capitalists
 			add = 50
 			has_ai_personality = ruthless_capitalists
 		}
 		modifier = {
-			add = 100
-			is_federation_leader = yes
-			federation = { has_federation_law = succession_power_economy }
+			desc = federation_acceptance_capitalism
+			add = 50
+			has_ethic = ethic_capitalism
 		}
 		modifier = {
+			desc = federation_acceptance_capitalism
+			add = 100
+			has_ethic = ethic_fanatic_capitalism
+		}
+		modifier = {
+			desc = federation_acceptance_current_crown_under_this_law
+			add = 100
+			is_federation_leader = yes
+			federation = { has_federation_law = succession_power_economy_empire }
+		}
+		modifier = {
+			desc = federation_acceptance_leader_would_lose
 			add = -100
 			is_federation_leader = yes
 			federation = {
@@ -124,16 +131,9 @@ succession_power_diplomatic_weight_empire = {
 
 	ai_weight = {
 		base = 26
-		
-		#Behaviour-specific
+
 		modifier = {
-			add = 25
-			federation = { 
-				has_federation_type = trade_federation
-				NOT = { federation = { has_federation_law = succession_power_economy } }
-			}
-		}
-		modifier = {
+			desc = federation_acceptance_would_win
 			add = 25
 			federation = {
 				NOT = {
@@ -148,37 +148,16 @@ succession_power_diplomatic_weight_empire = {
 			}
 		}
 		modifier = {
-			desc = federation_acceptance_empire_federation
-			add = 200
-			federation = {
-				has_federation_type = empire_federation
-			}
+			desc = federation_acceptance_crown
+			add = 1000
+			is_federation_leader = yes
+			federation = { has_federation_type = empire_federation }
 		}
 		modifier = {
-			add = 50
-			has_ai_personality = federation_builders
-		}
-		modifier = {
-			add = 50
-			federation = { is_domineering_federation_type = yes }
-		}
-		modifier = {
+			desc = federation_acceptance_current_crown_under_this_law
 			add = 100
 			is_federation_leader = yes
-			federation = { has_federation_law = succession_power_diplomatic_weight }
-		}
-		modifier = {
-			add = -100
-			is_federation_leader = yes
-			federation = {
-				any_member = {
-					relative_power = {
-						who = from
-						category = all
-						value > equivalent
-					}
-				}
-			}
+			federation = { has_federation_law = succession_power_diplomatic_weight_empire }
 		}
 	}
 }
@@ -225,10 +204,12 @@ succession_power_tech_empire = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_erudite_explorers
 			add = 25
 			has_ai_personality = erudite_explorers
 		}
 		modifier = {
+			desc = federation_acceptance_would_win
 			add = 25
 			federation = {
 				NOT = {
@@ -243,22 +224,13 @@ succession_power_tech_empire = {
 			}
 		}
 		modifier = {
-			desc = federation_acceptance_empire_federation
-			add = 200
-			federation = {
-				has_federation_type = empire_federation
-			}
-		}
-		modifier = {
-			add = 50
-			federation = { has_federation_type = research_federation }
-		}
-		modifier = {
+			desc = federation_acceptance_current_crown_under_this_law
 			add = 100
 			is_federation_leader = yes
-			federation = { has_federation_law = succession_power_tech }
+			federation = { has_federation_law = succession_power_tech_empire }
 		}
 		modifier = {
+			desc = federation_acceptance_leader_would_lose
 			add = -100
 			is_federation_leader = yes
 			federation = {
@@ -316,6 +288,7 @@ succession_power_fleet_empire = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_would_win
 			add = 25
 			federation = {
 				NOT = {
@@ -330,26 +303,13 @@ succession_power_fleet_empire = {
 			}
 		}
 		modifier = {
-			desc = federation_acceptance_empire_federation
-			add = 200
-			federation = {
-				has_federation_type = empire_federation
-			}
-		}
-		modifier = {
-			add = 50
-			has_ai_personality = ruthless_capitalists
-		}
-		modifier = {
-			add = 50
-			federation = { has_federation_type = military_federation }
-		}
-		modifier = {
+			desc = federation_acceptance_current_crown_under_this_law
 			add = 100
 			is_federation_leader = yes
-			federation = { has_federation_law = succession_power_fleet }
+			federation = { has_federation_law = succession_power_fleet_empire }
 		}
 		modifier = {
+			desc = federation_acceptance_leader_would_lose
 			add = -100
 			is_federation_leader = yes
 			federation = {

@@ -1,4 +1,4 @@
-@cooldown = 7
+@cooldown = 60
 
 centralization_minimal = {
 	unlocks_centralization = 1
@@ -774,6 +774,7 @@ centralization_very_high = {
 		}
 		modifier = {
 			# AI will try to increase the centralization one step at a time
+			desc = federation_acceptance_president
 			add = 100
 			is_federation_leader = yes
 			federation = {
@@ -1506,6 +1507,7 @@ centralization_very_high_empire = {
 		}
 		modifier = {
 			# AI will try to increase the centralization one step at a time
+			desc = federation_acceptance_president
 			add = 100
 			is_federation_leader = yes
 			federation = {

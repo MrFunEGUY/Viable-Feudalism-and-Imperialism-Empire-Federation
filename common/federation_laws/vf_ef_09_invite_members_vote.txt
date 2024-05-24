@@ -1,4 +1,4 @@
-@cooldown = 7
+@cooldown = 60
 
 
 invite_members_unanimous_vote_empire = {

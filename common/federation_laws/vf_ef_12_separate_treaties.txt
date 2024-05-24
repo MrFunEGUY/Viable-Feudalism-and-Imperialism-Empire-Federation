@@ -1,4 +1,4 @@
-@cooldown = 7
+@cooldown = 60
 
 treaties_separate_no_empire = {
 	potential = {

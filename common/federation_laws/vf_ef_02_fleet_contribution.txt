@@ -6,7 +6,7 @@
 @fleet_cap_medium_empire = 1000000
 @fleet_cap_high_empire = 1000000
 
-@cooldown = 7
+@cooldown = 60
 
 # Fleet Contribution - Empire
 

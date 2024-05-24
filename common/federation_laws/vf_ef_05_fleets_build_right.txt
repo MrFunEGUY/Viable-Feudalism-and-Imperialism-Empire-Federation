@@ -1,4 +1,4 @@
-@cooldown = 7
+@cooldown = 60
 
 federation_build_fleets_everyone_empire = {
 	potential = { has_federation_type = empire_federation }

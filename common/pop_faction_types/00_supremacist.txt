@@ -13,7 +13,30 @@ supremacist = {
 	resources = {
 		category = pop_factions
 		produces = {
-			unity = @faction_base_unity
+            trigger = {
+                owner = {
+                	OR = {
+                		years_passed > 10
+                		AND = {
+                			days_passed > 30
+                			has_valid_civic = civic_parliamentary_system
+                		}
+                		AND = {
+                			days_passed > 350
+                			has_origin = origin_broken_shackles
+                		}
+                	}
+                }
+            }
+            unity = @faction_base_output
+        }
+	}
+
+	extortion_resource = {
+		category = pop_factions
+		produces = {
+			alloys = @faction_base_output
+			mult = @faction_extortion_alloys_ratio
 		}
 	}
 
@@ -39,10 +62,7 @@ supremacist = {
 		is_shackled_robot = no
 		can_think = yes
 		owner = {
-			NOR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-			}
+			is_pacifist = no
 		}
 		is_same_species = owner_species
 	}
@@ -65,6 +85,11 @@ supremacist = {
 			from = {
 				NOT = { exists = leader }
 			}
+		}
+
+		modifier = {
+			factor = 0
+			planet = { has_modifier = planet_culture_shock }
 		}
 	}
 
@@ -441,7 +466,16 @@ supremacist = {
 			owner = {
 				OR = {
 					has_federation = no
-					federation = { has_federation_type = empire_federation }
+					AND = {
+						has_federation = yes
+						is_federation_leader = yes
+						federation = {
+							OR = {
+								has_federation_type = vf_ef_federation
+								has_federation_type = hegemony_federation
+							}
+						}
+					}
 				}
 			}
 		}
@@ -471,6 +505,7 @@ supremacist = {
 					has_policy_flag = interference_active
 					has_policy_flag = interference_aggressive
 				}
+
 			}
 		}
 	}
@@ -506,9 +541,7 @@ supremacist = {
 			owner = {
 				NOT = {
 					any_owned_species = {
-						NOT = {
-							is_same_species = prev
-						}
+						NOT = { is_same_species = prev }
 						NAND = {
 							prev = { has_valid_civic = civic_selective_kinship }
 							is_same_species_class = prev
@@ -542,8 +575,7 @@ supremacist = {
 			owner = {
 				NOR = {
 					num_migration_pacts > 0
-					any_country = {
-						is_country_type = default
+					any_playable_country = {
 						has_communications = root.owner
 						OR = {
 							has_diplo_migration_treaty = root.owner
@@ -695,6 +727,7 @@ supremacist = {
 				OR = {
 					has_policy_flag = diplo_stance_belligerent
 					has_policy_flag = diplo_stance_supremacist
+					has_policy_flag = diplo_stance_animosity
 				}
 			}
 		}
@@ -704,6 +737,7 @@ supremacist = {
 				OR = {
 					has_policy_flag = diplo_stance_belligerent
 					has_policy_flag = diplo_stance_supremacist
+					has_policy_flag = diplo_stance_animosity
 				}
 			}
 		}
@@ -997,6 +1031,51 @@ supremacist = {
 						}
 					}
 				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		# Faction Extortion Buttons
+		extort_faction = {
+			title = "EXTORT_FACTION"
+			description = "EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					has_authority = auth_oligarchic
+					has_country_flag = cyber_collectivist
+				}
+				is_faction_extorted = no
+			}
+
+			effect = {
+				set_faction_extorted = yes
+				custom_tooltip = alloys_extortion_tt
+				custom_tooltip = ONLY_ONE_EXTORTED_FACTION_TT
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_extort_faction = {
+			title = "CANCEL_EXTORT_FACTION"
+			description = "CANCEL_EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					has_authority = auth_oligarchic
+					has_country_flag = cyber_collectivist
+				}
+				is_faction_extorted = yes
+			}
+
+			effect = {
+				set_faction_extorted = no
 			}
 
 			ai_weight = {

@@ -1,4 +1,4 @@
-@cooldown = 7
+@cooldown = 60
 
 succession_term_status_change_empire = {
 	potential = { 

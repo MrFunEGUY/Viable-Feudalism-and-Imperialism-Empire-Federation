@@ -1,4 +1,4 @@
-@cooldown = 7
+@cooldown = 60
 
 succession_type_challenge_empire = {
 	potential = { has_federation_type = empire_federation }

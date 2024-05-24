@@ -13,14 +13,30 @@ progressive = {
 	resources = {
 		category = pop_factions
 		produces = {
-			unity = @faction_base_unity
-		}
+            trigger = {
+                owner = {
+                	OR = {
+                		years_passed > 10
+                		AND = {
+                			days_passed > 30
+                			has_valid_civic = civic_parliamentary_system
+                		}
+                		AND = {
+                			days_passed > 350
+                			has_origin = origin_broken_shackles
+                		}
+                	}
+                }
+            }
+            unity = @faction_base_output
+        }
+	}
 
+	extortion_resource = {
+		category = pop_factions
 		produces = {
-			trigger = {
-				FROM = { has_valid_civic = civic_shared_burden }
-			}
-			unity = 0.5
+			society_research = @faction_base_output
+			mult = @faction_extortion_research_ratio
 		}
 	}
 
@@ -67,10 +83,14 @@ progressive = {
 			}
 		}
 
-		# Should really check for citizenship instead
 		modifier = {
 			factor = 0.25
-			NOT = { is_same_species = owner_species }
+			has_citizenship_rights = no
+		}
+
+		modifier = {
+			factor = 0
+			planet = { has_modifier = planet_culture_shock }
 		}
 	}
 
@@ -222,6 +242,59 @@ progressive = {
 	}
 
 	demand = {
+		title = "PROGRESSIVE_NO_SLAVERY"
+		unfulfilled_title = "PROGRESSIVE_SLAVERY"
+		desc = "PROGRESSIVE_NO_SLAVERY_DESC"
+		fulfilled_effect = 3
+		unfulfilled_effect = -15
+		potential = {
+			has_global_flag = cultural_overhaul_active
+			exists = owner
+			owner = {
+				# has_policy_flag = slavery_allowed
+				NOR = {
+					is_xenophobe = yes
+					has_valid_civic = civic_slaver_guilds
+					has_valid_civic = civic_slaving_despots
+					has_valid_civic = civic_caste_system
+					has_valid_civic = civic_indentured_assets
+				}
+			}
+		}
+		trigger = {
+			owner = { NOT = { has_policy_flag = slavery_allowed } }
+		}
+	}
+
+	demand = {
+		title = "PROGRESSIVE_FREE_MEDIA"
+		unfulfilled_title = "NO_PROGRESSIVE_FREE_MEDIA"
+		desc = "PROGRESSIVE_FREE_MEDIA_DESC"
+		fulfilled_effect = 4
+		potential = {
+			exists = owner
+			has_global_flag = cultural_overhaul_active
+		}
+		trigger = {
+			owner = { has_policy_flag = free_media }
+		}
+	}
+
+	demand = {
+		title = "NO_PROGRESSIVE_STATE_MEDIA"
+		unfulfilled_title = "PROGRESSIVE_STATE_MEDIA"
+		desc = "NO_PROGRESSIVE_STATE_MEDIA_DESC"
+		unfulfilled_effect = -10
+		potential = {
+			exists = owner
+			has_global_flag = cultural_overhaul_active
+		}
+		trigger = {
+			owner = { NOT = { has_policy_flag = state_media } }
+		}
+	}
+
+	demand = {
 		title = "COOPERATIVE_DIPLO_STANCE"
 		unfulfilled_title = "COOPERATIVE_DIPLO_STANCE"
 		desc = "COOPERATIVE_DIPLO_STANCE_DESC"
@@ -234,7 +307,6 @@ progressive = {
 			owner = {
 				is_homicidal = no
 				is_country_type = default
-				has_policy_flag = diplo_stance_cooperative
 			}
 		}
 
@@ -242,6 +314,21 @@ progressive = {
 			owner = {
 				has_policy_flag = diplo_stance_cooperative
 			}
+		}
+	}
+
+	demand = {
+		title = "FEDERAL_STATE"
+		unfulfilled_title = "NO_FEDERAL_STATE"
+		desc = "FEDERAL_STATE_DESC"
+		fulfilled_effect = 5
+		unfulfilled_effect = -5
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_federal_state }
+		}
+		trigger = {
+			owner = { has_policy_flag = federal_state }
 		}
 	}
 
@@ -255,13 +342,23 @@ progressive = {
 
 		potential = {
 			exists = owner.federation
-            owner.federation = { is_domineering_federation_type = yes }
+			owner.federation = {
+				OR = {
+					has_federation_type = hegemony_federation
+					has_federation_type = vf_ef_federation
+				}
+			}
 		}
 
 		trigger = {
 			OR = {
 				NOT = { exists = owner.federation }
-				owner.federation = { is_domineering_federation_type = no }
+				owner.federation = {
+					NOR = {
+						has_federation_type = hegemony_federation
+						has_federation_type = vf_ef_federation
+					}
+				}
 			}
 		}
 	}
@@ -486,6 +583,51 @@ progressive = {
 				parameter:empire = {
 					remove_modifier = suppressed_egalitarian
 				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		# Faction Extortion Buttons
+		extort_faction = {
+			title = "EXTORT_FACTION"
+			description = "EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					has_authority = auth_oligarchic
+					has_country_flag = cyber_collectivist
+				}
+				is_faction_extorted = no
+			}
+
+			effect = {
+				set_faction_extorted = yes
+				custom_tooltip = society_research_extortion_tt
+				custom_tooltip = ONLY_ONE_EXTORTED_FACTION_TT
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_extort_faction = {
+			title = "CANCEL_EXTORT_FACTION"
+			description = "CANCEL_EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					has_authority = auth_oligarchic
+					has_country_flag = cyber_collectivist
+				}
+				is_faction_extorted = yes
+			}
+
+			effect = {
+				set_faction_extorted = no
 			}
 
 			ai_weight = {

@@ -86,3 +86,67 @@ is_democracy = { #Power of many
 		has_authority = auth_cooperative
 	}
 }
+
+is_cyber_democracy = { #Power of many
+	is_democracy = yes
+	OR = {
+		has_country_flag = cyber_individualist
+		has_country_flag = cyber_collectivist
+	}
+}
+
+is_cyber_dictatorial = {
+	is_dictatorial = yes
+	OR = {
+		has_country_flag = cyber_individualist
+		has_country_flag = cyber_collectivist
+	}
+}
+
+is_cyber_imperial = {
+	is_imperial = yes
+	OR = {
+		has_country_flag = cyber_individualist
+		has_country_flag = cyber_collectivist
+	}
+}
+
+is_cyber_corporate = {
+	is_megacorp = yes
+	OR = {
+		has_country_flag = cyber_individualist
+		has_country_flag = cyber_collectivist
+	}
+}
+
+is_synth_democracy = {
+	is_democracy = yes
+	OR = {
+		has_country_flag = synth_physical
+		has_country_flag = synth_virtual
+	}
+}
+
+is_synth_dictatorial = {
+	is_dictatorial = yes
+	OR = {
+		has_country_flag = synth_physical
+		has_country_flag = synth_virtual
+	}
+}
+
+is_synth_imperial = {
+	is_imperial = yes
+	OR = {
+		has_country_flag = synth_physical
+		has_country_flag = synth_virtual
+	}
+}
+
+is_synth_corporate = {
+	is_megacorp = yes
+	OR = {
+		has_country_flag = synth_physical
+		has_country_flag = synth_virtual
+	}
+}

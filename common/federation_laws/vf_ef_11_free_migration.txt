@@ -1,4 +1,4 @@
-@cooldown = 7
+@cooldown = 60
 
 free_migration_no_empire = {
 	potential = { has_federation_type = empire_federation }
