@@ -256,7 +256,7 @@ progressive = {
 					is_xenophobe = yes
 					has_valid_civic = civic_slaver_guilds
 					has_valid_civic = civic_slaving_despots
-					has_valid_civic = civic_caste_system
+					has_valid_civic = civic_divine_order
 					has_valid_civic = civic_indentured_assets
 				}
 			}
