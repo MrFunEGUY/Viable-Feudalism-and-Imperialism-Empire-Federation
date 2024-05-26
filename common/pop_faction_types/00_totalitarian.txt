@@ -263,10 +263,10 @@ totalitarian = {
 		fulfilled_effect = 5
 		potential = {
 			exists = owner
-			owner = { has_valid_civic = civic_divine_order }
+			owner = { has_valid_civic = civic_caste_system }
 		}
 		trigger = {
-			owner = { has_valid_civic = civic_divine_order }
+			owner = { has_valid_civic = civic_caste_system }
 		}
 	}
 
