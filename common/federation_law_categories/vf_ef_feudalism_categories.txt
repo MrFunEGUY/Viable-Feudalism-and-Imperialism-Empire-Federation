@@ -216,8 +216,6 @@ law_category_succession_type_empire = {
 		has_federation_type = empire_federation
 	}
 	laws = {
-		succession_type_rotation_empire
-		succession_type_random_empire
 		succession_type_challenge_empire
 		succession_type_strongest_empire
 	}
