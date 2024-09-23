@@ -9,12 +9,24 @@
 
 has_ecaf_triggers = { always = yes }
 
+is_socialism = {
+	OR = {
+		has_ethic = ethic_socialism
+		has_ethic = ethic_fanatic_socialism
+	}
+}
+
+is_capitalism = {
+	OR = {
+		has_ethic = ethic_capitalism
+		has_ethic = ethic_fanatic_capitalism
+	}
+}
+
 is_megacorp = {
 	OR = {
 		has_authority = auth_corporate
 		has_authority = auth_corporate_imperial
-		#############
-		has_government = gov_imperial_domain_megacorp
 		# Other Mods
 		has_authority = auth_corporate_democratic
 		has_authority = auth_bugged_corporate_democratic
@@ -26,51 +38,7 @@ is_megacorp = {
 	}
 }
 
-has_corporate_government = {
-	OR = {
-		is_megacorp = yes
-		has_civic = civic_galactic_sovereign_megacorp
-	}
-}
-
-is_dictatorial = {
-	OR = {
-		has_authority = auth_dictatorial
-		AND = {
-			has_authority = auth_dict_democratic
-			is_egalitarian = no
-		}
-	}
-}
-
-is_imperial = { #Has Heir
-	OR = {
-		has_authority = auth_imperial
-		has_authority = auth_corporate_imperial
-		# Other Mods
-		has_authority = auth_corporate_fiefdom
-		has_authority = auth_tec_patrocorporate
-		has_authority = auth_bugged_corporate_imperial
-		has_authority = auth_private
-	}
-}
-
-is_autocracy = { #Power of one
-	OR = {
-		is_gestalt = yes
-		is_imperial = yes
-		is_dictatorial = yes
-	}
-}
-
-is_imp_or_dict = { #Power of one
-	OR = {
-		is_imperial = yes
-		is_dictatorial = yes
-	}
-}
-
-is_democracy = { #Power of many
+is_democratic_authority = {
 	OR = {
 		has_authority = auth_democratic
 		has_authority = auth_strict_democratic
@@ -85,68 +53,34 @@ is_democracy = { #Power of many
 		has_authority = auth_corporate_democratic
 		has_authority = auth_cooperative
 	}
+	
 }
 
-is_cyber_democracy = { #Power of many
-	is_democracy = yes
+is_imperial_authority = {
 	OR = {
-		has_country_flag = cyber_individualist
-		has_country_flag = cyber_collectivist
+		has_authority = auth_imperial
+		has_authority = auth_corporate_imperial
+		# Other Mods
+		has_authority = auth_corporate_fiefdom
+		has_authority = auth_tec_patrocorporate
+		has_authority = auth_bugged_corporate_imperial
+		has_authority = auth_private
 	}
 }
 
-is_cyber_dictatorial = {
-	is_dictatorial = yes
+is_dictatorial_authority = {
 	OR = {
-		has_country_flag = cyber_individualist
-		has_country_flag = cyber_collectivist
+		has_authority = auth_dictatorial
+		AND = {
+			has_authority = auth_dict_democratic
+			is_egalitarian = no
+		}
 	}
 }
 
-is_cyber_imperial = {
-	is_imperial = yes
+is_imp_or_dict = { #Power of one
 	OR = {
-		has_country_flag = cyber_individualist
-		has_country_flag = cyber_collectivist
-	}
-}
-
-is_cyber_corporate = {
-	is_megacorp = yes
-	OR = {
-		has_country_flag = cyber_individualist
-		has_country_flag = cyber_collectivist
-	}
-}
-
-is_synth_democracy = {
-	is_democracy = yes
-	OR = {
-		has_country_flag = synth_physical
-		has_country_flag = synth_virtual
-	}
-}
-
-is_synth_dictatorial = {
-	is_dictatorial = yes
-	OR = {
-		has_country_flag = synth_physical
-		has_country_flag = synth_virtual
-	}
-}
-
-is_synth_imperial = {
-	is_imperial = yes
-	OR = {
-		has_country_flag = synth_physical
-		has_country_flag = synth_virtual
-	}
-}
-
-is_synth_corporate = {
-	is_megacorp = yes
-	OR = {
-		has_country_flag = synth_physical
-		has_country_flag = synth_virtual
+		is_imperial_authority =yes
+		is_dictatorial_authority =yes
 	}
 }

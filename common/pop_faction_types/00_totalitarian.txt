@@ -125,7 +125,7 @@ totalitarian = {
 
 		potential = {
 			exists = owner
-			owner = { is_democracy = no }
+			owner = { is_democratic_authority =no }
 		}
 
 		trigger = {
@@ -147,7 +147,7 @@ totalitarian = {
 		}
 
 		trigger = {
-			owner = { is_democracy = no }
+			owner = { is_democratic_authority =no }
 		}
 	}
 
@@ -294,29 +294,29 @@ totalitarian = {
 		}
 	}
 
-	demand = {
-		title = "TOTALITARIAN_POLICE_CONTROL"
-		unfulfilled_title = "TOTALITARIAN_NO_POLICE_CONTROL"
-		desc = "TOTALITARIAN_POLICE_CONTROL_DESC"
-		fulfilled_effect = 5
-		potential = {
-			exists = owner
-			owner = {
-				OR = {
-					has_valid_civic = civic_police_state
-					has_valid_civic = civic_cyber_dictatorship
-				}
-			}
-		}
-		trigger = {
-			owner = {
-				OR = {
-					has_valid_civic = civic_police_state
-					has_valid_civic = civic_cyber_dictatorship
-				}
-			}
-		}
-	}
+	# demand = {
+	# 	title = "TOTALITARIAN_POLICE_CONTROL"
+	# 	unfulfilled_title = "TOTALITARIAN_NO_POLICE_CONTROL"
+	# 	desc = "TOTALITARIAN_POLICE_CONTROL_DESC"
+	# 	fulfilled_effect = 5
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			OR = {
+	# 				has_valid_civic = civic_police_state
+	# 				has_valid_civic = civic_cyber_dictatorship
+	# 			}
+	# 		}
+	# 	}
+	# 	trigger = {
+	# 		owner = {
+	# 			OR = {
+	# 				has_valid_civic = civic_police_state
+	# 				has_valid_civic = civic_cyber_dictatorship
+	# 			}
+	# 		}
+	# 	}
+	# }
 
 	demand = {
 		title = "NO_FREE_MEDIA"
@@ -674,7 +674,7 @@ totalitarian = {
 			potential = {
 				exists = owner
 				owner = {
-					has_authority = auth_oligarchic
+					is_oligarchic_authority = yes
 					has_country_flag = cyber_collectivist
 				}
 				is_faction_extorted = no
@@ -697,7 +697,7 @@ totalitarian = {
 			potential = {
 				exists = owner
 				owner = {
-					has_authority = auth_oligarchic
+					is_oligarchic_authority = yes
 					has_country_flag = cyber_collectivist
 				}
 				is_faction_extorted = yes

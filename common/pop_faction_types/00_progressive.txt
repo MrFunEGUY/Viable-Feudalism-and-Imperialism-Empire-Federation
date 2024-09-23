@@ -100,7 +100,7 @@ progressive = {
 		modifier = {
 			factor = 0
 			is_ruler = yes
-			owner = { is_imperial = yes }
+			owner = { is_imperial_authority =yes }
 		}
 
 		modifier = {
@@ -597,7 +597,7 @@ progressive = {
 			potential = {
 				exists = owner
 				owner = {
-					has_authority = auth_oligarchic
+					is_oligarchic_authority = yes
 					has_country_flag = cyber_collectivist
 				}
 				is_faction_extorted = no
@@ -620,7 +620,7 @@ progressive = {
 			potential = {
 				exists = owner
 				owner = {
-					has_authority = auth_oligarchic
+					is_oligarchic_authority = yes
 					has_country_flag = cyber_collectivist
 				}
 				is_faction_extorted = yes
