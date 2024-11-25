@@ -9,6 +9,8 @@
 
 has_ecaf_triggers = { always = yes }
 
+is_socialist = { is_socialism = yes }
+
 is_socialism = {
 	OR = {
 		has_ethic = ethic_socialism

@@ -233,7 +233,7 @@ create_empire_member = {
 			1 = {	# Fanatic Socialism
 				modifier = {
 					factor = 10
-					root = { is_socialism = yes }
+					root = { is_socialist = yes }
 				}
 				create_country = {
 					name = random
