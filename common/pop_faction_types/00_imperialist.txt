@@ -349,10 +349,7 @@ imperialist = {
 				owner = {
 					has_federation = yes
 					federation = {
-						OR = {
-							has_federation_type = hegemony_federation
-							has_federation_type = vf_ef_federation
-						}
+						is_domineering_federation_type = yes
 					}
 					is_federation_leader = yes
 				}

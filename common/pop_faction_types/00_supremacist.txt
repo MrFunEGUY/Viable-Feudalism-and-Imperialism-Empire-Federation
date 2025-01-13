@@ -470,10 +470,7 @@ supremacist = {
 						has_federation = yes
 						is_federation_leader = yes
 						federation = {
-							OR = {
-								has_federation_type = vf_ef_federation
-								has_federation_type = hegemony_federation
-							}
+							is_domineering_federation_type = yes
 						}
 					}
 				}
