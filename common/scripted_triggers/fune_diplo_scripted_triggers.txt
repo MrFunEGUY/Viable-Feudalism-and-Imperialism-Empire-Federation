@@ -261,7 +261,7 @@ is_diplo_robot_empire = {
 		owner_species = { has_trait = trait_mechanical }
 		owner_species = { has_trait = trait_machine_unit }
 		has_country_flag = synthetic_empire
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 		is_individual_machine = yes
 	}
 }
