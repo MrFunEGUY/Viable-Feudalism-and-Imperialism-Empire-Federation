@@ -11,7 +11,7 @@ is_capitalism = { always = no }
 
 is_imp_or_dict = { #Power of one
 	OR = {
-		is_imperial_authority =yes
-		is_dictatorial_authority =yes
+		is_imperial_authority = yes
+		is_dictatorial_authority = yes
 	}
 }
