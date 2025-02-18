@@ -543,6 +543,7 @@ country_event = {
 					who = event_target:fed_member_2
 					status = no
 				}
+				set_subject_of = { who = root preset = preset_vassal }
 			}
 			event_target:fed_member_2 = {
 				add_intel = {
@@ -561,6 +562,7 @@ country_event = {
 					who = event_target:fed_member_1
 					status = no
 				}
+				set_subject_of = { who = root preset = preset_vassal }
 			}
 			add_intel = {
 				amount = 60
