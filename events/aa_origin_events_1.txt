@@ -18,11 +18,7 @@ country_event = {
 	immediate = {
 		set_country_flag = first_contact_event
 		set_country_flag = Story2 # Already encountered spacefarers
-		if = {
-			limit = { NOT = { has_origin = origin_vfef_empire } }
-			add_tradition = tr_diplomacy_adopt
-			add_tradition = tr_diplomacy_the_federation
-		}
+		give_technology = { tech = tech_federation_code message = no }
 
 		# Replace prescripted ideal planets with barren worlds and spawn federation partners.
 		if = {
@@ -348,6 +344,10 @@ country_event = {
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 } # create starter set of ships
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			if = { ## Necessary first bc they leave fed upon becoming vassals
+				limit = { root = { has_origin = origin_vfef_empire } }
+				set_subject_of = { who = root preset = preset_vassal }
+			}
 			join_alliance = {
 				who = root
 				override_requirements = yes
@@ -358,6 +358,10 @@ country_event = {
 			create_starting_leaders = yes
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			if = { ## Necessary first bc they leave fed upon becoming vassals
+				limit = { root = { has_origin = origin_vfef_empire } }
+				set_subject_of = { who = root preset = preset_vassal }
+			}
 			join_alliance = {
 				who = root
 				override_requirements = yes
@@ -543,7 +547,6 @@ country_event = {
 					who = event_target:fed_member_2
 					status = no
 				}
-				set_subject_of = { who = root preset = preset_vassal }
 			}
 			event_target:fed_member_2 = {
 				add_intel = {
@@ -562,7 +565,6 @@ country_event = {
 					who = event_target:fed_member_1
 					status = no
 				}
-				set_subject_of = { who = root preset = preset_vassal }
 			}
 			add_intel = {
 				amount = 60

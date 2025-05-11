@@ -32,31 +32,31 @@ action_form_commercial_pact = {
 			fail_text = "requires_recipient_not_gestalt_consciousness"
 			from = { is_gestalt = no }
 		}
-		custom_tooltip = {
-			fail_text = "requires_actor_not_criminal_heritage"
-			is_criminal_syndicate = no
-		}
-		if = {
-			limit = { from = { is_criminal_syndicate = yes } }
-			if = {
-				limit = {
-					has_intel = {
-						who = from
-						intel = civics
-					}
-				}
-				custom_tooltip = {
-					fail_text = requires_recipient_not_criminal_heritage
-					always = no
-				}
-			}
-			else = {
-				custom_tooltip = {
-					fail_text = diplo_action_no_low_intel
-					always = no
-				}
-			}
-		}
+		# custom_tooltip = {
+		# 	fail_text = "requires_actor_not_criminal_heritage"
+		# 	is_criminal_syndicate = no
+		# }
+		# if = {
+		# 	limit = { from = { is_criminal_syndicate = yes } }
+		# 	if = {
+		# 		limit = {
+		# 			has_intel = {
+		# 				who = from
+		# 				intel = civics
+		# 			}
+		# 		}
+		# 		custom_tooltip = {
+		# 			fail_text = requires_recipient_not_criminal_heritage
+		# 			always = no
+		# 		}
+		# 	}
+		# 	else = {
+		# 		custom_tooltip = {
+		# 			fail_text = diplo_action_no_low_intel
+		# 			always = no
+		# 		}
+		# 	}
+		# }
 		custom_tooltip = {
 			fail_text = "federation_actor_no_separate_treaties"
 			NOT = {
@@ -94,6 +94,15 @@ action_form_commercial_pact = {
 					trust = {
 						who = root
 						value >= 20
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 10
+						}
 					}
 				}
 				# We don't take into consideration relations' status when dealing with the Mirror Empire
@@ -204,6 +213,15 @@ action_form_research_agreement = {
 					trust = {
 						who = root
 						value >= 20
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 10
+						}
 					}
 				}
 			}
@@ -330,6 +348,15 @@ action_guarantee_independence = {
 						value >= 10
 					}
 				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 5
+						}
+					}
+				}
 			}
 		}
 		custom_tooltip = {
@@ -358,7 +385,6 @@ action_invite_to_federation = {
 	should_show_auto_accept_message_recipient = yes
 	should_open_auto_accept_message_recipient = yes
 	should_notify_auto_recipient_on_vote_fail = yes
-	requires_recipient_independence = no
 
 	potential = {
 		hidden_trigger = {
@@ -366,9 +392,21 @@ action_invite_to_federation = {
 			from = { is_fallen_empire_machine = no }
 		}
 		hidden_trigger = {
+			if = {
+				limit = { FROM = { is_subject = yes } }
+				from.overlord = { is_same_empire = root }
+				# is_overlord_to = FROM ## Seems broken
+			}
+		}
+		hidden_trigger = {
 			OR = {
 				has_federation = no
 				federation = { NOT = { has_federation_type = empire_federation } }
+				AND = {
+					from = { is_subject = yes }
+					from.overlord = { is_same_empire = root }
+					federation = { has_federation_type = empire_federation }
+				}
 			}
 		}
 	}
@@ -402,8 +440,8 @@ action_invite_to_federation = {
 				is_country_type_with_subjects = yes
 			}
 			custom_tooltip = {
-				fail_text = requires_tradition_the_federation
-				has_tradition = tr_diplomacy_the_federation
+				fail_text = requires_tech_federation_code
+				has_technology = tech_federation_code
 			}
 		}
 		diplomacy_is_not_homicidal = yes
@@ -422,6 +460,15 @@ action_invite_to_federation = {
 					trust = {
 						who = root
 						value >= 30
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 15
+						}
 					}
 				}
 			}
@@ -533,6 +580,15 @@ action_ask_to_join_federation = {
 						value >= 30
 					}
 				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 15
+						}
+					}
+				}
 			}
 		}
 		custom_tooltip = {
@@ -550,10 +606,7 @@ action_ask_to_join_federation = {
 					fail_text = requires_actor_to_be_empire_leader
 					from = {
 						if = {
-							limit = {
-								exists = federation
-								federation = { has_federation_law = invite_members_president_vote_empire }
-							}
+							limit = { federation = { has_federation_law = invite_members_president_vote_empire } }
 							is_federation_leader = yes
 						}
 					}
@@ -564,10 +617,7 @@ action_ask_to_join_federation = {
 					fail_text = requires_actor_to_be_federation_leader
 					from = {
 						if = {
-							limit = {
-								exists = federation
-								federation = { has_federation_law = invite_members_president_vote_hegemony }
-							}
+							limit = { federation = { has_federation_law = invite_members_president_vote_hegemony } }
 							is_federation_leader = yes
 						}
 					}
@@ -577,19 +627,7 @@ action_ask_to_join_federation = {
 
 
 		# Shared Borders
-		get_border_test = yes
-		
-		# # Members of the Galactic Empire can't be in federations
-		# custom_tooltip = {
-		# 	fail_text = "requires_actor_recipient_not_in_galactic_empire"
-		# 	NAND = {
-		# 		has_galactic_emperor = yes
-		# 		OR = {
-		# 			is_galactic_community_member = yes
-		# 			from = { is_galactic_community_member = yes }
-		# 		}
-		# 	}
-		# }
+		get_border_test = yes	
 	}
 }
 

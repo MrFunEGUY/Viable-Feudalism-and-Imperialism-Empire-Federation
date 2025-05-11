@@ -162,7 +162,7 @@ challenge_type_psionic_battle_empire = {
 		modifier = {
 			desc = federation_acceptance_psionic
 			add = 25
-			count_owned_pop = {
+			count_owned_pop_amount = {
 				limit = {
 					has_psionic_species_trait = yes
 				}
@@ -172,7 +172,7 @@ challenge_type_psionic_battle_empire = {
 		modifier = {
 			desc = federation_acceptance_psionic
 			add = 30
-			count_owned_pop = {
+			count_owned_pop_amount = {
 				limit = {
 					has_psionic_species_trait = yes
 				}
@@ -182,7 +182,7 @@ challenge_type_psionic_battle_empire = {
 		modifier = {
 			desc = federation_acceptance_psionic
 			add = 35
-			count_owned_pop = {
+			count_owned_pop_amount = {
 				limit = {
 					has_psionic_species_trait = yes
 				}
@@ -192,7 +192,7 @@ challenge_type_psionic_battle_empire = {
 		modifier = {
 			desc = federation_acceptance_psionic
 			add = 40
-			count_owned_pop = {
+			count_owned_pop_amount = {
 				limit = {
 					has_psionic_species_trait = yes
 				}
@@ -202,7 +202,7 @@ challenge_type_psionic_battle_empire = {
 		modifier = {
 			desc = federation_acceptance_psionic
 			add = 45
-			count_owned_pop = {
+			count_owned_pop_amount = {
 				limit = {
 					has_psionic_species_trait = yes
 				}
