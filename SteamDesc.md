@@ -59,7 +59,7 @@ The result? A (hopefully) better feudal/imperial-type gameplay experience.
 
 [h1]Credits:[/h1]
 
-- Russian Localisation by [url=https://steamcommunity.com/profiles/99006664646]Anti4iteR[/url]. Thank you!
+- Russian Localisation originally by [url=https://steamcommunity.com/profiles/99006664646]Anti4iteR[/url] and updated by [url=https://steamcommunity.com/id/tzverg]tzverg[/url]. Thank you!
 
 - Crown and star vectors for the federation icon by Vecteezy
 
