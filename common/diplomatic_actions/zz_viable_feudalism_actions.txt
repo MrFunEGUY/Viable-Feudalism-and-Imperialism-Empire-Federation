@@ -24,6 +24,7 @@ action_form_commercial_pact = {
 	possible = {
 		diplomacy_is_not_homicidal_non_gestalt = yes
 		diplomacy_is_not_inward_perfection = yes
+		diplomacy_is_not_scorched = yes
 		custom_tooltip = {
 			fail_text = "requires_actor_not_gestalt_consciousness"
 			is_gestalt = no
@@ -79,6 +80,7 @@ action_form_commercial_pact = {
 				}
 			}
 		}
+		diplomacy_empire_treaties = yes
 		diplomacy_recipient_is_not_pompous = yes
 		# Requirements:
 		# - 20 Trust OR Good Opinion
@@ -157,12 +159,18 @@ action_form_research_agreement = {
 	potential = {
 		hidden_trigger = {
 			is_country_type = default
-			from = { is_country_type = default }
+			from = {
+				OR = {
+					is_country_type = default
+					is_country_type = exiled
+				}
+			}
 		}
 	}
 
 	possible = {
 		diplomacy_is_not_homicidal = yes
+		diplomacy_is_not_scorched = yes
 		diplomacy_is_not_inward_perfection = yes
 		custom_tooltip = {
 			fail_text = "federation_actor_no_separate_treaties"
@@ -327,6 +335,7 @@ action_guarantee_independence = {
 
 	possible = {
 		diplomacy_is_not_homicidal = yes
+		diplomacy_is_not_scorched = yes
 		custom_tooltip = {
 			fail_text = "requires_actor_not_inward_perfection"
 			NOT = { has_valid_civic = civic_inwards_perfection }
@@ -369,6 +378,17 @@ action_guarantee_independence = {
 		# Shared Borders
 		get_border_test_defense = yes
 	}
+
+	on_accept = {
+		hidden_effect = {
+			country_event = { # Patron Objective Counter: po_establish_diplomatic_pact
+				id = shroud.10420
+				scopes = {
+					from = from
+				}
+			}
+		}
+	}
 }
 
 # Creates a federation between two empires or invites an empire to an existing federation. Requires unanimous vote from the federation, if one exists already.
@@ -398,6 +418,7 @@ action_invite_to_federation = {
 				# is_overlord_to = FROM ## Seems broken
 			}
 		}
+		hidden_trigger = { NOT = { has_origin = origin_endbringers } }
 		hidden_trigger = {
 			OR = {
 				has_federation = no
@@ -445,23 +466,21 @@ action_invite_to_federation = {
 			}
 		}
 		diplomacy_is_not_homicidal = yes
+		diplomacy_is_not_scorched = yes
 		diplomacy_is_not_inward_perfection = yes
-		# Requirements:
-		# - 30 Trust OR Excellent Opinion
-		# - An Embassy OR the Diplomatic Networking tradition.
 		custom_tooltip = {
-			fail_text = requires_30_trust_or_excellent
-			OR = {
-				opinion_level = {
-					who = from
-					level >= good
-				}
-				from = {
-					trust = {
-						who = root
-						value >= 30
-					}
-				}
+            fail_text = requires_30_trust_or_excellent
+            OR = {
+                opinion_level = {
+                    who = from
+                    level >= good
+                }
+                from = {
+                    trust = {
+                        who = root
+                        value >= 30
+                    }
+                }
 				AND = {
 					has_valid_civic = civic_hive_familiar_face
 					from = {
@@ -471,15 +490,15 @@ action_invite_to_federation = {
 						}
 					}
 				}
-			}
-		}
-		custom_tooltip = {
-			fail_text = requires_embassy_or_diplomatic_networking
-			OR = {
-				has_embassy = from
-				has_active_tradition = tr_diplomacy_diplomatic_networking
-			}
-		}
+            }
+        }
+        custom_tooltip = {
+            fail_text = requires_embassy_or_diplomatic_networking
+            OR = {
+                has_embassy = from
+                has_active_tradition = tr_diplomacy_diplomatic_networking
+            }
+        }
 		diplomacy_recipient_is_not_pompous_bypass = yes
 		# Members of the Galactic Empire can't be in federations
 		custom_tooltip = {
@@ -494,6 +513,17 @@ action_invite_to_federation = {
 		}
 		# Shared Borders
 		get_border_test = yes
+	}
+
+	on_accept = {
+		hidden_effect = {
+			country_event = { # Patron Objective Counter: po_establish_diplomatic_pact
+				id = shroud.10400
+				scopes = {
+					from = from
+				}
+			}
+		}
 	}
 }
 
@@ -521,6 +551,13 @@ action_kick_from_federation = {
 			}
 		}
 	}
+
+	proposable = {
+		custom_tooltip = {
+			fail_text = requires_federation_leader_exists
+			federation = { federation_election_underway = no }
+		}
+	}
 }
 
 # Ask to join an existing federation. Requires unanimous vote from the federation.
@@ -540,6 +577,7 @@ action_ask_to_join_federation = {
 			is_fallen_empire_machine = no
 			from = { is_fallen_empire_machine = no }
 		}
+		hidden_trigger = { NOT = { has_origin = origin_endbringers } }
 		hidden_trigger = { # No one wants to join an Empire
 			from = {
 				NAND = {
@@ -563,6 +601,7 @@ action_ask_to_join_federation = {
 			}
 		}
 		diplomacy_is_not_homicidal = yes
+		diplomacy_is_not_scorched = yes
 		diplomacy_is_not_inward_perfection = yes
 		# Requirements:
 		# - 30 Trust OR Excellent Opinion
@@ -625,9 +664,22 @@ action_ask_to_join_federation = {
 			}
 		}
 
-
 		# Shared Borders
 		get_border_test = yes	
+	}
+
+	on_accept = {
+		hidden_effect = {
+			if = { ## Doesnt count for empires, following the lead of vanilla not including it in ask subjugation
+				limit = { from = { federation = { NOT = { has_federation_type = empire_federation } } } }
+				country_event = { # Patron Objective Counter: po_establish_diplomatic_pact
+					id = shroud.10405
+					scopes = {
+						from = from
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -660,13 +712,21 @@ action_leave_federation = {
 		}
 	}
 	proposable = {
-		custom_tooltip = {
-			fail_text = requires_federation_leader_exists
-			federation = { federation_election_underway = no } #messes up federation election chains
+		if = {
+			limit = { federation = { has_federation_type = empire_federation } }
+			custom_tooltip = {
+				fail_text = requires_empire_leader_exists
+				federation = { federation_election_underway = no } #messes up federation election chains
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = requires_federation_leader_exists
+				federation = { federation_election_underway = no } #messes up federation election chains
+			}
 		}
 	}
 }
-
 
 action_ask_to_leave_federation = {
 	icon = "GFX_diplomacy_status_federation"

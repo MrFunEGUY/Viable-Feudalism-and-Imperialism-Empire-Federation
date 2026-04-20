@@ -68,7 +68,7 @@ succession_power_economy_empire = {
 		modifier = {
 			desc = federation_acceptance_capitalism
 			add = 100
-			has_ethic = ethic_fanatic_capitalism
+			is_fanatic_capitalist = yes
 		}
 		modifier = {
 			desc = federation_acceptance_current_crown_under_this_law

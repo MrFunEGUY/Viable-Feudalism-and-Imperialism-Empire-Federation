@@ -126,31 +126,31 @@ country_event = {
 			}
 			#And set them again :D
 			if = {
-				limit = { has_ethic = ethic_fanatic_militarist }
+				limit = { is_fanatic_militarist = yes }
 				set_country_flag = empire_ethos_militarist
 			}
 			else_if = {
-				limit = { has_ethic = ethic_fanatic_pacifist }
+				limit = { is_fanatic_pacifist = yes }
 				set_country_flag = empire_ethos_pacifist
 			}
 			else_if = {
-				limit = { has_ethic = ethic_fanatic_xenophobe }
+				limit = { is_fanatic_xenophobe = yes }
 				set_country_flag = empire_ethos_xenophobe
 			}
 			else_if = {
-				limit = { has_ethic = ethic_fanatic_xenophile }
+				limit = { is_fanatic_xenophile = yes }
 				set_country_flag = empire_ethos_xenophile
 			}
 			else_if = {
-				limit = { has_ethic = ethic_fanatic_materialist }
+				limit = { is_fanatic_materialist = yes }
 				set_country_flag = empire_ethos_materialist
 			}
 			else_if = {
-				limit = { has_ethic = ethic_fanatic_spiritualist }
+				limit = { is_fanatic_spiritualist = yes }
 				set_country_flag = empire_ethos_spiritualist
 			}
 			else_if = { #hopefully never
-				limit = { has_ethic = ethic_fanatic_egalitarian }
+				limit = { is_fanatic_egalitarian = yes }
 				set_country_flag = empire_ethos_egalitarian
 			}
 			else = {
