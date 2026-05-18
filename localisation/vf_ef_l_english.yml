@@ -50,6 +50,10 @@
 
  federation_recipient_no_separate_treaties_empire: "§RTheir §Y$law_category_separate_treaties_empire$§! is §Y$treaties_separate_no$§! by Imperial decree, so they cannot enter into such an agreement.§!"
 
+ disabled_for_empire: "§RA §Y$empire_federation$§! cannot ban subject nations from joining.§!"
+
+ only_galatic_emperor: "$TRIGGER_FAIL$§RSubjects of the §YGalactic Imperium§! cannot form Federations.§!"
+
  ACTION_RECIPIENT_NOT_YOURS: "§RThis nation is a subject of another empire.§!"
 
  EMPIRE_LAW_CHANGE: "The empire is §Rnot currently allowing revisions§! to the law."
@@ -210,6 +214,7 @@
  free_migration_no_empire_desc: "Subjects have to sign individual Migration Treaties."
  free_migration_yes_empire: "Enabled"
  free_migration_yes_empire_desc: "Migration Treaties are free and automatic between all subjects."
+ empire_internal_migration:0 "§Y$law_category_free_migration_empire$§! §Ris §Y$free_migration_yes_empire$§! by Imperial Decree, so we already have a migration treaty by default.§!"
 
  treaties_separate_yes_empire: "Allowed"
  treaties_separate_yes_empire_desc: "Subject nations are allowed to sign diplomatic agreements with nations outside the empire."
@@ -229,8 +234,6 @@
  succession_power_fleet_empire_desc: "Our ['concept_crown_nation'] should be chosen from the nation with the largest and most powerful §Ynavy§!."
  succession_power_diplomatic_weight_empire: "Diplomatic Weight"
  succession_power_diplomatic_weight_empire_desc: "Our ['concept_crown_nation'] should be chosen from the nation with the largest §YDiplomatic Weight§!."
-
- disabled_for_empire: "§RA §Y$empire_federation$§! cannot ban subject nations from joining.§!"
 
  # Federation Laws
  

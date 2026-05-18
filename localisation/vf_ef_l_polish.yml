@@ -19,8 +19,11 @@ l_polish:
  concept_empire_federation_desc: "$empire_federation_desc$"
  concept_crown_nation: "Crown"
  concept_crown_nation_desc: "The Crown is the ruling nation in an §YEmpire§! federation. They have sovereignty over the other nations in their federation."
+ empire_origin_end: "\n- ['concept_guaranteed_colonies']: Replaced with Federation members"
 
  ACTION_RECIPIENT_NO_SATRAPY: "Recipient must not be a satrapy under the Great Khan."
+
+ requires_not_empire_federation: "They have no desire to give up their autonomy."
 
  war_goal_wg_leave_empire: "Leave Empire"
  war_goal_wg_leave_empire_desc: "War is waged to secede from the Empire. Other subjects who feel as we do may be invited to help us, though they themselves will not secede."
@@ -38,10 +41,18 @@ l_polish:
  
  requires_actor_not_already_asked_empire: "$TRIGGER_FAIL$§RWe recently asked to leave the Empire and were refused. If we want to leave, we will have to declare a war for our independence.§!"
  requires_actor_not_rebelled_empire: "$TRIGGER_FAIL$§RWe cannot ask to leave until §!§Y20§!§R years have passed since our last attempt to secede.§!"
- 
+
+ requires_actor_to_be_empire_leader: "$TRIGGER_FAIL$§ROnly the ['concept_crown_nation'] of an §Y$empire_federation$§! may approve new members.§!"
+
+ requires_empire_leader_exists: "$TRIGGER_FAIL$§RMembers of the Empire cannot leave until a new ['concept_crown_nation'] is chosen.§!"
+
  federation_actor_no_separate_treaties_empire: "§Y$law_category_separate_treaties_empire$§! §Ris §Y$treaties_separate_no$§! by Imperial decree - we cannot have treaties with nations who are not members of our empire.§!"
 
  federation_recipient_no_separate_treaties_empire: "§RTheir §Y$law_category_separate_treaties_empire$§! is §Y$treaties_separate_no$§! by Imperial decree, so they cannot enter into such an agreement.§!"
+
+ disabled_for_empire: "§RA §Y$empire_federation$§! cannot ban subject nations from joining.§!"
+
+ only_galatic_emperor: "$TRIGGER_FAIL$§RSubjects of the §YGalactic Imperium§! cannot form Federations.§!"
 
  ACTION_RECIPIENT_NOT_YOURS: "§RThis nation is a subject of another empire.§!"
 
@@ -53,7 +64,9 @@ l_polish:
  edict_empire_law_change_enabled: "Empire: Allow Law Changes"
  edict_empire_law_change_enabled_desc: "The emperor decrees that some laws may need to be revised."
 
- vf.ef.form.desc: "$fedev.500.intro$\n\nThis Empire will ensure the safety of its subjects through the enlightened leadership of its ['concept_crown_nation'].\n\nA new era of [fed_founder_1.GetAdj] dominance has begun!"
+ vf.ef.form.desc: "Let history record that on this day, the §Y[fed_founder_1.ruler.GetTitle]§! of the §H[fed_founder_1.GetName]§! was officially declared the Head of State of the §H[fed_founder_2.GetName]§!. The formerly sovereign nation has been regorganized into a constituent member of a new supranational empire, the §H[Root.GetAllianceName]§!.  \n\nThis new empire will ensure the safety of its subjects through the enlightened leadership of its crown nation, the §H[fed_founder_1.GetName]§!.\n\nA new era of [fed_founder_1.GetAdj] dominance has begun!"
+
+ START_SCREEN_EMPIRE: "Decades ago, when our first crude sublight probes visited the star systems near our own, we discovered the presence of two distinct alien civilizations. Like us, they were on the verge of developing practical interstellar travel, but their governments were weak and disorganized.\n\nRecognizing that their strength would add to our own, we forced them to submit to our authority. Through war and occupation, we eventually snuffed out all resistance to our rule. A new order had been established."
 
  # Perks
 
@@ -78,7 +91,6 @@ l_polish:
  
  vf_ef_job_output_1: "Imperial Administration"
  vf_ef_job_output_1_desc: "The efficient and capable administration of our empire has led to massive improvements in production."
-
  
  emperor_unity_1: "Imperial Destiny"
  emperor_unity_1_desc: "The citizens of our empire are proud of what they have accomplished."
@@ -128,10 +140,6 @@ l_polish:
  war_goal_wg_empire: "Imperialism"
  war_goal_wg_empire_desc: "War is waged to force a state to become a subject of our empire.\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new subject of our Empire if they include at least one planet."
  
- # War Goals
- war_goal_wg_empire: "Imperialism"
- war_goal_wg_empire_desc: "War is waged to force the enemy to become a member of our empire.\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new subject of our Empire if they include at least one planet."
-
  imperialism_wg_tooltip: "§Y[from.GetName]§! joins the §H[root.federation.GetName]§!"
 
  wg_empire_status_quo: "Our subject §Y[Root.GetName]§! has partially seceded from the §Y[From.GetAllianceName]§!"
@@ -206,6 +214,7 @@ l_polish:
  free_migration_no_empire_desc: "Subjects have to sign individual Migration Treaties."
  free_migration_yes_empire: "Enabled"
  free_migration_yes_empire_desc: "Migration Treaties are free and automatic between all subjects."
+ empire_internal_migration:0 "§Y$law_category_free_migration_empire$§! §Ris §Y$free_migration_yes_empire$§! by Imperial Decree, so we already have a migration treaty by default.§!"
 
  treaties_separate_yes_empire: "Allowed"
  treaties_separate_yes_empire_desc: "Subject nations are allowed to sign diplomatic agreements with nations outside the empire."
@@ -225,8 +234,6 @@ l_polish:
  succession_power_fleet_empire_desc: "Our ['concept_crown_nation'] should be chosen from the nation with the largest and most powerful §Ynavy§!."
  succession_power_diplomatic_weight_empire: "Diplomatic Weight"
  succession_power_diplomatic_weight_empire_desc: "Our ['concept_crown_nation'] should be chosen from the nation with the largest §YDiplomatic Weight§!."
-
- disabled_for_empire: "§RA §Y$empire_federation$§! cannot ban subject nations from joining.§!"
 
  # Federation Laws
  

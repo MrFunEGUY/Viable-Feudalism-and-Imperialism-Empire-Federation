@@ -15,6 +15,30 @@ diplomacy_is_not_homicidal = {
 
 # this = country, actor
 # from = country, recipient
+diplomacy_is_not_gestalt = {
+	diplomacy_actor_is_not_gestalt = yes
+	diplomacy_recipient_is_not_gestalt = yes
+}
+
+diplomacy_is_not_scorched = {
+	diplomacy_actor_is_not_scorched = yes
+	diplomacy_recipient_is_not_scorched = yes
+}
+
+diplomacy_is_not_pompous = {
+	diplomacy_actor_is_not_pompous = yes
+	diplomacy_recipient_is_not_pompous = yes
+}
+
+# this = country, actor
+# from = country, recipient
+diplomacy_is_not_inward_perfection = {
+	diplomacy_actor_is_not_inward = yes
+	diplomacy_recipient_is_not_inward = yes
+}
+
+# this = country, actor
+# from = country, recipient
 diplomacy_is_not_homicidal_non_gestalt = {
 	diplomacy_actor_is_not_homicidal_non_gestalt = yes
 	diplomacy_recipient_is_not_homicidal_non_gestalt = yes
@@ -41,6 +65,61 @@ diplomacy_recipient_is_not_homicidal = {
 	diplomacy_recipient_is_not_homicidal_gestalt = yes
 }
 
+## Gestalt
+diplomacy_actor_is_not_gestalt = {
+	custom_tooltip = {
+		fail_text = "requires_actor_not_gestalt_consciousness"
+		is_gestalt = no
+	}
+}
+diplomacy_recipient_is_not_gestalt = {
+	custom_tooltip = {
+		fail_text = "requires_recipient_not_gestalt_consciousness"
+		from = { is_gestalt = no }
+	}
+}
+
+## Scorched
+diplomacy_actor_is_not_scorched = {
+	custom_tooltip = {
+		fail_text = "requires_actor_not_scorched_earth"
+		OR = {
+			is_genocidal_infernal = no
+			from = { is_infernal_empire = yes }
+		}
+	}
+}
+diplomacy_recipient_is_not_scorched = {
+	if = {
+		limit = { from = { is_genocidal_infernal = yes } }
+		if = {
+			limit = {
+				has_intel = {
+					who = from
+					intel = civics
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_recipient_not_scorched_earth"
+				OR = {
+					is_infernal_empire = yes
+					from = { is_genocidal_infernal = no }
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = diplo_action_no_low_intel
+				OR = {
+					is_genocidal_infernal = no
+					from = { is_infernal_empire = yes }
+				}
+			}
+		}
+	}
+}
+
+## Pompous
 # this = country, actor
 # from = country, recipient
 diplomacy_recipient_is_not_pompous = {
@@ -69,7 +148,12 @@ diplomacy_recipient_is_not_pompous = {
 		}
 	}
 }
-
+diplomacy_actor_is_not_pompous = {
+	custom_tooltip = {
+		fail_text = "requires_actor_not_pompous"
+		NOT = { has_valid_civic = civic_pompous_purists	}
+	}
+}
 diplomacy_recipient_is_not_pompous_bypass = {
 	if = {
 		limit = {
@@ -100,7 +184,73 @@ diplomacy_recipient_is_not_pompous_bypass = {
 
 # this = country, actor
 # from = country, recipient
-diplomacy_is_not_inward_perfection = {
+diplomacy_is_not_barbaric = {
+	if = {
+		limit = { from = { has_valid_civic = civic_barbaric_despoilers } }
+		if = {
+			limit = {
+				has_intel = {
+					who = from
+					intel = civics
+				}
+			}
+			custom_tooltip = {
+				fail_text = requires_recipient_not_barbaric_despoilers
+				always = no
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = diplo_action_no_low_intel
+				always = no
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "requires_actor_not_barbaric_despoilers"
+		NOT = { has_valid_civic = civic_barbaric_despoilers }
+	}
+}
+
+# this = country, actor
+# from = country, recipient
+diplomacy_is_not_kin = {
+	if = {
+		limit = {
+			from = {
+				has_valid_civic = civic_selective_kinship
+				NOT = { is_same_species_class = ROOT }
+			}
+		}
+		if = {
+			limit = {
+				has_intel = {
+					who = from
+					intel = civics
+				}
+			}
+			custom_tooltip = {
+				fail_text = requires_recipient_not_selective_kinship
+				always = no
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = diplo_action_no_low_intel
+				always = no
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "requires_actor_not_selective_kinship"
+		NAND = {
+			has_valid_civic = civic_selective_kinship
+			NOT = { from = { is_same_species_class = root } }
+		}
+	}
+}
+
+diplomacy_recipient_is_not_inward = {
 	if = {
 		limit = { from = { has_valid_civic = civic_inwards_perfection } }
 		if = {
@@ -122,11 +272,17 @@ diplomacy_is_not_inward_perfection = {
 			}
 		}
 	}
+}
+
+# this = country, actor
+# from = country, recipient
+diplomacy_actor_is_not_inward = {
 	custom_tooltip = {
 		fail_text = "requires_actor_not_inward_perfection"
 		NOT = { has_valid_civic = civic_inwards_perfection }
 	}
 }
+
 
 # this = country, actor
 # from = country, recipient
@@ -251,6 +407,81 @@ diplomacy_recipient_is_not_homicidal_gestalt = {
 			NAND = {
 				from = { has_valid_civic = civic_machine_terminator }
 				is_diplo_robot_empire = no
+			}
+		}
+	}
+}
+
+####
+
+diplomacy_treaties = {
+	custom_tooltip = {
+		fail_text = "federation_actor_no_separate_treaties"
+		NOT = {
+			AND = {
+				has_federation = yes
+				federation = { has_federation_law = treaties_separate_no }
+				NOT = { federation = { any_member = { is_same_value = root.from } } }
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "federation_recipient_no_separate_treaties"
+		from = {
+			NOT = {
+				AND = {
+					has_federation = yes
+					federation = {
+						has_federation_law = treaties_separate_no
+					}
+					NOT = { federation = { any_member = { is_same_value = root } } }
+				}
+			}
+		}
+	}
+	#######
+	custom_tooltip = {
+		fail_text = "federation_actor_no_separate_treaties_empire"
+		NOT = {
+			AND = {
+				has_federation = yes
+				federation = { has_federation_law = treaties_separate_no_empire }
+				NOT = { federation = { any_member = { is_same_value = root.from } } }
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "federation_recipient_no_separate_treaties_empire"
+		from = {
+			NOT = {
+				AND = {
+					has_federation = yes
+					federation = { has_federation_law = treaties_separate_no_empire }
+					NOT = { federation = { any_member = { is_same_value = root } } }
+				}
+			}
+		}
+	}
+}
+
+diplomacy_migration = {
+	custom_tooltip = {
+		fail_text = "federation_internal_migration"
+		NOT = {
+			AND = {
+				has_federation = yes
+				federation = { any_member = { is_same_value = root.from } }
+				federation = { has_federation_law = free_migration_yes }
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "empire_internal_migration"
+		NOT = {
+			AND = {
+				has_federation = yes
+				federation = { any_member = { is_same_value = root.from } }
+				federation = { has_federation_law = free_migration_yes_empire }
 			}
 		}
 	}

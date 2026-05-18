@@ -25,14 +25,7 @@ action_form_commercial_pact = {
 		diplomacy_is_not_homicidal_non_gestalt = yes
 		diplomacy_is_not_inward_perfection = yes
 		diplomacy_is_not_scorched = yes
-		custom_tooltip = {
-			fail_text = "requires_actor_not_gestalt_consciousness"
-			is_gestalt = no
-		}
-		custom_tooltip = {
-			fail_text = "requires_recipient_not_gestalt_consciousness"
-			from = { is_gestalt = no }
-		}
+		diplomacy_is_not_gestalt = yes
 		# custom_tooltip = {
 		# 	fail_text = "requires_actor_not_criminal_heritage"
 		# 	is_criminal_syndicate = no
@@ -58,29 +51,7 @@ action_form_commercial_pact = {
 		# 		}
 		# 	}
 		# }
-		custom_tooltip = {
-			fail_text = "federation_actor_no_separate_treaties"
-			NOT = {
-				AND = {
-					has_federation = yes
-					federation = { has_federation_law = treaties_separate_no }
-					NOT = { federation = { any_member = { is_same_value = root.from } } }
-				}
-			}
-		}
-		custom_tooltip = {
-			fail_text = "federation_recipient_no_separate_treaties"
-			from = {
-				NOT = {
-					AND = {
-						has_federation = yes
-						federation = { has_federation_law = treaties_separate_no }
-						NOT = { federation = { any_member = { is_same_value = root } } }
-					}
-				}
-			}
-		}
-		diplomacy_empire_treaties = yes
+		diplomacy_treaties = yes
 		diplomacy_recipient_is_not_pompous = yes
 		# Requirements:
 		# - 20 Trust OR Good Opinion
@@ -170,32 +141,9 @@ action_form_research_agreement = {
 
 	possible = {
 		diplomacy_is_not_homicidal = yes
-		diplomacy_is_not_scorched = yes
 		diplomacy_is_not_inward_perfection = yes
-		custom_tooltip = {
-			fail_text = "federation_actor_no_separate_treaties"
-			NOT = {
-				AND = {
-					has_federation = yes
-					federation = { has_federation_law = treaties_separate_no }
-					NOT = { federation = { any_member = { is_same_value = root.from } } }
-				}
-			}
-		}
-		custom_tooltip = {
-			fail_text = "federation_recipient_no_separate_treaties"
-			from = {
-				NOT = {
-					AND = {
-						has_federation = yes
-						federation = {
-							has_federation_law = treaties_separate_no
-						}
-						NOT = { federation = { any_member = { is_same_value = root } } }
-					}
-				}
-			}
-		}
+		diplomacy_is_not_scorched = yes
+		diplomacy_treaties = yes
 		custom_tooltip = {
 			fail_text = "federation_automatic_research"
 			NOT = {
@@ -336,10 +284,7 @@ action_guarantee_independence = {
 	possible = {
 		diplomacy_is_not_homicidal = yes
 		diplomacy_is_not_scorched = yes
-		custom_tooltip = {
-			fail_text = "requires_actor_not_inward_perfection"
-			NOT = { has_valid_civic = civic_inwards_perfection }
-		}
+		diplomacy_actor_is_not_inward = yes
 		diplomacy_recipient_is_not_pompous = yes
 		# Requirements:
 		# - 10 Trust OR Neutral Opinion
@@ -391,6 +336,74 @@ action_guarantee_independence = {
 	}
 }
 
+# Creates a migration treaty that allows pops to move freely between two empires. Only possible if both empires have suitable worlds for each others' pops.
+# Usable by regular empires only. Raises trust over time.
+action_form_migration_pact = {
+	icon = "GFX_diplomacy_status_migration_pact"
+	diplo_view_acceptance_icon = yes
+	should_notify_all_communications = yes
+	requires_actor_independence = no
+	requires_recipient_independence = no
+	AI_acceptance_base_value = -50
+	action_type = positive
+	possible = {
+		diplomacy_is_not_homicidal_non_gestalt = yes
+		diplomacy_is_not_scorched = yes
+		diplomacy_is_not_gestalt = yes
+		diplomacy_is_not_inward_perfection = yes
+		diplomacy_is_not_kin = yes
+		diplomacy_is_not_barbaric = yes
+		diplomacy_migration = yes
+		diplomacy_treaties = yes
+		diplomacy_is_not_pompous = yes
+		# Requirements:
+		# - 20 Trust OR Good Opinion
+		# - An Embassy OR the Diplomatic Networking tradition.
+		custom_tooltip = {
+			fail_text = requires_20_trust_or_good
+			OR = {
+				opinion_level = {
+					who = from
+					level >= good
+				}
+				from = {
+					trust = {
+						who = root
+						value >= 20
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 10
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = requires_embassy_or_diplomatic_networking
+			OR = {
+				has_embassy = from
+				has_active_tradition = tr_diplomacy_diplomatic_networking
+			}
+		}
+	}
+}
+
+# Break an existing migration pact, harms relations.
+action_break_migration_pact = {
+	icon = "GFX_diplomacy_status_migration_pact"
+	auto_accepted = yes
+	should_notify_all_communications = no
+	should_show_auto_accept_message_recipient = yes
+	requires_actor_independence = no
+	requires_recipient_independence = no
+	action_type = negative
+}
+
 # Creates a federation between two empires or invites an empire to an existing federation. Requires unanimous vote from the federation, if one exists already.
 # Usable by regular empires only. Raises trust over time.
 action_invite_to_federation = {
@@ -419,6 +432,7 @@ action_invite_to_federation = {
 			}
 		}
 		hidden_trigger = { NOT = { has_origin = origin_endbringers } }
+		#########
 		hidden_trigger = {
 			OR = {
 				has_federation = no
@@ -500,15 +514,12 @@ action_invite_to_federation = {
             }
         }
 		diplomacy_recipient_is_not_pompous_bypass = yes
-		# Members of the Galactic Empire can't be in federations
-		custom_tooltip = {
-			fail_text = "requires_actor_recipient_not_in_galactic_empire"
-			NAND = {
-				has_galactic_emperor = yes
-				OR = {
-					is_galactic_community_member = yes
-					from = { is_galactic_community_member = yes }
-				}
+		# Members of the Galactic Empire can't form federations
+		if = {
+			limit = { has_galactic_emperor = yes }
+			custom_tooltip = {
+				fail_text = "only_galatic_emperor"
+				is_galactic_emperor = yes
 			}
 		}
 		# Shared Borders
@@ -578,6 +589,7 @@ action_ask_to_join_federation = {
 			from = { is_fallen_empire_machine = no }
 		}
 		hidden_trigger = { NOT = { has_origin = origin_endbringers } }
+		#############
 		hidden_trigger = { # No one wants to join an Empire
 			from = {
 				NAND = {
@@ -748,12 +760,12 @@ action_ask_to_leave_federation = {
 
 	potential = {
 		hidden_trigger = {
+			has_federation = yes
+			federation = { is_domineering_federation_type = yes }
 			NAND = {
 				is_subject = yes
 				is_at_war_with = root.overlord
 			}
-			has_federation = yes
-			federation = { is_domineering_federation_type = yes }
 			OR = {
 				is_ai = no
 				is_federation_leader = no
